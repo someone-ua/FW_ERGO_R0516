@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apns>
+  <apn carrier="LTE - Verizon Internet" mcc="311" mnc="480" type="default,dun" autoconnect="1" lte_default="0" always_on="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1428"/>
+  <apn carrier="LTE - Verizon FOTA" mcc="311" mnc="480" type="fota" autoconnect="0" lte_default="0" always_on="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1428"/>
+  <apn carrier="LTE - Verizon IMS" mcc="311" mnc="480" type="ims" autoconnect="1" lte_default="1" always_on="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1428"/>
+</apns>

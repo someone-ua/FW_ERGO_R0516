@@ -1,0 +1,24 @@
+*{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;}
+ul{list-style: none;}
+body 	{font-size: 14px;	margin: 0px; font-family:Microsoft Yahei; color:#333; background:#fff}
+a				{text-decoration:none; color:#000		}
+
+.header{width:900px;margin: 0 auto;margin-top:30px;}
+.navigation{ height: 40px; border-bottom: 8px solid rgba(50,50,50,0.2);}
+.helpBody .content {  width:890px; margin:0 auto;	}
+ul.helpList, .ul.helpList li, ul.helpList ul, ul.helpList ul li, .helpBody h2 {	margin:0; padding:0; font-size:16px; font-weight:bold 	}
+ul.helpList, ul.helpList ul {	list-style:none	}
+ul.helpList {	margin-top:10px;	}
+ul.helpList ul li {	margin:4px 0 4px 20px; font-weight:normal;  	}
+.helpBody h2 {	border-top:1px solid #c4c8bd; margin-top:15px; padding-top:15px;text-shadow: rgb(170, 170, 170) 0px 0px 5px;color:#e31d39; }
+
+.helpBody .helpTitle {  background: none; font: bold 28px arial; color: #e31d39; margin-top: 3px; text-shadow: rgb(170, 170, 170) 0px 0px 5px; }
+.footerHelp { width: 1002px; margin: 0 auto; background: #fff; }
+
+@media screen and (max-width: 430px){
+	.header{width:98%;margin-top:15px;}
+	.navigation{height:30px;border-bottom:5px solid rgba(50,50,50,0.2);}
+	.helpBody .content {width:95%;margin:0 auto;}
+	.helpBody .helpTitle{font-size:24px;}
+}
+.logo_icon{cursor: pointer; width: 100px; margin-bottom: 15px;}

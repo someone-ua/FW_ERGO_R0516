@@ -1,0 +1,3 @@
+/usr/sbin/ascii-xfr
+/usr/sbin/minicom
+/lib/upgrade/keep.d/minicom

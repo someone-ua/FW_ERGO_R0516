@@ -1,0 +1,8 @@
+Package: ota_standard_1826
+Version: 0.1-1
+Depends: libc, libubox, libubus, libuci, libpthread, liblog, tr069_standard_1826
+Source: package/services/ota_standard_1826
+Section: ota_standard_1826
+Architecture: ramips_24kec
+Installed-Size: 34772
+Description:  Marvell ota service for 1802s or 1826 standard

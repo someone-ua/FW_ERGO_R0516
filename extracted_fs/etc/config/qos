@@ -1,0 +1,4 @@
+config qos_ctrl qos_ctrl
+    option type 'off'
+    option up_bandwidth '0'
+    option down_bandwidth '0'

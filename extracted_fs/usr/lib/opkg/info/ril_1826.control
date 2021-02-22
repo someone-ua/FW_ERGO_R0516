@@ -1,0 +1,8 @@
+Package: ril_1826
+Version: 1.0-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog, libstdcpp, lte-telephony
+Source: package/services/ril_1826
+Section: opt
+Architecture: ramips_24kec
+Installed-Size: 166321
+Description:  Ril service applictions and utilities for 1826

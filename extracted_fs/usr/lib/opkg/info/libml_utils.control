@@ -1,0 +1,8 @@
+Package: libml_utils
+Version: 1.0-1
+Depends: libc, libpthread, prop2uci, liblog
+Source: package/libs/libml_utils
+Section: libs
+Architecture: ramips_24kec
+Installed-Size: 9865
+Description:  Marvell utils

@@ -1,0 +1,8 @@
+/etc/config/nodogsplash
+/usr/bin/nodogsplash
+/lib/upgrade/keep.d/nodogsplash
+/usr/bin/ndsctl
+/etc/init.d/nodogsplash
+/etc/nodogsplash/htdocs/splash.html
+/etc/nodogsplash/htdocs/images/splash.jpg
+/etc/nodogsplash/htdocs/infoskel.html

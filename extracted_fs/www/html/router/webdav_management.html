@@ -1,0 +1,114 @@
+<a href='#' class='help' onclick="getHelp('NetworkSharedFilesSetting')">&nbsp;</a>
+
+    
+<div id="webdavSettingDlg" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="SDcardShareSettingInfoDlgTitle">SD Card Usage Mode</h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+			<div id="share_mode_setting">
+				<label id="setting_shared_enable" style="margin-left:40px;width:300px;">Please Open or Close The Shared Function:</label>
+				<br style="clear: both">  
+				<input type="radio" id="WebDavSharedOpen" style="margin-left:40px; border:none;width:20px" name="WebDavSharedOpen" onclick="WebDav_shared_open_Setting()">
+				<span id="shared_open">open</span>
+				<br style="clear: both">  
+				<input type="radio" id="WebDavSharedClose" style="margin-left:40px; border:none;width:20px" name="WebDavSharedClose" onclick="WebDav_shared_close_Setting()">
+				<span id="shared_close">close</span> 
+				
+				<label id="setting_shared_mode" style="margin-left:40px;width:300px;float:none;">Please Select The Shared Mode:</label>
+				<br style="clear: both">  
+				<input type="radio" id="read_mode" style="margin-left:40px; border:none;width:20px" name="read_mode" onclick="WebDav_shared_read_Setting()">
+				<span id="read_mode_show">read-only</span>
+				<br style="clear: both">  
+				<input type="radio" id="readwrite_mode" style="margin-left:40px; border:none;width:20px" name="readwrite_mode" onclick="WebDav_shared_readwrite_Setting()">
+				<span id="readwrite_mode_show">read&write</span>  
+			</div>          
+
+            <div class="buttonRow1">
+                <input id="lt_webdav_setting_btnSave" type="button" value="OK"/>
+                <input id="setting_stcCancelView"  onclick="CloseDlg()" type="button" value="Cancel"/>
+            </div>
+        </div>
+    </div>
+</div>
+    
+<div id='webdav_User_Password_Reset_div' style='display:none'>
+    <label id='webdav_lUsername'></label>
+    <input type='text' name='router_username'  maxlength="32" value='' id='tbrouter_username' class='textfield' readonly = ""/>
+
+    <label id='webdav_lPassword'></label>
+    <input type='password' value='' id='tbrouter_password' maxlength="32" onchange='passwordChanged()' onkeypress='passwordChanged()' class='textfield'  />
+
+    <label id='webdav_lRePassword'  style='display: none'></label>
+    <input type='password' value='' id='tbreenter_password' maxlength="32" style='display: none'  class='textfield'/>
+    <div align='center' class="formBox">
+        <label class='error' id='lPassErrorMes'  style='display: none'></label>
+    </div>
+    <div align='right'><span class="btnWrp"><input type='button' id='btUpdate' value='Save' onclick='validatePassword()' /></span>
+    </div>
+</div>
+
+<label id="webdavSettingtitle" class="title"></label>
+<br style="clear:both" />
+
+<div id="SD_Card_Setting_function" align="right" > 
+    <span id="webdav_Setting_Button">
+    <input type='button' class="btn-apply" id='webdavSetting'/>
+    </span>
+</div>
+
+<label id="webdavmangementtitle" class="title"></label>
+<br style="clear:both" />
+
+<div id='User_Account_div'>
+	    <div align="right" style='display: none'>
+     		<span id='btnwrpAddAccount' class="btnWrp"><input id="btnAddNewAccount" type="button" value="Add New Account" onclick="AddNewAccount()"/></span>
+     	</div>
+    	<label id="lAccountTabletitle"> </label>
+		<table width="100%" id="tableUserAccount" class="dataTbl10 example table-stripeclass:alternate" style="margin-top: 5px">
+			<thead>
+			<tr>
+			<th width="80%" id="lt_account_AccountName"></th>
+			<th width="20%" id="lt_account_AccountDelColumn"></th>
+			</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+
+	 <div id="MBAccount_Popup" style="display: none" >
+        <div class="popUpBox popUpBox2"  >
+            <h1 id="webdav_h1AccountEdit"></h1>
+	    	<a href="#" class="close" onclick="CloseDlg()"><img src="images/close-icon.gif" alt="" /></a><br style="clear:both" />
+            <div class="pBoxCont" >
+                <br style="clear:both" />
+                <label id="webdav_lAccountName"></label>
+                <input name="" type="text" size="30" id="webdav_txtAccountName" maxlength="32"/>
+				<label id='webdav_lAccountPassword'></label>
+   				<input type='password' value='' id='webdav_txtAccountPassword' maxlength="32" onchange='webdav_tablepasswordChanged()' onkeypress='webdav_tablepasswordChanged()' class='textfield'  />
+
+   				<label id='webdav_lAccountRePassword'  style='display: none'></label>
+   				<input type='password' value='' id='webdav_txtReAccountPassword' maxlength="32" style='display: none'  class='textfield'/>
+   				<!-- 
+				<br style="clear:both" />
+				<label id="lAccountAuthority"></label>
+                <select id="AccountGroupSelect">
+                    <option value="0" id="opt_restricted">Restricted</option>
+                    <option value="1" id="opt_standard">Standard</option>
+                </select>
+                <br style="clear:both" />
+                 -->
+                 <br style="clear:both" />				
+      	        <label class='lable13' id='lTablePassErrorMes'  style='display: none'></label>
+   			
+   			      <br style="clear:both" /> 
+                <div class="buttonRow1">
+                    <input id="btnOk" type="button"  value="OK" onclick="webdav_btnOKClickedEditAccount()" />
+                    <input id="btnCancel" type="button"  value="Cancel" onclick="CloseDlg()" />
+                </div>
+
+            </div>
+        </div>
+     </div>
+
+</div>

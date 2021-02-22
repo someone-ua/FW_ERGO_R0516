@@ -1,0 +1,3 @@
+/usr/bin/setprop
+/usr/bin/delprop
+/usr/bin/getprop

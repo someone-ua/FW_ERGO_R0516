@@ -1,0 +1,10 @@
+Package: jshn
+Version: 2016-04-06-155bf39896f126b1ba121b816922a88dc34c31e3
+Depends: libc, libjson-c, libubox, libblobmsg-json
+Source: package/libs/libubox
+License: ISC BSD-3c
+Section: utils
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ramips_24kec
+Installed-Size: 5697
+Description:  Library for parsing and generating JSON from shell scripts

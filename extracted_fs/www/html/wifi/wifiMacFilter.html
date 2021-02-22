@@ -1,0 +1,77 @@
+<a href='#' class='help' onclick="getHelp('WirelessMACFilters')">&nbsp;</a>
+<label id="lt_macFilter_title" class="title"></label>
+<ul class="noteBox">
+	<li id="lt_macFilterMode_title">Select a MAC filtering mode from the Filtering mode drop-down list box.</li>
+	<li id="lt_macFilterMode_Disable">(1) Disable : Disable MAC filtering.</li>
+	<li id="lt_macFilterMode_Allow">(2) Allow : Allow a client to connect to your device if the client's MAC address is in the MAC Address list.MAC filter adds no more than 16!</li>
+	<li id="lt_macFilterMode_Deny">(3) Deny : Deny a client's access to your device if the client's MAC address is in the MAC Address list.MAC filter adds no more than 16!</li>
+</ul>
+  
+   <div id='divWifiAPClass' style="display:none">
+	    <label id='lt_macFilter_WifiModule'></label>
+	    <select id="SelWifiModule">
+	        <option id='lt_macFilter_wifiModule0' value='0'>AP0</option>
+			<option id='lt_macFilter_wifiModule1' value='1' style="display:none">AP1</option>	
+	    </select>
+    </div>   
+
+    <div id='divMacFilterSwitch' >
+    <label id='lt_macFilter_MacFilterSwitch'></label>
+    <select id="selMacFilterSwitch">
+        <option id='lt_macFilter_disabledMode' value='disable'>disable</option>
+		<option id='lt_macFilter_AllowdMode' value='allow'>allow</option>
+		<option id='lt_macFilter_DenyMode' value='deny'>deny</option>
+    </select>
+    </div>   
+
+		
+    <div class="formBox" align="right"><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/> </div>
+    <br style="clear:both" />
+
+
+    <div  id='divMacFilterList' style="display:none">
+    <br style="clear:both" />
+    
+    <label id="lMacFilterListLabel" class="left"> </label>
+		<div class="right">    	
+			<input type='button' id='lt_macFilter_btnDeleteMacFilter' value='delete' class="btn-apply" style="display:none;"/> 
+			<input type='button' id='lt_macFilter_btnAddMacFilter' value='add' class="btn-apply"/>
+		</div>
+		<br style="clear:both" />
+        <table id="tableMACFilters">
+            <thead>
+                <tr>
+                    <th id="lt_macFilter_clientMacAddrList" style="width:270px;"></th>
+                    <th width="30px" id="" name="DeleteAll"><input type="checkbox" id="DeleteAllIpEntry"></th>
+                </tr>
+            </thead>
+            <tbody id="tbodyMacAddrList">
+            </tbody>
+        </table>		
+    </div>
+
+    <div id="divMACFilterDlg" style="display: none" >
+	   <div class="popUpBox popUpBox2">
+            <h1 id="lt_macFilter_AddMACFilterTitle"></h1>
+	    	<a href="#" class="close" onclick="CloseDlg()">x</a>
+            <div class="pBoxCont" style="text-align: center;">      
+              <div class="boxCont2" style="display: inline-block;">  
+              	<input type="text" name="txtmac" id="txtMac1" style="width:40px;" maxlength="2" /> <strong>&middot;</strong>
+                <input type="text"  name="txtmac" id="txtMac2" style="width:40px;" maxlength="2" /> <strong>&middot;</strong>
+                <input type="text"  name="txtmac" id="txtMac3" style="width:40px;" maxlength="2" /> <strong>&middot;</strong>
+                <input type="text"  name="txtmac" id="txtMac4" style="width:40px;" maxlength="2" /> <strong>&middot;</strong>
+                <input type="text"  name="txtmac" id="txtMac5" style="width:40px;" maxlength="2" /> <strong>&middot;</strong>
+                <input type="text"  name="txtmac" id="txtMac6" style="width:40px;" maxlength="2"/>
+                <br style="clear:both" /></div>
+	        	<label id="lt_macFilter_MacError" class="lable13 error" style="display: none"></label>
+	        	
+	        	<div class="buttonRow1 right_align">
+					<input id="lt_btnSave" type="button" class="btn-apply" />
+            		<!--input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" /-->
+            	</div>
+            </div>
+	      </div>
+	</div>
+
+
+

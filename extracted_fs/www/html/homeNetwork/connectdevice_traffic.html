@@ -1,0 +1,105 @@
+<label id="ltitle" class="title"></label>
+<div id='divResetAllDevices' class="condevice_tra" align='right' style='display: none'>        
+	<input type="button" class="btn-apply btn_padding_10"  id="lt_BtnResetDevicesTraffic" value="Reset All Clients Traffic" onclick="ResetClientTrafficData()"> 
+	<input type="button" class="btn-apply btn_padding_10"  id="lt_BtnResetAllDeviceInfo" value="Reset All Clients Info" onclick="ResetClientsInfo()">
+</div>
+<div class="pc_device">
+	<table id="tableDeviceInfo">
+	    <thead>
+	        <tr>
+	            <th width="20%" id="lt_ClientName"></th>
+	            <th width="20%" id="lt_MacAddr"></th>
+	            <th width="22%" id="lt_ConnTime"></th>
+	            <th width="15%" id="lt_Status"></th>
+	            <th width="23%" id="lt_Action"></th>
+	        </tr>
+	    </thead>
+	    <tbody></tbody>
+	</table>
+</div>
+<div class="phone_device">
+	<table id="tableDeviceInfo_phone">
+		<thead>
+			<tr>
+				<th width="35%" id="lt_ClientName"></th>
+				<th width="35%" id="lt_Status"></th>
+				<th width="30%" id="lt_Action"></th>
+			</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+</div>
+<div id="DeviceInfoDiv" style="display: none">
+    <div class="popUpBox popUpBox2" id="connectdevice_traffic">
+        <h1 id="lt_DeviceInfoBoxTitle"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+            <label id="lt_DeviceName"></label>
+            <input type="text" size="30" id="txtDeviceName" maxlength="25" disabled/>
+            <br style="clear: both" />
+            <label id="lt_DeviceStatus"></label>
+            <input type="text" id="deviceStatusSel" disabled/>
+            <!-- <select id="deviceStatusSel" disabled style="background-color: rgb(235, 235, 228);">
+                <option value="conn" id="lt_connected">connected</option>
+                <option value="block" id="lt_connecting">block</option>
+                <option value="dis_conn" id="lt_disconnected">disconnect</option>
+            </select> -->
+            <br style="clear: both" />
+            <label id="lt_ConnType"></label>
+            
+            <input type="text" id="ConnTypeSel" disabled/>
+            <!-- <select id="ConnTypeSel" disabled style="background-color: rgb(235, 235, 228);">
+                <option value="USB">USB</option>
+                <option value="WIFI">WIFI</option>
+                <option value="LAN">LAN</option>
+            </select> -->
+            <br style="clear: both" />
+            <label id="lt_IpAddress"></label>
+            <input type="text" size="30" id="txtIpAddr" maxlength="25" disabled/>
+            <br style="clear: both" />
+            <label id="lt_MacAddress"></label>
+            <input name="input" type="text" id="txtMacAddr" disabled/>
+            <br style="clear: both" />
+            <label id="lt_CurConTime"></label>
+            <input name="input" type="text" id="txtCurConTime" disabled/>
+            <br style="clear: both" />
+            <label id="lt_TotalConTime"></label>
+            <input name="input" type="text" id="txtTotalConTime" disabled/>
+            <br style="clear: both" />
+            <label id="lt_LastConTime"></label>
+            <input name="input" type="text" id="txtLastConTime" disabled/>
+            <br style="clear: both" />
+            <label id="lt_MonthRecvData"></label>
+            <input name="input" type="text" id="txtMonthRecvData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_MonthSendData"></label>
+            <input name="input" type="text" id="txtMonthSendData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_MonthTotalData"></label>
+            <input name="input" type="text" id="txtMonthTotalData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_Last3DayRecvData"></label>
+            <input name="input" type="text" id="txtLast3DayRecvData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_Last3DaySendData"></label>
+            <input name="input" type="text" id="txtLast3DaySendData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_Last3DayTotalData"></label>
+            <input name="input" type="text" id="txtLast3DayTotalData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_TotalRecvData"></label>
+            <input name="input" type="text" id="txtTotalRecvData" disabled/>
+            <br style="clear: both" />
+            <label id="lt_TotalSendData"></label>
+            <input name="input" type="text" id="txtTotalSendData" disabled/>
+            <br style="clear: both" />
+            
+            <label id="lt_TotalData"></label>
+            <input name="input" type="text" id="txtTotalData" disabled/>
+            <br style="clear: both" />
+            <div class="buttonRow1">
+                    <input id="lt_BtnOk" class="btn-apply" type="button" value="OK" onclick="CloseDlg()"/>
+            </div>
+        </div>
+    </div>
+</div>

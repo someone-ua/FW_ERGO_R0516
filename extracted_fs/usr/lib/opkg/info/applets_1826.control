@@ -1,0 +1,8 @@
+Package: applets_1826
+Version: 0.1-1
+Depends: libc, libubox, libubus, libuci, ril_1826, libpthread, liblog, libcgi, libprop2uci
+Source: package/services/applets_1826
+Section: applets
+Architecture: ramips_24kec
+Installed-Size: 19079
+Description:  Marvell misc applets service

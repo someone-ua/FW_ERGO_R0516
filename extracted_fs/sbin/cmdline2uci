@@ -1,0 +1,21 @@
+#!/bin/sh
+#This script parse /proc/cmdline and set "cmdline" UCI
+
+UCI_FILE=cmdline
+rm -f /etc/config/$UCI_FILE
+touch /etc/config/$UCI_FILE
+
+CMDLINE=/proc/cmdline
+COUNTER=1
+CMD=`cat $CMDLINE | cut -d " " -f$COUNTER`
+
+while [ -n "$CMD" ]; do
+	KEY=`echo $CMD | cut -d "=" -f1`
+	VALUE=`echo $CMD | cut -d "=" -f2`
+	# If KEY contains "." the uci set will fail
+	uci set $UCI_FILE.$KEY=$VALUE 2> /dev/null
+	let COUNTER+=1
+	CMD=`cat $CMDLINE | cut -d " " -f$COUNTER`
+done
+
+uci commit

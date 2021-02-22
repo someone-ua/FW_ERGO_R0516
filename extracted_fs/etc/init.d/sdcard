@@ -1,0 +1,33 @@
+#!/bin/sh /etc/rc.common
+# (C) 2013 openwrt.org
+
+START=49
+
+start() {
+        local sd_dev mount_name sd_card
+        rm -rf /www/webdav
+        sd_dev=`ls /dev/ | grep mmcblk | grep "p"`
+
+        [ -z "$sd_dev" ] && exit 0
+        echo "$sd_dev" > /tmp/sd.log
+        mount_name=`mount | grep mmcblk | awk -F " " '{print $1}' | awk -F "/" '{print $3}'`
+        if [ -z "$mount_name" ]
+        then
+                mkdir -p  /mnt/$sd_dev
+                mount -t vfat /dev/$sd_dev /mnt/$sd_dev
+                ln -sf /mnt/$sd_dev /www/webdav
+                echo "$sd_dev mounted" > /tmp/sd.log
+        else
+                sd_card=`echo $mount_name | grep "p"`
+                if [ -z "$sd_card" ]
+                then
+                        umount /dev/$mount_name
+	    		mkdir -p  /mnt/$sd_dev
+            		mount -t vfat /dev/$sd_dev /mnt/$sd_dev
+                fi
+            	ln -sf /mnt/$sd_dev /www/webdav	
+                echo "$sd_dev mount" > /tmp/sd.log
+        fi
+
+}
+

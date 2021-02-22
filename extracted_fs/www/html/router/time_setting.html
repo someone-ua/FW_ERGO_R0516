@@ -1,0 +1,68 @@
+<a href='#' class='help' onclick="getHelp('TimeSetting')">&nbsp;</a>
+
+    <label id="lt_tz_title" class="title"></label>
+
+	<label id='lt_tz_TimeZone'></label>
+	<select id="SelTimeZone">
+		<option id="lt_lselTZGMTEast12" value="GMT-12">GMT+12 Auckland, Wellington, Fiji, Marshall islands</option>
+		<option id="lt_lselTZGMTEast11" value="GMT-11">GMT+11 Magadan, New caledonia, Solomon islands</option>
+		<option id="lt_lselTZGMTEast10" value="GMT-10">GMT+10 Canberra, Guam, Melbourne,Sydney,Vladivostok</option>
+		<option id="lt_lselTZGMTEast9" value="GMT-9">GMT+9 Sapporo, Osaka, Seoul, Tokyo, Yakutsk</option>
+		<option id="lt_lselTZGMTEast8" value="GMT-8">GMT+8 Beijing ,Chongqing ,Hongkong, Urumqi</option>
+		<option id="lt_lselTZGMTEast7" value="GMT-7">GMT+7 Jakarta, Bangkok, Hanoi</option>
+		<option id="lt_lselTZGMTEast6" value="GMT-6">GMT+6 Astana, Dhaka, Ekaterinburg</option>
+		<option id="lt_lselTZGMTEast5" value="GMT-5">GMT+5 Tashkent, Islamabad, karachi</option>
+		<option id="lt_lselTZGMTEast4" value="GMT-4">GMT+4 Moscow, Yerevan, Tbilisi St.Petersburg ,Muscat</option>
+		<option id="lt_lselTZGMTEast3" value="GMT-3">GMT+3 Nairobi, Kuwait, Riyadh</option>
+		<option id="lt_lselTZGMTEast2" value="GMT-2">GMT+2 Cairo, Helsinki, kaliningrad, South Africa ,Warsaw</option>
+		<option id="lt_lselTZGMTEast1" value="GMT-1">GMT+1 Berlin, Brussels, Copenhagen, Madrid, Paris, Rome</option>
+		<option id="lt_lselTZGMT" value="GMT0">GMT Greenwich</option>
+		<option id="lt_lselTZGMTWest1" value="GMT+1">GMT-1 Dublin, London, Lisbon, Casablanca</option>
+		<option id="lt_lselTZGMTWest2" value="GMT+2">GMT-2 Ascencion, Saint, Helena</option>
+		<option id="lt_lselTZGMTWest3" value="GMT+3">GMT-3 Brasilia, Buenos, Aires, Georgetown, Falkland-islands</option>
+		<option id="lt_lselTZGMTWest4" value="GMT+4">GMT-4 Atlantic time (Canada),  Caracas,  La-paz</option>
+		<option id="lt_lselTZGMTWest5" value="GMT+5">GMT-5 Eastern time(USA and Canada), Bogota,  Lima,  Quito</option>
+		<option id="lt_lselTZGMTWest6" value="GMT+6">GMT-6 Central time(USA and Canada), Mexico City</option>
+		<option id="lt_lselTZGMTWest7" value="GMT+7">GMT-7 mountain time(USA and Canada),  Arizona</option>
+		<option id="lt_lselTZGMTWest8" value="GMT+8">GMT-8 Pacific time(USA and Canada), Tijuana</option>
+		<option id="lt_lselTZGMTWest9" value="GMT+9">GMT-9 Alaska</option>
+		<option id="lt_lselTZGMTWest10" value="GMT+10">GMT-10 Hawaii</option>
+		<option id="lt_lselTZGMTWest11" value="GMT+11">GMT-11 Midway Islands,  Samoa islands</option>
+		<option id="lt_lselTZGMTWest12" value="GMT+12">GMT-12 Eniwetok, Kwajalein</option>
+	</select>
+    
+
+    <label id='lt_tz_date'></label>
+	<input name="time" type="text" maxlength="4"  id="txtdate1" class="sml" /> <strong>-</strong>
+    <input name="time" type="text" maxlength="2"  id="txtdate2" class="sml" /> <strong>-</strong>
+    <input name="time" type="text" maxlength="2"  id="txtdate3" class="sml" />	
+    
+    <label id='lt_tz_time'></label>
+    <input name="time" type="text" maxlength="2"  id="txtTime1" class="sml" /> <strong>:</strong>
+    <input name="time" type="text" maxlength="2"  id="txtTime2" class="sml" /> <strong>:</strong>
+    <input name="time" type="text" maxlength="2"  id="txtTime3" class="sml" />
+
+    <label id='lt_tz_ntpServer'></label>
+	<select id="SelNtpServerSwitch">
+		<option id="lt_optEnableSwitch" value="1">enabled</option>
+		<option id="lt_optDisabledSwitch" value="0">disabled</option>
+	</select>
+
+    <div id='divNtpServer' style="display:none;">
+    	<label id='lt_tz_ntpServer1'></label>
+    	<input type="text"  id='txtNtpServer1' class="txtEditBox" /> 
+ 
+    	<label id='lt_tz_ntpServer2'></label>
+    	<input type="text"  id='txtNtpServer2' class="txtEditBox" />  
+    </div>    
+
+
+	<label id='lt_tz_gmtTimeLabel'></label>
+  	<input type='button' id='lt_tz_btnGetGmtTime' class="btn-apply"/>
+
+
+<label id="tzSetErrorLogs" class="error" style="display:none;magin-left:50px;"></label>
+
+<br style="clear:both" />
+
+<div class="right_align" ><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/></div>

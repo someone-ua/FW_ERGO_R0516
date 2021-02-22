@@ -1,0 +1,8 @@
+Package: cgi
+Version: 0.1-1
+Depends: libc, libubox, libubus, libblobmsg-xml, libcgi, libpthread, liblog
+Source: package/network/services/cgi
+Section: net
+Architecture: ramips_24kec
+Installed-Size: 491115
+Description:  Web server CGI

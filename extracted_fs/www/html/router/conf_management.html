@@ -1,0 +1,46 @@
+<a class="help" href="#" onclick="getHelp('ConfigurationManagement')">&nbsp;</a>
+ <label id="lt_cnf_title" class="title"></label>
+
+
+<div class="popUpBox" id="divRebootRouterDlg" style="display: none">
+    <h1 id="lt_cnf_h1RebootRouter">Rebooting...</h1>
+    <a  class="close">&nbsp;</a><br style="clear:both" />
+    <div align="center">
+        <label id="lt_cnf_lRebootingText"></label>
+    </div>
+     
+     <div align="center">
+        <label id="lt_cnf_lRebootingText1"></label>
+    </div>    
+</div>
+
+
+<form enctype="multipart/form-data" id="uploadConfgFileForm" method="post">
+
+<div class="formBox">
+    <label id='lt_cnf_importCfgFile1' class="subttl">
+    </label>
+    <!-- 
+     <label id='lt_cnf_importCfgFile2' class="subttl">
+    </label> -->
+    <label id='lt_cnf_importCfgFile3' class="subttl">
+    </label>
+    <div class='file-box' style="width: 550px;">
+        <input type='file' id='updateCfgFile' class='file' name='config_backup.bin'/>
+        <input type='text' id='txtCfgFileName' class='txt' />
+        <input type='button' class='btnWrn' value='Browse' id='lt_cnf_btnBrowserFile' />
+        <span style="display: none;color:red;" id="lConfigFileError">file format errro.</span>
+    </div>
+    <br class="clear" />
+    <div align="right">
+		<input type='button' id='lt_cnf_btnUpdateCfgFile' value='update' class="btn-apply"/> 
+	</div>    
+</div>
+
+<div class="formBox">
+    <label id='lt_cnf_EmportCfgFileText' class="subttl">click link to export cfg file. </label> 
+    <a target="_blank" id="lt_cnf_btnExportCfgFile" style="color:blue;cursor: pointer;">Export Cfg file.</a>
+</div>
+
+</form>
+<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe> 

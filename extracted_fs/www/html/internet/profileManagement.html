@@ -1,0 +1,79 @@
+<a href='#' id='lt_interCon_helper' class='help' onclick="getHelp('ProfileManagement')">&nbsp;</a>
+<label id="lt_profileManagement_title" class="title"></label>
+<div id='divCellularConn' style='display: block'>  
+	<div id='divPdpProfileType' style='display: none'>
+        <input type="hidden" id="pdpProfileType">
+    </div>
+	<div id='divPdpProfileName' style='display: block'>
+        <label id='lt_interCon_PdpProfileName'></label>
+        <select id='selPdpProfileName'></select>
+    </div>
+	<div id="div2G3GAuthEnabled">
+		<label id="lt_interCon_2G3GUser"></label>
+	    <input type="text" size="30" id="txt2G3GUser" maxlength="25" class="txtEditBox"/>
+	    <label id="lt_interCon_2G3GPassword"></label>
+	    <input type="text" size="30" id="txt2G3GPassword" maxlength="25" class="txtEditBox" onfocus="this.type='password'"/>
+	</div>
+	<div id="divIpType" style="display: block">
+	   	<label id="lt_interCon_IPType"></label>
+	    <select id='SelIpType'>
+			<option id='lt_interCon_OptIPV4V6' value='0'>IPV4V6</option>
+		    <option id='lt_interCon_OptIPV4' value='1'>IPV4</option>
+		    <option id='lt_interCon_OptIPV6' value='2'>IPV6</option>
+	    </select>
+	</div>
+	<div id="2G3GAPNNameDiv">
+	   	<label id="lt_interCon_APN"></label>
+	    <input type="text" size="30" id="txtAPNname" maxlength="25" class="txtEditBox"/>
+	</div>
+	
+	<div>
+	   	<label id="lPdpSetError" class="lable13 error" style="display: none"></label>
+	</div>
+</div>
+<div class="buttonRow1 box360">
+	<input type='button' id='lt_new_profile' value='New Profile' style="width:auto" class="btn-apply"/>
+	<input type='button' id='lt_del_profile' value='Delete' class="btn-apply"/>
+	<input type='button' id='lt_btnApply' value='Save' class="btn-apply"/>
+</div>
+
+<div id='divPDPSetting' style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="lt_interCon_pdpSetDlgTitle"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont pdpSetting box360" style="clear:left">
+        	<p id="lt_internet_remind_txt" style="margin-bottom:15px;"></p>
+       		<label id="lt_interCon_PdpProfileName">APN Profile Name</label>
+       		<input type="text" size="30" id="txtPdpProfileName_popup" maxlength="25">
+			<div id="2G3GAPNNameDiv">
+	            <label id="lt_interCon_APN"></label>
+	            <input type="text" size="30" id="txtAPNname_popup" maxlength="25" />
+         	</div>
+			<input style="display: none" type="text"/>
+			<input style="display: none" type="password"/>
+            <div id="div2G3GAuthEnabled">
+                <label id="lt_interCon_2G3GUser"></label>
+                <input type="text" size="30" id="txt2G3GUser_popup" maxlength="25" />
+	            <br style="clear: both" />
+                <label id="lt_interCon_2G3GPassword"></label>
+                <input type="password" size="30" id="txt2G3GPassword_popup" maxlength="25" />
+	            <br style="clear: both" />
+            </div>
+            <div id="divIpType" style="display: block">
+                <label id="lt_interCon_IPType"></label>
+                <select id='SelIpType_popup'>
+                    <option id='lt_interCon_OptIPV4V6' value='0'>IPV4V6</option>
+                    <option id='lt_interCon_OptIPV4' value='1'>IPV4</option>
+                    <option id='lt_interCon_OptIPV6' value='2'>IPV6</option>
+                </select>
+            </div>
+           	<div>
+            	<label id="lPdpSetError_popup" class="lable13 error" style="display: none"></label>
+           	</div> 
+           	<div class="buttonRow1 right_align">
+                <input id="lt_btnSave" type="button" class="btn-apply" />
+                <input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+           	</div>
+        </div>
+    </div>
+</div>

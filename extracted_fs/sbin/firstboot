@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for sd in /mnt/*; do
+	sd=`echo $sd | grep "mmc" | grep "p"`
+        [ -z "$sd" ] &&  continue
+        umount $sd
+done
+/sbin/jffs2reset

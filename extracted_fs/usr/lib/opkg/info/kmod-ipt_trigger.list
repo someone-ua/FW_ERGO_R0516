@@ -1,0 +1,2 @@
+/etc/modules.d/50-ipt_trigger
+/lib/modules/3.10.14/ipt_trigger.ko

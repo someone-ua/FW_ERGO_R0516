@@ -1,0 +1,124 @@
+<a href='#' class='help' onclick="getHelp('NetworkActivity')">&nbsp;</a>
+<label id="lt_log_lAccessLogs" class="title"></label>
+<br style="clear:both" />
+<div style="float: right;">
+	<input type='button' id='lt_log_btnDeletePdpLog' value='delete' class="btn-apply" style="display:none;"/>   
+    <input type='button' id='lt_log_btnClearPdpLog' value='delete' class="btn-apply" style="display:none;"/>  
+</div>
+<br style="clear:both" />
+
+<div id="divAcessLogRule">
+    <div class="pc_device">
+		<table id="tableAccessLogs">
+			<thead>
+				<tr>
+					<th width="15%" id="lt_log_PdpName"></th>
+					<th width="8%" id="lt_log_Cid"></th>
+					<th width="15%" id="lt_log_ACStartTime"></th>
+					<th width="15%" id="lt_log_ACEndTime"></th>
+					<th width="8%" id="lt_log_IPType"></th>
+					<th width="17%" id="lt_log_IPv4Addr"></th>
+					<th width="17%" id="lt_log_IPv6Addr"></th>
+					<th width="5%"><input type="checkbox" id="DeleteAllPdpLog"></th>
+				</tr>
+			</thead>
+			<tbody id="pdpLogListBody"></tbody>
+		</table>
+	</div>
+	<div class="phone_device">
+		<table id="tableAccessLogs_phone">
+			<thead>
+				<tr>
+					<th width="30%" id="lt_log_PdpName"></th>
+					<!-- <th width="8%" id="lt_log_Cid"></th> -->
+					<th width="40%" id="lt_log_ACStartTime"></th>
+					<!-- <th width="15%" id="lt_log_ACEndTime"></th>
+					<th width="8%" id="lt_log_IPType"></th>
+					<th width="17%" id="lt_log_IPv4Addr"></th>
+					<th width="17%" id="lt_log_IPv6Addr"></th> -->
+					<th width="15%" id="lt_detail"></th>
+					<th width="15%"><input type="checkbox" id="DeleteAllPdpLog"></th>
+				</tr>
+			</thead>
+			<tbody id="pdpLogListBody_phone"></tbody>
+		</table>
+	</div>
+</div>
+<!--div id='divDetailedLogFull' align='center' class="popUpBox popUpBox2" style='display: none'>
+    <h1 id="h1LogFullHeader" style='width: 300px;'>
+    </h1>
+    <a href="#" class="close" onclick="btnCancelLogFull()">
+        <img src="images/close-icon.gif" alt="" /></a><br style="clear: both" />
+    <p>
+        <font color="#FF0000">&nbsp; &nbsp; Log list is FULL, please delete unused logs!
+        </font>
+    </p>
+</div-->
+<br />
+<!---
+<label id="lClientAccessLogs">
+</label>
+<div id="divClientAcessLogRule">
+    <table width="100%" id="tableClientAccessLogs" class="dataTbl10 example table-stripeclass:alternate"
+        style="margin-top: 0px">
+        <thead>
+            <tr>
+                <th width="32%" id="ltACMACAddr">
+                </th>
+                <th width="32%" id="ltACConTime">
+                </th>
+                <th width="30%" id="ltDisconTime">
+                </th>
+                <th class="close">
+                    &nbsp;
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+</div>
+<div id='divClientDetailedLogFull' align='center' class="popUpBox popUpBox2" style='display: none'>
+    <h1 id="h1ClientLogFullHeader" style='width: 300px;'>
+    </h1>
+    <a href="#" class="close" onclick="btnCancelClientLogFull()">
+        <img src="images/close-icon.gif" alt="" /></a><br style="clear: both" />
+    <p>
+        <font color="#FF0000">&nbsp; &nbsp; Log list is FULL, please delete unused logs!
+        </font>
+    </p>
+</div>
+-->
+
+<div id="divAccessLogs" style="display: none">
+	<div class="popUpBox popUpBox2 inputW">
+		<h1 id="lt_log_lAccessLogs_detail"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div class="pBoxCont">
+			<label id="lt_log_PdpName"></label>
+			<input type="text"  id="txt_log_PdpName" disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_Cid"></label>
+			<input type="text" id="txt_log_Cid" disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_ACStartTime"></label>
+			<input type="text" id="txt_log_ACStartTime" disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_ACEndTime"></label>
+			<input type="text"  id="txt_log_ACEndTime"  disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_IPType"></label>
+			<input name="input" type="text" id="txt_log_IPType" disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_IPv4Addr"></label>
+			<input name="input" type="text" id="txt_log_IPv4Addr" disabled/>
+			<br style="clear: both" />
+			<label id="lt_log_IPv6Addr"></label>
+			<input name="input" type="text" id="txt_log_IPv6Addr" disabled/>
+			<br style="clear: both" />
+			<div class="buttonRow1">
+					<input id="lt_BtnOk" class="btn-apply" type="button" value="OK" onclick="CloseDlg()"/>
+			</div>
+		</div>
+	</div>
+</div>

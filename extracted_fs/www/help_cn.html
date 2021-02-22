@@ -1,0 +1,940 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-VA-Compatible" content="IE=edge,chrome=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="pragma" content="no-cache"/>  
+		<meta http-equiv="cache-control" content="no-cache"/>
+		
+		<title>LTE</title>
+		<!-- <link href="css/stylesheet.css" rel="stylesheet" type="text/css" /> -->
+		<link href="css/media_help.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery/jquery-1.10.2.min.js" language="javascript"></script>
+		<script type="text/javascript" src="js/jquery/jquery.i18n.properties-1.0.4.js" language="javascript"></script> 
+		
+		<script type="text/javascript" src="js/base/utils.js" language="javascript"></script>
+		<script type="text/javascript" src="js/base/config.js" language="javascript"></script>
+		<script>
+			$(function(){
+				var bodyObj = document.body;
+				if(bodyObj && forbiddenMouseRightBtn){
+					bodyObj.oncontextmenu = function(){return false};
+				}
+				if(manuNavigation){
+					for(var i=0;i<manuNavigation.length;i++){
+						$("."+manuNavigation[i]).show();
+						for(var j=0;j<subNavigation[i].length;j++){
+							$("."+subNavigation[i][j]).show();
+						}
+					}
+				}
+				if(only_for_4G == 1){
+					$(".notFor4G").hide();
+				}
+				var url = location.href;
+				var goToModel = url.substr(url.indexOf("#"));
+				$("a[href='"+goToModel+"']").click();
+
+
+				if(config_hasWIFI5G){
+				    $('#noWifi5G').hide();
+				}else{
+				    $('#noWifi5G').show();
+				}
+				$('.network2G').hide();
+				if(config_network == 'both'){
+					$('.networkBoth,.network4G,.network3G').show();
+				}else if(config_network == '4'){
+                    $('.network4G').show();
+                    $('.networkBoth,.network3G').hide();
+				}else if(config_network == '3'){
+                    $('.network3G').show();
+                    $('.networkBoth,.network4G').hide();
+				}else{
+					$('.networkBoth,.network4G,.network3G,.network2G').show();
+				}
+			});
+		</script>
+	</head>
+
+    <body class="helpBody"> <a name="top"></a>
+		<div class="header" id="header">
+			<a href="index.html"><img class="logo_icon" src="../images/logo.png" alt=""></a>
+			<div class="navigation" id="navigation">
+				<ul>
+					<li class="helpTitle">LTE Wireless Router Help</li>
+				</ul>
+				<div class="date">&nbsp;</div>
+			</div>
+		</div>
+		<div class="mainColumn">
+			<div class="content">
+				<ul class="helpList">
+					<li><a href="#QuickSetup">Quick Setup</a></li>
+					<li class="internet" style="display:none">Internet
+						<ul>
+							<li class="internetConnection" style="display:none"><a href="#InternetConnection">Internet Connection</a></li>
+							<li class="profileManagement" style="display:none"><a href="#ProfileManagement">Profile Management</a></li>
+							<li class="manueNetwork" style="display:none"><a href="#ManualNetwork">Manual Network</a></li>
+							<li class="PINManagement" style="display:none"><a href="#PinPuk">PIN Managment</a></li>
+							<li class="MEPSetting" style="display:none"><a href="#MEPSettings">MEP Settings</a></li>
+						</ul>
+					</li>
+					<li class="homeNetwork" style="display:none">Home Network
+						<ul>
+							<li class="DHCPSetting" style="display:none"><a href="#DHCPSettings">DHCP Settings</a></li>
+							<li class="dnsSettings" style="display:none"><a href="#DHCPSettings">DNS Settings</a></li>
+							<li class="deviceManagement" style="display:none"><a href="#ConnectedDevices">Device Management</a></li>
+							<li class="trafficManagement" style="display:none"><a href="#TrafficStatistics">Traffic Management</a></li>
+							<li class="USSD" style="display:none"><a href="#USSDSettings">USSD</a></li>
+							<li class="WANSwitch" style="display:none"><a href="#wanSwitch">Wan Switch</a></li>
+						</ul>
+					</li>
+					<li class="phoneBook" style="display:none">Phone Book
+	                    <ul>
+	                    	<li class="all" style="display:none"><a href="#phonebookAll">All</a></li>
+	                    	<li class="location" style="display:none"><a href="#phonebookLocal">Device</a></li>
+	                    	<li class="SIM" style="display:none"><a href="#phonebookSIM">SIM</a></li>
+                    	</ul>
+                    </li>
+                    <li class="sms" style="display:none">SMS
+	                    <ul>
+	                    	<li class="localInbox" style="display:none"><a href="#smsLocal">Local Inbox</a></li>
+	                    	<li class="SIMInbox" style="display:none"><a href="#smsSIM">SIM Inbox</a></li>
+	                    	<li class="sendbox" style="display:none"><a href="#smsSendbox">Outbox</a></li>
+	                    	<li class="draft" style="display:none"><a href="#smsDraftbox">Drafts</a></li>
+	                    	<li class="smsSetting" style="display:none"><a href="#smsSettings">SMS Settings</a></li>
+                    	</ul>
+                    </li>
+					<li id="lWirelessHelpNavigation"  class="wireless" style="display:none">Wireless
+						<ul>
+							<li class="wifiSetting" style="display:none"><a href="#WirelessSettings">Wireless Settings(2.4G)</a></li>
+							<li class="wifiSetting5G" style="display:none"><a href="#WirelessSettings5G">Wireless Settings(5G)</a></li>
+							<li class="WPSSettings" style="display:none"><a href="#WPSSettings">WPS Settings</a></li>
+							<li class="wifiMac" style="display:none"><a href="#WirelessMACFilters">Wireless MAC Filter</a></li>
+							<li class="dnFilter" style="display:none"><a href="#CustomFirewallRules">Firewall Settings</a></li>
+						</ul>
+					</li>
+					<li class="router" style="display:none">Router
+						<ul>
+							<li class="userManagement" style="display:none"><a href="#UserManagement">Router Management</a></li>
+							<li class="accountManagement" style="display:none"><a href="#accountManagement">Account Management</a></li>
+							<li class="softUpgrade" style="display:none"><a href="#SoftwareUpgrade">Software Upgrade</a></li>
+							<li class="configManagement" style="display:none"><a href="#ConfigurationManagement">Configuration File Management</a></li>
+							<li class="NetworkActivity" style="display:none"><a href="#NetworkActivity">Network Activity</a></li>
+							<li class="VPNSetting" style="display:none"><a href="#VPNSettings">VPN</a></li>
+							<li class="SSHTunnel" style="display:none"><a href="#SSHTunnel">SSH Tunnel</a></li>
+							<li class="openVPNSetting" style="display:none"><a href="#openVPNSettings">openVPN</a></li>
+							<li class="portalSetting" style="display:none"><a href="#portalSettings">Portal Settings</a></li>
+							<li class="timeSetting" style="display:none"><a href="#TimeSetting">Time Settings</a></li>
+                            <li class="mWebDav" style="display:none"><a href="#NetworkFilesSetting"><span>Network File</span></a></li>
+                            <li class="networkShare" style="display:none"><a href="#NetworkSharedFilesSetting">Network Shared File Settings</a></li>
+							<li class="mdiagnostics_ping" style="display:none"><a href="#Diagnostics_ping">Diagnostic</a></li>
+							<li class="mtr069_setting" style="display:none"><a href="#tr069_setting">TR069 Settings</a></li>
+							<li class="mqos" style="display:none"><a href="#qos_setting">Qos Settings</a></li>
+							<li class="mstaticRoute" style="display:none"><a href="#staticRoute">Static Route</a></li>
+						</ul>
+					</li>
+				</ul>
+				<br class="clear" /> <a name="QuickSetup"></a>
+				<h2>Quick Setup</h2>
+	
+				<p>The LTE router Quick Setup tab is designed to assist you in
+					connecting your new LTE router to the Internet. This Quick Setup
+					procedure guides you through step-by-step instructions on how to get
+					an Internet connection up and running.</p>
+				<strong>Screen 1 - User Settings</strong>
+				<p>
+					Via this screen you can change the router's Username and Password. <br />
+					The default values for username and password are 'admin' and 'admin'
+					<br />
+				</p>
+				<strong>Screen 2 - Internet Connection</strong>
+				<p>The Internet Connection screen allows the user to configure
+					the Internet connection type.</p>
+				<p>The main Internet connection types are as follows:</p>
+				<ul>
+					<li>Disable - No Internet connection. Only the
+							wireless Home Network is active.</li>
+					<li>Cellular - This is the default mode of connectivity. You
+						can insert your SIM into the router and the wireless clients
+						associated can make use of it for internet connectivity! Also note
+						that in this mode, the ethernet port can be used for connecting any
+						LAN side clients. For 3G USBModem, there are a bunch of ISP's that
+						we support - you can select one of them from a dropdown list. Also
+						you can update the router's ISP database by uploading your local
+						ISP settings file.</li>
+				</ul>
+				<strong>Screen 3 - Wireless Settings(2.4G)</strong>
+				<p>The Wireless Connection Setup screen contains the Wireless
+					Network Information (WLAN) section which describes the wireless
+					connection status. The user can configure wireless settings and
+					security parameters.</p>
+				<ul>
+					<li>802.11 mode -- Current provide mode 802.11b/g and 802.11b/g/n<br/>
+						802.11b/g--Allows all the 802.11b or 802.11g devices to connect the router. 
+					</li>
+					<li>Channel--Allow router to choose the best channel in the wireless work area,the mode 802.11 depend on if the router works in the 2.4GHZ.
+						the options of the channel show all the effective channels under the mode 802.11
+					</li>
+					<li>Bandwidth -- To control the performance and the interference.Users can configuration it as required.</li>
+					<li>Max connections -- Allows users to config the max connections at the same time.</li>
+					<li>WIFI auto close time -- Allows users to config the time of auto close wifi.</li>
+					<li>Wireless Network Name (SSID) -- User defined name for the
+						wireless network.</li>
+					<li>Wireless Network Password -- User defined password for the
+						wireless network.</li>
+					<li>WPA / WPA2 (most secure) -- Provides maximum level of
+						security. Devices that support WPA or WPA2 will be able to join
+						this network. You must enter a password between 8 and 63
+						characters.</li>
+					<li>No Security (not recommended) -- Any wireless device can
+						connect your network without entering a password.</li>
+				</ul>
+				<div class="wifiSetting5G" style="display: none;">
+					<strong>Screen 4 - Wireless Settings(5G)</strong>
+					<p>The Wireless Connection Setup screen contains the Wireless
+						Network Information (WLAN) section which describes the wireless
+						connection status. The user can configure wireless settings and
+						security parameters.</p>
+					<ul>
+						<li>802.11 mode -- Current provide mode 802.11a/an/ac mode and 802.11an/ac</li>
+						<li>Channel--Allow router to choose the best channel in the wireless work area,the mode 802.11 depend on if the router works in the 5GHz.
+							the options of the channel show all the effective channels under the mode 802.11
+						</li>
+						<li>Bandwidth -- To control the performance and the interference.Users can configuration it as required.</li>
+						<li>Max connections -- Allows users to config the max connections at the same time.</li>
+						<li>WIFI auto close time -- Allows users to config the time of auto close wifi.</li>
+						<li></li>
+						<li>Wireless Network Name (SSID) -- User defined name for the
+							wireless network.</li>
+						<li>Wireless Network Password -- User defined password for the
+							wireless network.</li>
+						<li>WPA / WPA2 (most secure) -- Provides maximum level of
+							security. Devices that support WPA or WPA2 will be able to join
+							this network. You must enter a password between 8 and 63
+							characters.</li>
+						<li>No Security (not recommended) -- Any wireless device can
+							connect your network without entering a password.</li>
+					</ul>
+					<strong>Screen 5 - Device Placement Guidelines</strong>
+					<p>Here we list some advice to place the device:It is recommended that you do not place your wireless router near a Microwave, Home Cordless Phone, a Baby Monitor, Bluetooth devices
+						(such as a headset or a Bluetooth keyboard or a Bluetooth mouse) and any other wireless network devices.
+					</p>
+				</div>
+				<div id="noWifi5G" style="display:none;">
+					<strong>Screen 4 - Device Placement Guidelines</strong>
+					<p>Here we list some advice to place the device:It is recommended that you do not place your wireless router near a Microwave, Home Cordless Phone, a Baby Monitor, Bluetooth devices
+						(such as a headset or a Bluetooth keyboard or a Bluetooth mouse) and any other wireless network devices.
+					</p>
+				</div>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+	
+	    <div class="internet" style="display:none">
+			<div class="internetConnection" style="display:none">
+				<a name="InternetConnection"></a>
+				<h2>Internet Connection</h2>
+				<p>The Internet Connection screen is used to configure the LTE
+					router Internet Connection type. There are 2 connection types to
+					choose from: Disabled, Cellular. Please verify your Internet
+					connection type with your Internet Service Provider.</p>
+				<strong>Internet Connection Setup</strong>
+				<p>The Internet Connection Setup section contains the following
+					fields:</p>
+				My Internet Connection is -
+				<ul>
+					<li>Disable - No Internet connection. Only the
+							wireless Home Network is active.</li>
+					<li>Cellular - This is the default mode of connectivity. You
+						can insert your SIM into the router and the wireless clients
+						associated can make use of it for internet connectivity! Also note
+						that in this mode, the ethernet port can be used for connecting any
+						LAN side clients. For 3G USBModem, there are a bunch of ISP's that
+						we support - you can select one of them from a dropdown list. Also
+						you can update the router's ISP database by uploading your local
+						ISP settings file.</li>
+				</ul>
+				<div class="notFor4G">
+						Network Mode -
+					<ul>
+						<li class="network2G">4G/3G/2G multimode</li>
+						<li class="network4G">4G only - Only 4G is enabled</li>
+						<li class="networkBoth">4G/3G only - Only 4G and 3G is enabled</li>
+						<li class="network3G">3G only - Only 3G is enabled</li>
+						<li class="network2G">3G/2G - Only 3G and 2G is enabled</li>
+						<li class="network2G">2G only - Only 2G is enabled</li>
+					</ul>
+					Preferred Work Mode -
+					<ul class="networkBoth">
+						<li>4G Preferred - The device will attach to 4G network as
+							prefer</li>
+						<li>3G Preferred - The device will attach to 3G network
+							as prefer</li>
+					</ul>
+				</div>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+			</div>
+			<div class="profileManagement" style="display:none">
+				<a name="ProfileManagement"></a>
+				<h2>Profile Management</h2>
+				<h2>APN Profile Management</h2>
+						<p>APN is the settings information name that is read by your device, which is used to set up the connection to 
+							the gateway between the carrier's mobile network and the public network. In most cases, 
+							your device has these settings in the system file, and you can automatically fill in the APN information 
+							during the connection. If the automatic APN cannot access the Internet, you can change the APN by yourself</p>
+						<p> APN Profile Management contains followings:</p>
+						<ul>
+							<li>APN Profile Name</li>
+							<li>APN Name</li>
+							<li>Username</li>
+							<li>Password</li>
+							<li>IP Type</li>
+							<li>you can also add new Profile,delete APN and edit APN</li>
+						</ul>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+			</div>
+
+			<div class="manueNetwork" style="display:none">
+				<a name="ManualNetwork"></a>
+				<h2>Manual Network</h2>
+				<p>
+					<strong>Manual Network Screen</strong>
+				</p>
+	
+				<p>The Manual Network Screen displays the function of manually
+					scan network operators and configure the selectable network operator</p>
+				<p>The Manual Network Screen contains the following fields:</p>
+				<ul>
+					<li>Manual Scan Network button - Click the button will triggle
+						router to scan network operators. The scan results will be
+						displayed on drop-down menu of "Selectable Network".</li>
+					<li>Selectable Network - Then network operators will be
+						displayed after click the Manual Scan Network button, choose one
+						network operator and save, the router will connect to the selected
+						network if no error happens.</li>
+					<li>LTE background scan network time - On drop-down menu, you
+						can choose the inteval time and save. Then the inteval time to LTE
+						background scanning will be configure to router.</li>
+				</ul>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+		    </div>
+
+			<div class="PINManagement" style="display:none">
+				<a name="PinPuk"></a>
+				<h2>PIN Managment</h2>
+				<p>
+					<strong>PIN Managment Screen</strong>
+				</p>
+	
+				<p>Enable or disable PIN, and change PIN.</p>
+				<p>The PIN Managment Screen contains the following fields:</p>
+				<ul>
+					<li>PIN/PUK Attempts - display the number of PIN attempts and
+						PUK attempts.The default number of PIN attempts is 3, and PUK
+						attempts is 10; if PIN attempts larger than 3, it will require PUK
+						to unlock the SIM card, and if PUK attempts larger than 10, the SIM
+						card will be abandoned When you input PIN code to enable or disable
+						PIN, if input wrong PIN code, the number of PIN attempts will
+						decrease by 1, same as PUK</li>
+					<li>Enable/Disable PIN - Enable PIN:Input correct PIN code and
+						press the right button, PIN will be enabled successfully, and the
+						right button will display as "Disable PIN". Disable PIN:Input
+						correct PIN code and press the right button "Disable PIN", PIN will
+						be disabled successfully, and the right button will display as
+						"Enable PIN".</li>
+					<li>Change PIN - Enter current PIN, then Enter New PIN and
+						press "Save" button, the PIN will be changed.</li>
+				</ul>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+		   </div>
+
+		   <div class="MEPSetting" style="display:none">
+				<a name="MEPSettings"></a>
+				<h2>MEP Settings</h2>
+				<p>MEP stands for Personalisation of Mobile Equipment,one features to personalise Mobile Equipment</p>
+				<ul>
+					<li><b>Network personalisation</b>--Allows the network operator to personalise a ME so that it can only be used with that particular network operator's SIM/USIMs</li>
+				</ul>
+				
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+		   </div>
+		</div>
+				
+		<div class="homeNetwork">
+			<div class="DHCPSetting" style="display:none">
+				<a name="DHCPSettings"></a>
+				<h2>DHCP Settings</h2>
+		
+				<p>The Home Network screen displays the DHCP settings and allows
+					users to define IP Addresses range to be assigned to the network
+					devices. The DHCP assigns dynamic IP addresses to devices on a
+					network. DHCP ensures that network devices can have a different IP
+					address every time the device connects to the network. The Home
+					Network screen is used to configure the built-in DHCP Server to
+					assign IP addresses to the computers and other devices on the user's
+					LAN.</p>
+		
+				<strong>DHCP Settings</strong>
+		
+				<p>The DHCP Settings section contains the following fields:</p>
+				<ul>
+					<li> DHCP server switch – Users can enable or disable the DHCP server,it will lost the functio of allocation IP address if disable it.</li>
+					<li>DHCP Range -- Selects the basic IP address range, in which
+						the start and the end DHCP IP addresses range are assigned.</li>
+					<li>Start DHCP Address and End DHCP Address -- Defines a range
+						of addresses that the DHCP Server uses when assigning addresses to
+						computers and devices on your Local Area Network. Any addresses
+						that are outside this range are not managed by the DHCP Server;
+						these could, therefore, be used for manually configured devices or
+						devices that cannot use DHCP to obtain network address details
+						automatically.</li>
+					<li>Static IP address -- it can allocate a static IP address for a device.</li>
+				</ul>
+		
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+			</div>
+			<div class="dnsSettings" style="display:none">
+				<a name="DNSSettings"></a>
+				<h2>DNS Settings</h2>
+				
+				<p>Manually set the DNS server</p>
+				
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			<div class="deviceManagement" style="display:none">
+				<a name="ConnectedDevices"></a>
+				<h2>Devices Management</h2>
+				<p><strong>Connected Devices</strong></p>
+				<p>The Connected Devices screen displays a list of devices that
+					are connected to the network now. The Connected Devices screen also
+					allows the user to block access to the Internet to a specific
+					device.</p>
+				<p>The Connection Devices screen contains the following fields:</p>
+				<ul>
+					<li>Connected Devices</li>
+					<li>Name - Device name</li>
+					<li>IP Address - Device IP address</li>
+					<li>MAC Address - Device MAC address</li>
+					<li>Connection - Device connection type</li>
+					<li>Block Internet - When checked, blocks specific device Internet access</li>
+					<li>Connect time</li>
+				</ul>
+				<p><strong>All Connect Devices</strong></p>
+				<p>The All Connect Devices screen displays a list of devices that were connected 
+				to the network ever.</p>
+				<p>The All Connect Devices screen contains the following fields:</p>
+				<ul>
+					<li>Connected Devices</li>
+					<li>Name - Device name</li>
+					<li>MAC Address - Device MAC address</li>
+					<li>Total Connected Time</li>
+					<li>Device Status -- Disconnect and connect </li>
+					<li>Operation -- Block,the device can not connect the CPE wireless if block it.</li>
+				</ul>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+			</div>
+			<div class="trafficManagement" style="display:none">
+				<a name="TrafficStatistics"></a>
+				<h2>Traffic Management</h2>
+				<p><strong>Traffic Settings</strong></p>
+	
+				<p>The Traffic Settings Screen displays the total and the usage of the month,idle and period traffic,
+				and you can also check the accuracy of them. And if the traffic usage are beyond the rate you set,
+				you can set if give the notice or net off</p>
+				<br/>
+				<p><strong>Traffic Statistic Screen</strong></p>
+	
+				<p>The Traffic Statistics Screen displays the received and the
+					transmitted packet statistics for packets that are sent via the
+					LTE router.</p>
+				<div align="right">
+					<a href="#top"><strong>&uarr; </strong> Top</a>
+				</div>
+			</div>
+			<div class="USSD" style="display:none">
+				<a name="USSDSettings"></a>
+				<h2>USSD Management</h2>
+				<p>USSD Management(Unstructured Supplementary Service Data),you can type-in some special number or characters eg.*#,
+					click the button SEND,then you can send an order to the net,and the net will provide the service you need to you </p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			<div class="WANSwitch" style="display:none">
+				<a name="wanSwitch"></a>
+				<h2>Wan Switch</h2>
+				<p>Users can switch network between WWAN and WAN,when switch to WAN,users need to choose one of static IP,PPPoE or DHCP protocol to switch.
+				</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+		</div>
+				
+		<div class="phoneBook" style="display:none">
+			<div class="all" style="display:none">
+				<a name="phonebookAll"></a>
+				<h2>All</h2>
+				<p>All Contacts screen shows all of the contacts those in your SIM Card or stored in the device</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			<div class="location" style="display:none">
+				<a name="phonebookLocal"></a>
+				<h2>Device</h2>
+				<p>Local Contacts screen shows the contacts those stored in the device</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			<div class="SIM" style="display:none">
+				<a name="phonebookSIM"></a>
+				<h2>SIM</h2>
+				<p>SIM Card Contacts screen shows the contacts those in the SIM Card</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+		</div>
+		<div class="sms" style="display:none">
+			<div class="localInbox" style="display:none">
+	            <a name="smsLocal"></a>
+				<h2>Local Inbox</h2>
+				<p>The received messages will be stored in the device if the Location of Storage is set to be device</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			
+			<div class="SIMInbox" style="display:none">
+				<a name="smsSIM"></a>
+				<h2>SIM Card Inbox</h2>
+				<p>The received message will be stored in the SIM Card if the Location of Storage is set to be SIM Card</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			
+			<div class="sendbox" style="display:none">
+				<a name="smsSendbox"></a>
+				<h2>Outbox</h2>
+				<p>The messages those sent out both success and failed will be stored in the Outbox</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			
+			<div class="draft" style="display:none">
+				<a name="smsDraftbox"></a>
+				<h2>Drafts</h2>
+				<p>The messages those users click Save button will be stored in the Drafts</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+			
+			<div class="smsSetting" style="display:none">
+				<a name="smsSettings"></a>
+				<h2>SMS Settings</h2>
+				<p>SMS Settings screen displays the enable or disable the delivery report,
+				the location of the message stored, SMS over mode,the validity and the Center Number</p>
+				<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+			</div>
+		</div>   
+				
+		<div id="dWirelessHelpContent" class="wireless" style="display:none">
+			<div class="wifiSetting" style="display:none">
+					<a name="WirelessSettings"></a>
+					<h2>Wireless Settings(2.4G)</h2>
+					<p><strong>Wireless Network Settings</strong></p>
+					<p>The Wireless screen allows you to configure the parameters
+						needed for your wireless home network. A host of Security methods
+						are also applicable for this wireless network.</p>
+					<p>The Settings page contains following fields -</p>
+					<ul>
+						<li><strong>802.11 Mode</strong> -- Currently we provide only 802.11b/g mode</li>
+						<li>802.11b/g -- Allows all 802.11b or g devices (in the 2.4
+							GHz) to connect to the home router.</li>
+						<li><strong>Channel</strong> -- Selects the 802.11 frequency
+							that the home router uses. Allows the home router to select the
+							optimal frequency to use given the radio environment in the
+							vicinity of the home router. The 802.11 standard associates
+							different channel ranges depending on if the home router is
+							operating in the 2.4GHz range. The Channel drop-down list
+							reflects the available channel numbers for the selected 801.11
+							Mode.</li>
+						<li><strong>Channel Bandwidth</strong> -- Enable users to
+							control the trade off between performance and interference with
+							other WiFi users. Users can configure this option as they need.</li>
+						<li><strong>Maximum Simultaneous Clients</strong> -- Enable
+							users to control the maximum simultaneous clients connect to
+							router.</li>
+						<li><strong>WIFI Auto OFF Time Settings</strong> -- Enable
+							users to control the Interval time to make WIFI off
+							automatically when no client connect to router.</li>
+					</ul>
+					<p><strong>Wireless Security Settings</strong></p>
+	
+					<p>The Wireless Security section allows users to define the
+						network as well as the security parameters for the wireless home
+						network as required. The factory default setting for security is
+						WPA-WPA2 Mixed mode that allows only the WPA/WPA2 devices to
+						associate with the home router.</p>
+					<p>The Wireless Security section contains the following fields:</p>
+					<ul>
+						<li><b>Network Name</b> -- Used to change the name of your
+							wireless network. This name appears in window's, Macintosh, Linux
+							or in other known networks.</li>
+						<li><b>Wireless security </b></li>
+						<li>NONE -- No wireless security. All traffic may be read
+							by others</li>
+						<li>WPA2-PSK -- The highest Level of Security. Passwords
+							should be at least 8 characters. Only devices that
+							support WPA2-PSK may associate. WPA2 Cipher is AES.</li>
+						<li>WPA-PSK -- The highest Level of Security. Passwords should
+							be at least 8 characters. Only devices that support
+							WPA-PSK may associate. WPA2 Cipher is AES.</li>
+						<li>WPA-WPA2 Mixed -- WPA2-PSK or WPA-PSK Security method
+							depending on the device that needed to connect. Passwords should
+							be at least 8 characters. WPA2 Cipher is AES. WPA
+							Cipher is TKIP/ AES.</li>
+						<li>Password -- A User defined password. Passwords should be
+							at least 8 characters.</li>
+					</ul>
+	
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="wifiSetting5G" style="display:none">
+					<a name="WirelessSettings5G"></a>
+					<h2>Wireless Settings(5G)</h2>
+					<p><strong>Wireless Network Settings</strong></p>
+					<p>The Wireless screen allows you to configure the parameters
+						needed for your wireless home network. A host of Security methods
+						are also applicable for this wireless network.</p>
+					<p>The Settings page contains following fields -</p>
+					<ul>
+						<li>802.11 mode -- Current provide mode 802.11a/an/ac mode and 802.11an/ac</li>
+						<li><strong>Channel</strong> -- Selects the 802.11 frequency
+							that the home router uses. Allows the home router to select the
+							optimal frequency to use given the radio environment in the
+							vicinity of the home router. The 802.11 standard associates
+							different channel ranges depending on if the home router is
+							operating in the 5GHz range. The Channel drop-down list
+							reflects the available channel numbers for the selected 801.11
+							Mode.</li>
+						<li><strong>Channel Bandwidth</strong> -- Enable users to
+							control the trade off between performance and interference with
+							other WiFi users. Users can configure this option as they need.</li>
+						<li><strong>Maximum Simultaneous Clients</strong> -- Enable
+							users to control the maximum simultaneous clients connect to
+							router.</li>
+						<li><strong>WIFI Auto OFF Time Settings</strong> -- Enable
+							users to control the Interval time to make WIFI off
+							automatically when no client connect to router.</li>
+					</ul>
+					<p><strong>Wireless Security Settings</strong></p>
+	
+					<p>The Wireless Security section allows users to define the
+						network as well as the security parameters for the wireless home
+						network as required. The factory default setting for security is
+						WPA-WPA2 Mixed mode that allows only the WPA/WPA2 devices to
+						associate with the home router.</p>
+					<p>The Wireless Security section contains the following fields:</p>
+					<ul>
+						<li><b>Network Name</b> -- Used to change the name of your
+							wireless network. This name appears in window's, Macintosh, Linux
+							or in other known networks.</li>
+						<li><b>Wireless security </b></li>
+						<li>NONE -- No wireless security. All traffic may be read
+							by others</li>
+						<li>WPA2-PSK -- The highest Level of Security. Passwords
+							should be at least 8 characters. Only devices that
+							support WPA2-PSK may associate. WPA2 Cipher is AES.</li>
+						<li>WPA-PSK -- The highest Level of Security. Passwords should
+							be at least 8 characters. Only devices that support
+							WPA-PSK may associate. WPA2 Cipher is AES.</li>
+						<li>WPA-WPA2 Mixed -- WPA2-PSK or WPA-PSK Security method
+							depending on the device that needed to connect. Passwords should
+							be at least 8 characters. WPA2 Cipher is AES. WPA
+							Cipher is TKIP/ AES.</li>
+						<li>Password -- A User defined password. Passwords should be
+							at least 8 characters.</li>
+					</ul>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="WPSSettings" style="display:none;">
+					<a name="WPSSettings"></a>
+						<h2>WPS Settings</h2>
+						<p>WPS is able to automatically configure Network Name (SSID) WPS and WPA Security Keys for access points and WPS client devices in the network. When connecting to a WPS device, it is not necessary for the user to understand concepts such as SSID and security key.</p>
+						<p>WPS has two ways to connect:</p>
+						<ul>
+							<li>Enter PIN code -- mandatory for WPS certified devices.Enter the PIN code generated by the wireless client and click the Connect button. The wireless gateway will receive an access request from the wireless client within two minutes.</li>
+							<li>Push Button Configuration(PBC) -- This can be a hardware button on the device or a software emulated button (optional for wireless clients).press the WPS buttom on your wireless device, and ther click the Connect button on this page within 2 minutes. The wireles gateway will then receive the access request from the wireless device.</li>
+						</ul>
+						<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="wifiMac" style="display:none">
+					<a name="WirelessMACFilters"></a>
+					<h2>Wireless MAC Filter</h2>
+					<p>
+						The Wireless MAC Filter screen allows you to enable/disable MAC
+						fileters. <br />Also you can delete multiple MAC filter
+						selectively from 'Allow' or from 'Deny' list.
+					</p>
+					<p>Enable Mac address filter:add white list,only the devices in the white list can connect the wifi</p>
+					<p>Disable Mac address filter:add blacklist,the devices in the blacklist can not connect the wifi</p>
+					
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+		
+				<div class="dnFilter" style="display:none">
+					<a name="CustomFirewallRules"></a>
+					<h2>Firewall Settings</h2>
+					<p>IP address filter -- To limit internet access of the computers in LAN by configuring time quantum,data package type,origin IP address,origin port,
+						designated IP address and designated port
+					</p>
+					<p>Port mapping -- Map the port of the IP address of outside hosts to the inside hosts to provide the relative service.When users visit this port,server will map the request to the correspond device of the LAN automation. 
+					</p>
+					<p>port trigger -- Router will send the outer join to the specified inside port when an application build the outer connection by some specific port</p>
+					<p>DMZ settings -- It is a buffer between the security system and security system to solve the problems that users of external network can not visit in-house network after install the firewall</p>
+					<p>domain name filter -- To point some specific strings in the router,once the page you visit contains the strings you pointed,the data package will be abandoned. 
+					</p>
+						<P>Dynamic DNS -- Dynamic DNS (DDNS) is a method of updating domain names in real time.This service is used to
+							provide a domain name for a device that may change its IP address on the network.</P>
+					<P>Service Access Control -- Service Access Control can limit network traffic and improve network performance, which is the basic means to provide network security Access. </P>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+			</div>
+			<div class="router" style="display:none">
+				<div class="userManagement">
+					<a name="UserManagement"></a>
+					<h2>Router Management</h2>
+					<p>The Router Management screen main contains follow three choice:</p>
+					<ul>
+						<li>
+							<b>Reboot Router</b>--Reboot Router screen is used to reboot router。
+						</li>
+						<li>
+							<b>Restore Factory Settings</b>--Restore Factory Settings is used to clear all the configurations while using it
+						</li>
+					</ul>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="accountManagement" style="display:none">
+					<a name="accountManagement"></a>
+					<h2>Account Management</h2>
+					<p>The Administration screen allows the admin user to set password&quot;</p>
+					<strong>User Management</strong>
+					<p>By default the Login settings are:</p>
+					<ul>
+						<li>Router Username -- admin</li>
+						<li>Router Password -- admin</li>
+					</ul>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="softUpgrade" style="display:none">
+					<a name="SoftwareUpgrade"></a>
+					<h2>Software Upgrade</h2>
+		
+					<p>The SW Upgrade screen is used to check for latest firmware
+						versions and to update LTE router router if a new version is
+						available.</p>
+					<strong>Software Information</strong>
+					<p>The Software Information section provides information about
+						currently used firmware version.</p>
+		
+					<strong>Software Upgrade</strong>
+					<p>The Software Upgrade section is used to upload a firmware
+						updated file when available on the user's computer.</p>
+					<p>The Software Upgrade contains the following fields:</p>
+					<ul>
+						<li>Select a file for manual upgrade -- Browses for the file
+							which contains the desired firmware version.</li>
+					</ul>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="configManagement" style="display:none">
+					<a name="ConfigurationManagement"></a>
+					<h2>Configuration File Management</h2>
+					<p>
+						<strong>Configuration File Management</strong>
+					</p>
+					<p>Configuration File Management screen is used to upload or download local configuration file to update device.
+						Device will be reboot after updating.
+					</p>
+		
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="NetworkActivity" style="display:none">
+					<a name="NetworkActivity"></a>
+					<h2>Network Activity</h2>
+					<p>The Network Activity screen displays a list of dialer logs and
+						WIFI client connect and disconnect log.</p>
+					<p>The Network Activity screen contains the following fields:</p>
+					<ul>
+						<li>Access logs - The table shows 30 most recently dialer
+							entries with router IP,connect time and disconnect time.</li>
+						<li>WIFI Client Access log - The table shows 30 most recently
+							WIFI client connect and disconnect entries with client MAC address,
+							connect time or disconnect time.</li>
+					</ul>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="VPNSetting" style="display:none">
+					<a name="VPNSettings"></a>
+					<h2>VPN</h2>
+					<p>Users can browse foreign webpage by setting the Protocol,server address,username and the password</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="SSHTunnel" style="display:none">
+					<a name="SSHTunnel"></a>
+					<h2>SSH Tunnel</h2>
+					<p>Port forwarding can be carried out using the SSH tunnel, which establishes an encrypted channel on the SSH connection.After creating the SSH tunnel, you can break through some of the network's restrictions on access to resources that cannot be directly accessed.</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+					
+				<div class="openVPNSetting" style="display:none">
+					<a name="openVPNSettings"></a>
+					<h2>openVPN</h2>
+					<p>With OpenVPN,users can set up private network channel similar to LAN between different network conveniently.</p>
+					<p>Users need to set following parameters:</p>
+					<ul>
+						<li>Enable/Disable openVPN</li>
+						<li>Mode--To config the segment of VPN,either tun or tap</li>
+						<li>Protocol--To set the protocol,TCP or UDP</li>
+						<li>IP--Openvpn server listen IP</li>
+						<li>Port--Openvpn server listen port</li>
+						<li>Root CA--CA file is need by server and client,server and client can config own .crt file</li>
+						<li>User Certification--.crt file is need</li>
+						<li>Key--.key file is need</li>
+					</ul>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="portalSetting" style="display:none">
+					<a name="portalSettings"></a>
+					<h2>Portal Settings</h2>
+					<p>The Portal Settings screen allows you to choose enable or disable the Portal,
+						you can set the URL address by yourself if enable the Portal</p>
+					<p>After connecting wifi,the client will forward to the URL interface if enable the Portal function</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+					
+				<div class="timeSetting" style="display:none">
+					<a name="TimeSetting"></a>
+					<h2>Time Settings</h2>
+		
+					<p>The time settings screen displays options for configuring the
+						router time.</p>
+					<div align="right">
+						<a href="#top"><strong>&uarr; </strong> Top</a>
+					</div>
+				</div>
+				<div class="mWebDav" style="display:none">
+					<a name="NetworkFilesSetting"></a>
+					<h2>Network File</h2>
+					<p>Users can read the content on the SD card when login</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="networkShare" style="display:none">
+					<a name="NetworkSharedFilesSetting"></a>
+					<h2>Network Shared File Settings</h2>
+					<p><strong>Network File Use Mode Settings</strong></p>
+					<p>User can choose enable or disable the Share function, and also can set the operate Privilege to the shared files</p>
+					<ul>
+						<li>Open share function:After opening share function,users can read the file at Login interface by clicking Share file button</li>
+						<li>Read only:users can only read the shared files</li>
+						<li>Read/Write privilege:users can read,edit the shared files</li>
+					</ul>
+					
+					<p><strong>Network File User Management</strong></p>
+					<p>To set the username and the password that are needed if you want to operate the the shared files</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="mdiagnostics_ping" style="display:none">
+					<a name="Diagnostics_ping"></a>
+					<h2>Diagnostic</h2>
+					<p>Users can input the address they want to check if the newwork work</p>
+					<p>Users can choose following options:</p>
+					<ul>
+					  	<li>Ping:test if the newwork is connected and network stability</li>
+					  	<li>Traceroute: can trace the number of the network device that some IP address through</li>
+					  	<li>Nslookup:generally used to resolve IP and Domain name</li>
+					</ul>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="mtr069_setting" style="display:none">
+					<a name="tr069_setting"></a>
+					<h2>TR069 Settings</h2>
+					<p>TR069 Settings is a protocol of the server management device</p>
+					<p>Users can set following items</p>
+					<ul>
+					  	<li>ACS URL  -- Set the server url of tr069</li>
+					  	<li>ACS username – to set the username of login the server</li>
+					  	<li>ACS password -- to set the password of login the server</li>
+					</ul>
+					<p>Attention:the switch on the menu is not for controlling the function of tr069,but to inform Enable/Disable</p>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="mqos" style="display:none">
+						<a name="qos_setting"></a>
+						<h2>Qos Settings</h2>
+						<p>Qos can be used to set upload and download total bandwidth,and also can assign upload and download bandwidth for each client</p>
+						<p>Users need to set following parameters:</p>
+						<ul>
+							<li>Enable/Disable--Only enabled,other config will be effective</li>
+							<li>Upload Total Bandwidth--To set upload total bandwidth,this value should not smaller than each client upload bandwidth</li>
+							<li>Download Total Bandwidth--To set download total bandwidth,this value should not smaller than each client download bandwidth</li>
+							<li>Protocol package--Users can add multi packages,and can set priority for each package,packages can not repeated</li>
+						</ul>
+						<p>Click Add button,can set upload and download client bandwidth for each client,each client bandwidth should not bigger than total bandwidth</p>
+						<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+				<div class="mstaticRoute" style="display: none">
+					<a name="staticRoute"></a>
+					<h2>Static Route</h2>
+					<p>Static routing refers to routing information manually configured by users or network administrators</p>
+					<p>Users need to set following parameters:</p>
+					<ul>
+						<li>Interface</li>
+						<li>Network Address </li>
+						<li>Network Mask</li>
+						<li>Gateway</li>
+					</ul>
+					<div align="right"><a href="#top"><strong>&uarr; </strong> Top</a></div>
+				</div>
+			</div>
+		</div>
+		<br class="clear" />
+		</div>
+		<div class="footerHelp">
+			<div class="footer">
+				<div class="footerLft"></div>
+		    	<div class="footerMast">
+			        <div>Copyright 2018, All Rights Reserved, LTE International Ltd.</div>
+			        <span class="footerTxt"><label id="lVersionString"> </label></span>
+		    	</div>
+		    	<div class="footerRgt"></div>
+			</div> 
+			<br class="clear" />
+		</div>
+	</body>
+</html>

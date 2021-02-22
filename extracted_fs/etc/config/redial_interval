@@ -1,0 +1,27 @@
+config operation_type CUCC
+	option connection_num 0
+	option mcc 460
+	option mnc 01
+	option interval0   5
+	option repeat0_times   10 
+	option interval1   5
+	option repeat1_times   10
+	option interval2   5
+	option repeat2_times   10 
+	option interval3   5
+	option repeat3_times   10 
+	option total_retry_times  40
+	
+config operation_type CMCC
+	option connection_num 0
+	option mcc 460
+	option mnc 00
+	option interval0   5
+	option repeat0_times   10 
+	option interval1   5
+	option repeat1_times   10
+	option interval2   5
+	option repeat2_times   10 
+	option interval3   5
+	option repeat3_times   10 
+	option total_retry_times  40

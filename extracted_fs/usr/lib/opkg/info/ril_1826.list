@@ -1,0 +1,4 @@
+/bin/rild
+/lib/libril.so
+/lib/libmarvellril.so
+/lib/librilutil.so

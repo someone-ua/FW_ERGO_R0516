@@ -1,0 +1,20 @@
+config service "myddns"
+	option enabled		"0"
+	option interface	"wwan"
+	option use_syslog	"1"
+
+	option service_name	"dyndns.org"
+	option domain		"mypersonaldomain.dyndns.org"
+	option username		"myusername"
+	option password		"mypassword"	
+	option use_https	"0"
+
+	option force_interval	"72"
+	option force_unit	"hours"
+	option check_interval	"10"
+	option check_unit	"minutes"
+	option retry_interval	"60"
+	option retry_unit	"seconds"
+
+	option ip_source	"network" 
+	option ip_network	"wwan"

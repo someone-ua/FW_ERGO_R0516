@@ -1,0 +1,11 @@
+Package: libxml2
+Version: 2.9.2-2
+Depends: libc, libpthread, zlib
+Source: external/packages/libs/libxml2
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Maintainer: Michael Heimpold <mhei@heimpold.de>
+Architecture: ramips_24kec
+Installed-Size: 498984
+Description:  A library for manipulating XML and HTML resources.

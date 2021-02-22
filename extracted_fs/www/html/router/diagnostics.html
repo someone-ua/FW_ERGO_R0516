@@ -1,0 +1,26 @@
+<a href='#' class='help' onclick="getHelp('Diagnostics_ping')">&nbsp;</a>
+
+    <label id="lt_mdiagnostics_ping" class="title"></label>
+	<div>
+		<label class="left">
+			<span id='lt__diagnostics' style="display: inline-block;text-align:right"></span>
+		</label>
+		<label class="left marginL">
+			<input type="text" id="diagnostics_addr" class="textfield"/>
+		</label>
+		<label class="left marginL">
+			<select id="SelDiagnostics" style="width:100px;">
+				<option id="lt_nslookup_diagnostics" value="nslookup">nslookup</option>
+				<option id="lt_ping_diagnostics" value="ping">ping</option>
+				<option id="lt_traceroute_diagnostics" value="traceroute">traceroute</option>
+			</select>
+		</label>
+		<div class="right_align"  style="float:left;padding:12px;">
+			<input type='button' id='lt_diagnostic_pingExcute' value='Ping' class="btn-apply"/>
+		</div>
+	</div>
+	<br class="clear" />
+	<label id="diagnostics_error_info" style="display:none;color:red" ></label>
+	<div>
+		<div id="diagnostics_info"></div>		
+	</div>

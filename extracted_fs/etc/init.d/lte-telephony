@@ -1,0 +1,43 @@
+#!/bin/sh /etc/rc.common
+# Marvell lte telephony init script
+
+START=12
+STOP=89
+
+#### wanghe 2017-05-05 to make DiagSaver
+DiagSaverStart() {
+	DiagSaverEnable=`uci get misc_cust.DiagSaver_setting.enable`
+	echo  DiagSaverEnable=${DiagSaverEnable}
+	echo  DiagSaverEnable=${DiagSaverEnable} > /dev/kmsg
+	if [ "${DiagSaverEnable}" == "false" ]; then
+	       	echo "$0 should not exe DiagSaver,exit"
+	       	echo "$0 should not exe DiagSaver,exit" > /dev/kmsg
+	       	exit 0
+	fi
+
+	DiagSaverPath=`uci get misc_cust.DiagSaver_setting.path`
+	echo  DiagSaverPath=${DiagSaverPath}
+	echo  DiagSaverPath=${DiagSaverPath} > /dev/kmsg
+	DiagSaverMaxsize=`uci get misc_cust.DiagSaver_setting.maxsize`
+	echo  DiagSaverMaxsize=${DiagSaverMaxsize}
+	echo  DiagSaverMaxsize=${DiagSaverMaxsize} > /dev/kmsg
+
+	cd ${DiagSaverPath}
+	if [ $? -ne 0 ]; then
+			echo "$0 cd ${DiagSaverPath} error,exit"
+	       	echo "$0 cd ${DiagSaverPath} error,exit" > /dev/kmsg
+	       	exit 0
+	fi
+	DiagSaver --maxsize=${DiagSaverMaxsize} &
+
+	#echo  "Rest DiagSaverEnable=false"
+	#echo  "Rest DiagSaverEnable=false" > /dev/kmsg
+	#uci set misc_cust.DiagSaver_setting.enable=false
+	#uci commit
+}
+
+start() {
+	echo "Starting ril Service"
+	/bin/rild &
+	DiagSaverStart
+}

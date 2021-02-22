@@ -1,0 +1,87 @@
+<a href='#' class='help' id="lt_wifiSet_helper" onclick="getHelp('CustomFirewallRules')">&nbsp;</a>
+<label id="lt_wifiDDNS_title" class="title"></label>
+<div id="lt_wifiDDNS_text">
+	Dynamic DNS (DDNS) is a method of updating domain names in real time.This service is used to provide a domain name for a device that may change its IP address on the network.
+</div>
+<label id="lt_wifiDDNS_title2" class="title">DDNS List</label>
+<table class="wifiDDNS_table pc_device">
+	<thead>
+	<tr>
+		<th id="lt_wifiDDNS_connection">Connection status</th>
+		<th id="lt_wifiDDNS_service">Service Provider</th>
+		<th id="lt_wifiDDNS_status">Status</th>
+		<th id="lt_wifiDDNS_dn">Domain Name</th>
+		<th id="lt_wifiDDNS_un">User name</th>
+		<th id="lt_wifiDDNS_password">Password</th>
+		<th id="lt_wifiDDNS_operation">Operation</th>
+	</tr>
+	</thead>
+	<tbody id="tbodyWifiDDNS_list"></tbody>
+</table>
+<table class="wifiDDNS_table phone_device ">
+	<thead>
+	<tr>
+		<!-- <th id="lt_wifiDDNS_connection">Connection status</th>
+		<th id="lt_wifiDDNS_service">Service Provider</th> -->
+		<th id="lt_wifiDDNS_status">Status</th>
+		<th id="lt_wifiDDNS_dn">Domain Name</th>
+		<th id="lt_wifiDDNS_un">User name</th>
+		<th id="lt_wifiDDNS_password">Password</th>
+		<th id="lt_wifiDDNS_operation"></th>
+	</tr>
+	</thead>
+	<tbody id="tbodyWifiDDNS_list_phone"></tbody>
+</table>
+
+<span id="ddnsError" style="color:red;margin-left:10px;"></span>
+<div style="margin-top:20px;">
+	<input type="checkbox" id="isShow"><span id="lt_ddns_showPassword">Show password</span>
+	<input type="button" value="add" style="margin-top: 8px;display: block" class="btn-apply button-key" id="lt_wifiDNSS_add">
+</div>
+
+<div style="display:none" id="isDelectDDNSlist">
+	<h1 id="isDelectDDNSlist_title"></h1>
+	<a href="#" class="close" onclick="CloseDlg()">x</a>
+	<div align="center">
+		<label id="isDelectDDNSlist_text" class="lable12"></label>
+		<br style="clear:both" />
+		<div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+			<input id="isDelectDDNSlist_sure" type="button"  value="OK" class="btn-apply" />
+			<input id="btnModalOk" type="button"  value="Cancle" onclick="CloseDlg()" class="btn-apply" />
+		</div>
+	</div>
+</div>
+
+<div id="divTableConfig" style="display: none">
+	<div class="popUpBox popUpBox2">
+		<h1 id="lt_wifiDDNS_title"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div class="pBoxCont">
+			<label id="lt_wifiDDNS_connection"></label>
+			<img id="wifiDDNS_connection" src="../../images/not_connected.png" alt="">
+			<br style="clear: both" />
+			<label id="lt_wifiDDNS_service"></label>
+			<input type="text" id="txt_wifiDDNS_service" value="DynDNS.org" disabled/>
+			<br style="clear: both" />
+			<label id="lt_wifiDDNS_status"></label>
+			<select id="txt_wifiDDNS_status">
+				<option value="0">Off</option>
+				<option value="1">On</option>
+			</select>
+			<br style="clear: both" />
+			<label id="lt_wifiDDNS_dn"></label>
+			<input type="text" size="30" id="txt_wifiDDNS_dn" maxlength="25" />
+			<br style="clear: both" />
+			<label id="lt_wifiDDNS_un"></label>
+			<input name="input" type="text" id="txt_wifiDDNS_un" />
+			<br style="clear: both" />
+			<label id="lt_wifiDDNS_password"></label>
+			<input name="input" type="text" id="txt_wifiDDNS_password" />
+			<br style="clear: both" />
+			<label id="lDDNSError" class="lable13 error" style="display: none"></label>
+			<div class="buttonRow1">
+					<input id="lt_BtnOk" class="btn-apply" type="button" value="OK"/>
+			</div>
+		</div>
+	</div>
+</div>

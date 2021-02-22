@@ -1,0 +1,296 @@
+<div id="networkImg" class="networkImg">
+	<img src="images/globe_gr.png" id="globeImage" />
+	<img src="images/discon-arrow.png" id="imgGlobalConnArrow" class="arrow" />
+	<img src="images/router.png" />
+	<img src="images/discon-arrow.png" id="imgWifiConnArrow" class="arrow" />
+	<img src="images/network_gr.png" id="imgNetwork" />
+</div>
+
+<div class="homeBox">
+	<h2 id="lt_dashbd_h2Internet"></h2>
+	<div class="boxInner brdr2">
+		<a id="divSimCardAbsent">
+			<span id="lt_dashbd_CellularConn" class="heading1">Cellular Connection</span>
+			<strong id="lt_dashbd_SimStatus">SIM Status:</strong><br>
+			<img align="right" alt="" src="images/status-icon2.png" id="imgSIMStatus">
+			<label id="txtSimStatus">Absent</label>
+		</a>
+
+		<a id="divNetworkLocked">
+			<span id="lt_dashbd_CellularConn" class="heading1">Cellular Connection</span>
+			<strong id="lt_dashbd_netLocked">Network Status:</strong><br>
+			<label id="lt_txtNetLocked">PNPIN:</label>
+			<label onmouseover="this.style.cursor='pointer';" onmousedown="dashboardOnClick('mMEPSetting')"
+				id="lt_PINrequired" class="link1" style="cursor: pointer;">required</label>
+		</a>
+		<a id="divRequiredPinPuk">
+			<span id="lt_dashbd_CellularConn" class="heading1">Cellular Connection</span>
+			<strong id="lt_dashbd_PINStatus">PIN/PUK Status:</strong><br><label id="txtPinPuk">PUK</label>
+			<label onmouseover="this.style.cursor='pointer';" onmousedown="dashboardOnClick('mPinPuk')"
+				id="lt_PINrequired" class="link1" style="cursor: pointer;">required</label>
+		</a>
+
+		<a id="divCellularConn">
+			<span id="lt_dashbd_CellularConn" class="heading1">Cellular Connection</span>
+			<strong id="lt_dashbd_SignalStrength">Signal Strength:</strong><img align="bottom" alt=""
+				src="images/signal0.png" id="imgSignalStrength"><br><br>
+			<!--strong id="lt_dashbd_CellularDataConn">Cellular Data Connectivity:</strong><br><label id="lt_optEnableSwitch">Enabled</label>
+	    <label onmouseover="this.style.cursor='pointer';" onmousedown="CellularED()" onclick="CellularED()" id="lt_optDisabledSwitch" class="link1">Disabled</label-->
+			<strong id="lt_dashbd_connStatus"></strong><br><label id="lCurConnStatus"></label>
+			<label onmouseover="this.style.cursor='pointer';" id="lChangeConnStatus" class="link1"
+				style="cursor: pointer;"></label>
+		</a>
+
+		<a id="divRoamingStatus" style="display:none;">
+			<span class="heading1" id="lt_dashbd_RoamingStatus"></span>
+			<strong id="lt_optEnableSwitch"> </strong><br />
+			<img src="" alt="images/status-icon3.png" align="right" />
+		</a>
+
+	</div>
+
+	<div class="boxInner brdr1 brdr2" id="divInternetPdpList">
+		<a href="#" onclick="dashboardOnClick('mInternetConn')">
+			<span class="heading1" id="lt_dashbd_h3IntrenetConn"> </span>
+			<strong id="lt_dashbd_NetworkOperatorName"></strong><br />
+			<label id="txtNetworkOperator"></label><br />
+			<strong id="lt_dashbd_CellularNetworkMode"></strong><br />
+			<label id="txtSystemNetworkMode"></label><br />
+			<strong id="lt_dashbd_DataConnMode"></strong><br />
+			<label id="txtDataConnMode"></label><br />
+
+			<strong id="lt_dashbd_PdpApn"></strong><br />
+			<label id="txtPdpApn" style="word-break: break-all;word-wrap: break-word;"></label><br />
+			<strong id="lt_dashbd_PdpConnStatus"></strong><br />
+			<label id="txtPdpconnStatus"></label><br />
+
+			<div id="pdpIpv4Info" style="display:none;">
+				<strong id="lt_dashbd_PdpIpv4Addr"></strong><br />
+				<label id="txtPdpIpv4Addr"></label><br />
+				<strong id="lt_dashbd_PdpIpv4Dns1"></strong><br />
+				<label id="txtPdpIpv4Dns1"></label><br />
+				<strong id="lt_dashbd_PdpIpv4Dns2"></strong><br />
+				<label id="txtPdpIpv4Dns2"></label><br />
+				<strong id="lt_dashbd_PdpIpv4GateWay"></strong><br />
+				<label id="txtPdpIpv4GateWay"></label><br />
+				<strong id="lt_dashbd_PdpIpv4NetMask"></strong><br />
+				<label id="txtPdpIpv4NetMask"></label><br />
+			</div>
+
+			<div id="pdpIpv6Info" style="display:block;">
+				<strong id="lt_dashbd_PdpIpv6Addr"></strong><br />
+				<label id="txtPdpIpv6Addr"></label><br />
+				<strong id="lt_dashbd_PdpIpv6Dns1"></strong><br />
+				<label id="txtPdpIpv6Dns1"></label><br />
+				<strong id="lt_dashbd_PdpIpv6Dns2"></strong><br />
+				<label id="txtPdpIpv6Dns2"></label><br />
+				<strong id="lt_dashbd_PdpIpv6GateWay"></strong><br />
+				<label id="txtPdpIpv6GateWay"></label><br />
+				<strong id="lt_dashbd_PdpIpv6NetMask"></strong><br />
+				<label id="txtPdpIpv6NetMask"></label><br />
+			</div>
+
+			<div id="engModeLTEInfo" style="display:none;">
+				<div id="div_txtLTE_mcc">
+					<strong id="lt_dashbd_LTE_mcc"></strong><br />
+					<label id="txtLTE_mcc"></label>
+				</div>
+				<div id="div_txtLTE_mnc">
+					<strong id="lt_dashbd_LTE_mnc"></strong><br />
+					<label id="txtLTE_mnc"></label>
+				</div>
+				<div id="div_txtLTE_phy_cellid">
+					<strong id="lt_dashbd_LTE_phy_cellid"></strong><br />
+					<label id="txtLTE_phy_cellid"></label>
+				</div>
+				<div id="div_txtLTE_cellid">
+					<strong id="lt_dashbd_LTE_cellid"></strong><br />
+					<label id="txtLTE_cellid"></label>
+				</div>
+				<div id="div_txtLTE_dl_euarfcn">
+					<strong id="lt_dashbd_LTE_dl_euarfcn"></strong><br />
+					<label id="txtLTE_dl_euarfcn"></label>
+				</div>
+				<div id="div_txtLTE_ul_euarfcn">
+					<strong id="lt_dashbd_LTE_ul_euarfcn"></strong><br />
+					<label id="txtLTE_ul_euarfcn"></label>
+				</div>
+				<div id="div_txtLTE_dl_bandwidth">
+					<strong id="lt_dashbd_LTE_dl_bandwidth"></strong><br />
+					<label id="txtLTE_dl_bandwidth"></label>
+				</div>
+				<div id="div_txtLTE_transmission_mode">
+					<strong id="lt_dashbd_LTE_transmission_mode"></strong><br />
+					<label id="txtLTE_transmission_mode"></label>
+				</div>
+				<div id="div_txtLTE_main_rsrp">
+					<strong id="lt_dashbd_LTE_main_rsrp"></strong><br />
+					<label id="txtLTE_main_rsrp"></label>
+				</div>
+				<div id="div_txtLTE_diversity_rsrp">
+					<strong id="lt_dashbd_LTE_diversity_rsrp"></strong><br />
+					<label id="txtLTE_diversity_rsrp"></label>
+				</div>
+				<div id="div_txtLTE_main_rsrq">
+					<strong id="lt_dashbd_LTE_main_rsrq"></strong><br />
+					<label id="txtLTE_main_rsrq"></label>
+				</div>
+				<div id="div_txtLTE_diversity_rsrq">
+					<strong id="lt_dashbd_LTE_diversity_rsrq"></strong><br />
+					<label id="txtLTE_diversity_rsrq"></label>
+				</div>
+				<div id="div_txtLTE_sinr">
+					<strong id="lt_dashbd_LTE_sinr"></strong><br />
+					<label id="txtLTE_sinr"></label>
+				</div>
+				<div id="div_txtLTE_rssi">
+					<strong id="lt_dashbd_LTE_rssi"></strong><br />
+					<label id="txtLTE_rssi"></label>
+				</div>
+				<div id="div_txtLTE_dl_bler">
+					<strong id="lt_dashbd_LTE_dl_bler"></strong><br />
+					<label id="txtLTE_dl_bler"></label>
+				</div>
+				<div id="div_txtLTE_ul_bler">
+					<strong id="lt_dashbd_LTE_ul_bler"></strong><br />
+					<label id="txtLTE_ul_bler"></label>
+				</div>
+			</div>
+		</a>
+	</div>
+</div>
+
+
+<div class="homeBox marginLR">
+	<h2 id="lt_dashbd_h2Router"></h2>
+	<div class="boxInner brdr1 brdr2" id="ussdBox">
+		<a href="javascript:void(0);">
+			<span id="lt_ussd_stcTitle" class="heading1">USSD</span>
+			<label id="lt_ussd_title">Enter a command.</label>
+			<div class="inputBox">
+				<input type="text" id="txtUssdServiceNumber" class="dash_textfield">
+				<input type="button" id="lt_ussd_btnSend" value="Send" class="btn-ussd">
+			</div>
+			<div class="return_information_content">
+				<div id="return_information" class="return_information"></div>
+			</div>
+			<div id="dialParamError" style="color: red;display: none;"></div>
+		</a>
+	</div>
+	<div class="boxInner brdr2">
+		<a href="#" onclick="dashboardOnClick('mDHCP_Settings')" id="h3LANIP">
+			<span class="heading1" id="lt_dashbd_h3RouterInfo"></span>
+			<strong id="lt_dashbd_routerLanIp"> </strong><br />
+			<label id="txtRouterLanIP"></label> <br />
+			<strong id="lt_dashbd_IMEI"> </strong><br />
+			<label id="txtRouterIMEI"></label> <br />
+			<div class="dashbd_phoneNum">
+				<strong id="lt_dashbd_phoneNum"> </strong><br />
+				<label id="txtRouterPhoneNum"></label> <br />
+			</div>
+			<strong id="lt_dashbd_RouterMask"> </strong><br />
+			<label id="txtRouterMask"></label> <br />
+			<strong id="lt_dashbd_RouterMAC"> </strong><br />
+			<label id="txtRouterMAC"></label> <br />
+			<strong id="lt_dashbd_RouterRunTime"> </strong><br />
+			<label id="txtDashRouterRunTime"></label><br />
+
+			<div id="divbatteryinfo" style="display: none;">
+				<strong id="lt_dashbd_BetteryInfo"> </strong><br />
+				<label id="lDashChargeStatus"></label><br />
+				<strong id="lt_dashbd_BetteryVol"> </strong><br />
+				<label id="lDashBatteryQuantity"></label><br />
+			</div>
+		</a>
+	</div>
+	<!----------- software version info.-----  ------>
+	<div class="boxInner brdr2" style="word-break: break-all;">
+		<a href="#" onclick="dashboardOnClick('mSoftUpdate')">
+			<strong id="lt_dashbd_SoftVersion"> </strong><br />
+			<label id="txtSoftVersion"></label> <br />
+			<strong id="lt_dashbd_HardVersion"> </strong><br />
+			<label id="txtHardVersion"></label><br />
+
+			<strong id="lt_base_band_version"> </strong><br />
+			<label id="txtBaseBandVersion"></label>
+		</a>
+	</div>
+</div>
+
+<div class="homeBox">
+	<h2 id="lt_dashbd_h2HomeNw"></h2>
+	<div class="boxInner brdr1 brdr2">
+		<a href="#" onclick="dashboardOnClick('mConnected_Devices')">
+			<span class="heading1" id="lt_dashbd_h3ConnDevice"></span>
+			<label id="lConnDeviceValue"></label>
+		</a>
+	</div>
+
+	<div class="boxInner brdr1 brdr2" id="divWifiStatus">
+		<a href="#" onclick="dashboardOnClick('mWifiInfoSet')">
+			<span class="heading1" id="lt_dashbd_h3WirelessStatus"></span>
+			<strong id="lt_dashbd_wifiStatus"> </strong><br />
+			<img id="imgWifiConnStatus" src="" alt="" align="right" />
+			<label id="lWLANStatus"> </label>
+
+			<div id="divWifiSet" style="display:none">
+				<strong id="lt_dashbd_wifiSSID"> </strong><br />
+				<label id="txtWifiSSID"> </label> <br />
+				<strong id="lt_dashbd_WifiSecurityMode"> </strong><br />
+				<label id="txtWifiSecMode"> </label> <br />
+				<strong id="lt_dashbd_WifiChannel"> </strong><br />
+				<label id="txtWifiChannel"> </label>
+			</div>
+		</a>
+	</div>
+	<div class="boxInner brdr1 brdr2" id="divWifiStatus5G" style="display: none;">
+		<a href="#" onclick="dashboardOnClick('mWifiInfoSet5G')">
+			<span class="heading1" id="lt_dashbd_h3WirelessStatus5G"></span>
+			<strong id="lt_dashbd_wifiStatus"></strong><br />
+			<img id="imgWifiConnStatus5G" src="" alt="" align="right" />
+			<label id="lWLANStatus5G"></label>
+
+			<div id="divWifiSet5G" style="display:none">
+				<strong id="lt_dashbd_wifiSSID"></strong><br />
+				<label id="txtWifiSSID5G"> </label> <br />
+				<strong id="lt_dashbd_WifiSecurityMode"> </strong><br />
+				<label id="txtWifiSecMode5G"> </label> <br />
+				<strong id="lt_dashbd_WifiChannel"> </strong><br />
+				<label id="txtWifiChannel5G"> </label>
+			</div>
+		</a>
+	</div>
+
+	<div class="boxInner brdr2">
+		<a href="#" onclick="dashboardOnClick('mDHCP_Settings')">
+			<span id="lt_dashbd_h3DhcpServer" class="heading1"></span>
+			<img id="imgDhcpServerSwitch" src="" align="right" />
+			<label id="lDhcpServerSwitch"></label>
+		</a>
+	</div>
+
+	<div class="boxInner brdr2" id="mTraffic_Statistical">
+		<a href="#" onclick="dashboardOnClick('mTrafficStatistical')">
+			<span class="heading1" id="lt_dashbd_h3TrafficStatistic"> </span>
+			<strong id="lt_dashbd_SentPackets"></strong><br />
+			<label id="txtsentPackets"></label><br />
+
+			<strong id="lt_dashbd_RecPackets"> </strong><br />
+			<label id="txtRecPackets"> </label><br />
+
+			<strong id="lt_send_speed"> </strong><br />
+			<label id="txtSendSpeed">0.00KB/s</label><br />
+
+			<strong id="lt_received_speed"> </strong><br />
+			<label id="txtReceivedSpeed">0.00KB/s</label><br />
+		</a>
+
+		<a>
+			<label onmouseover="this.style.cursor='pointer';" id="lt_dashbd_resetTrafficStatistic" class="link1"
+				style="cursor: pointer;">reset</label>
+			<br />
+		</a>
+	</div>
+</div>
+
+<br class="clear" />

@@ -1,0 +1,10 @@
+Package: kmod-mppe
+Version: 3.10.14-p112871-1
+Depends: kernel (=3.10.14-p112871-1-edfb187ef19e43c9e651f479d0bc12bd), kmod-ppp, kmod-crypto-core, kmod-crypto-arc4, kmod-crypto-sha1, kmod-crypto-ecb
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ramips_24kec
+Installed-Size: 105
+Description:  Kernel modules for Microsoft PPP compression/encryption

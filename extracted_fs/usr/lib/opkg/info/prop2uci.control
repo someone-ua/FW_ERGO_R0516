@@ -1,0 +1,8 @@
+Package: prop2uci
+Version: 1.0-1
+Depends: libc, libprop2uci
+Source: package/libs/libprop2uci
+Section: sys
+Architecture: ramips_24kec
+Installed-Size: 2018
+Description:  Marvell Android Application to UCI wrapper application

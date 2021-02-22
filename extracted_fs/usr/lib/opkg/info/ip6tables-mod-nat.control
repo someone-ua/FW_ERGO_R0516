@@ -1,0 +1,8 @@
+Package: ip6tables-mod-nat
+Version: 1.4.21-1
+Depends: libc, ip6tables, kmod-ipt-nat6
+Source: package/network/utils/iptables
+Section: net
+Architecture: ramips_24kec
+Installed-Size: 1778
+Description:  iptables extensions for IPv6-NAT targets.

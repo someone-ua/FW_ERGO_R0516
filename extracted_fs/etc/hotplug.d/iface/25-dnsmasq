@@ -1,0 +1,52 @@
+#!/bin/sh
+
+DiagSaverTransfer=`uci get misc_cust.DiagSaver_setting.transfer`
+#echo  DiagSaverTransfer=${DiagSaverTransfer}
+#echo  DiagSaverTransfer=${DiagSaverTransfer} > /dev/kmsg
+if [ "${DiagSaverTransfer}" == "true" ]; then
+	DiagSaverModem=`uci get misc_cust.DiagSaver_setting.modem`
+	echo  DiagSaverModem=${DiagSaverModem}
+	echo  DiagSaverModem=${DiagSaverModem} > /dev/kmsg
+
+	if [ "${DiagSaverModem}" == "1826" ]; then
+		para2=`ps|grep DiagTransfer|grep -v grep`
+		if [ -z "$para2" ]; then
+			echo  "<<<< execute DiagTransfer for 1826" > /dev/kmsg
+			DiagTransfer &
+		else
+			echo  "<<<< DiagTransfer for 1826 is running, not call DiagTransfer" > /dev/kmsg
+		fi
+	else
+		para2=`ps|grep DiagTransfer|grep -v grep`
+		if [ -z "$para2" ]; then
+			echo  "<<<< execute DiagTransfer for 1802" > /dev/kmsg
+			DiagTransfer --ttyACM0 1 &
+		else
+			echo  "<<<< DiagTransfer for 1802 is running, not call DiagTransfer" > /dev/kmsg
+		fi
+	fi
+fi
+
+[ "$ACTION" = ifup ] || exit 0
+
+killdnsmasq()
+{
+	para1=`ps|grep dnsmasq|grep -v grep|grep -v dnsmasqcheck`
+	if [ ! -n "$para1" ]; then
+		return 1
+	else
+		echo "*************find dnsmasq kill it:" $para1 >/dev/kmsg
+		ps | grep dnsmasq | grep -v grep | awk '{print $1}' | xargs kill -9
+		return 0
+	fi
+}
+
+echo "*************hotplug: $DEVICE up: start dnsmasq..." >/dev/kmsg
+/etc/init.d/dnsmasq enabled && /etc/init.d/dnsmasq stop 2>/dev/null
+PIPE=`uci get cmdline.PIPE 2> /dev/null`
+if [ "$PIPE" == "1" ]; then
+	echo "pipe mode" > /dev/kmsg
+else
+	killdnsmasq && sleep 3 && killdnsmasq
+fi
+/etc/init.d/dnsmasq enabled && /etc/init.d/dnsmasq start $DEVICE

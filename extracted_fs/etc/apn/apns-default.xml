@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<apns>
+  <default autoconnect="1" always_on="0" lte_default="1" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1500"/>
+  <ims autoconnect="0" always_on="0" lte_default="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1500"/>
+  <mms autoconnect="0" always_on="0" lte_default="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1500"/>
+  <supl autoconnect="0" always_on="0" lte_default="0" config_only="0" tetherable="0" is_host="0" data_on_roaming="0" mtu="1500"/>
+</apns>

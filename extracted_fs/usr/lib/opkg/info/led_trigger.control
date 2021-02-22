@@ -1,0 +1,8 @@
+Package: led_trigger
+Version: 1.0-0
+Depends: libc, libubox, libubus, liblog
+Source: package/notion/led_trigger
+Section: test
+Architecture: ramips_24kec
+Installed-Size: 4522
+Description:  This package is for led test.

@@ -1,0 +1,8 @@
+Package: phonebook_1826
+Version: 1.0-1
+Depends: libc, libpthread, libubox, libubus, ril_1826, liblog
+Source: package/services/phonebook_1826
+Section: opt
+Architecture: ramips_24kec
+Installed-Size: 13013
+Description:  Phonebook service applictions and utilities

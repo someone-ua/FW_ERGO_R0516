@@ -1,0 +1,60 @@
+<a href='#' class='help' onclick="getHelp('PinPuk')">&nbsp;</a>
+
+<div id="PinPukAttempts" style="display: none">
+	<label id="lt_Attempts" class="title"></label>
+	<label id="vPinAttmepts"> </label>
+	<label id="vPukAttmepts"> </label>
+	<br>
+</div>
+
+<div id="ProvidePin" style="display: none">
+	<label id="lt_ProvidePin" class="title"></label>
+	<br style="clear:both" />
+	<label id="lt_EnterPin"></label>
+	<input name="" type="password" maxlength="8" id="txtPin" class="textfield"  onclick="clearAlertError()"/>
+    	<div class="pBoxCont" ><label id="lAlertError" class="error"></label></div>
+	<div align='right'><input type='button' class="btn-apply" id='btUpdate' value='Save' onclick='ProvidePin()'  /> </div>
+</div>
+
+<div id="ResetPinUsingPuk" style="display: none">
+	<label id="lt_ResetPin" class="title"></label>
+
+	<br style="clear:both" />
+	<label id="lt_EnterPuk"> </label>
+	<input name="" type="password" maxlength="10" id="txtPuk0" class="textfield" />
+
+	<br style="clear:both" />
+	<label id="lt_EnterNewPin"> </label>
+	<input name="" type="password" maxlength="8" id="txtNewPin0" class="textfield" onclick="clearAlertError0()"/>
+    	<div class="pBoxCont" ><label id="lAlertError0" class="error"></label></div>
+	<div align='right'><input type='button'  class="btn-apply" id='btUpdate0' value='Save' onclick='resetPinUsingPuk()'  /> </div>
+</div>
+
+<div id="EnableDisablePin" style="display: none">
+	<label id="lt_EnableDisablePin" class="title"></label>
+
+	<br style="clear:both" />
+	<label id="lt_EnterPin"> </label>
+	<input name="" type="password" maxlength="8" id="txtPin1" class="textfield" onclick="clearAlertError1()"/>
+    	<div class="pBoxCont" ><label id="lAlertError1" class="error"></label></div>
+	<div align='right'><input type='button' class="btn-apply" id='btUpdate1' value='' onclick='EnableDisablePin()'  /> </div>
+</div>
+
+<div id="ChangePin" style="display: none">
+	<label id="lt_ChangePin" class="title"></label>
+
+	<br style="clear:both" />
+	<label id="lt_EnterPin1"> </label>
+	<input name="" type="password" maxlength="8" id="txtPin2" class="textfield" onclick="clearAlertError2()"/>
+
+	<br style="clear:both" />
+	<label id="lt_EnterNewPin1"> </label>
+	<input name="" type="password" maxlength="8" id="txtNewPin2" class="textfield" onclick="clearAlertError2()"/>
+	<br style="clear:both" />
+	<label id="lt_EnterNewPin2"> </label>
+	<input name="" type="password" maxlength="8" id="txtNewPin3" class="textfield" />
+    
+    	<div class="pBoxCont" ><label id="lAlertError2" class="error"></label></div>
+	<div align='right'><input type='button' class="btn-apply" id='btUpdate2' value='Save' onclick='ChangePin()'  /> </div>
+</div>
+

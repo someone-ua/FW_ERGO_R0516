@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Ui>
+    <Tab Name='mDashboard' type='submenuabsent' implFunction='objdashboard' xmlName='status1'> </Tab>
+
+    <Tab Name='tInternet' type='submenupresent'>
+        <Menues>
+            <Menu id='mInternetConn' implFunction='objInternetConn' xmlName='wan' />
+            <Menu id='mTrafficStats' implFunction='objTrafficStats' xmlName='statistics' />
+            <Menu id='mPinPuk' implFunction='objPinPuk' xmlName='pin_puk' />
+            <Menu id='mManulNetwork' implFunction='objManualNetwork' xmlName='wan' />
+            <Menu id='mMEPSetting' implFunction='objMEPSetting' xmlName='pin_puk' />
+	    <Menu id='mTrafficSetting' implFunction='objTrafficSetting' xmlName='statistics' />
+        </Menues>
+    </Tab>
+    <Tab Name='tHome_Network' type='submenupresent'>
+        <Menues>
+            <Menu id='mDHCP_Settings' implFunction='objDHCP_Settings' xmlName='lan' />
+            <Menu id='mConnected_Devices' implFunction='objConnectedDev' xmlName='device_management_all' />
+            <Menu id='mDataTraffic' implFunction='objDataTraffic' xmlName='device_management' />
+            <Menu id='mAccess_Logs' implFunction='objAccess_Logs' xmlName='detailed_log' />
+            <Menu id='mCustom_FW' implFunction='objCustom_FW' xmlName='custom_fw' />
+            <Menu id='mPortFilter' implFunction='objPortFilter' xmlName='port_filter' />
+            <Menu id='mPort_Forward' implFunction='objPort_Forward' xmlName='port_forwarding' />
+        </Menues>
+    </Tab>    
+       <Tab Name='tPhoneBook' type='submenupresent' >
+        <Menues>
+            <Menu id='mAllPhone' implFunction='objPhoneBook' xmlName='phonebook' />
+            <Menu id='mCommonPhone' implFunction='objPhoneBook' xmlName='phonebook' />
+            <Menu id='mFamilyPhone' implFunction='objPhoneBook' xmlName='phonebook' />
+            <Menu id='mFriendPhone' implFunction='objPhoneBook' xmlName='phonebook' />
+            <Menu id='mColleaguePhone' implFunction='objPhoneBook' xmlName='phonebook' />          
+        </Menues>
+    </Tab>
+      <Tab Name='tSms' type='submenupresent'>
+    <Menues>
+      <Menu id='mDeviceInbox' implFunction='objSms' xmlName='message' />     
+      <Menu id='mDeviceOutbox' implFunction='objSms' xmlName='message' />
+      <Menu id='mSimSms' implFunction='objSms' xmlName='message' />
+      <Menu id='mDrafts' implFunction='objSms' xmlName='message' />
+      <Menu id='mSmsSet' implFunction='objSmsSet' xmlName='message' />
+    </Menues>
+  </Tab>
+    <Tab Name='tRouter' type='submenupresent' >
+        <Menues>
+            <Menu id='mUserManage' implFunction='objUserManage' xmlName='admin' />
+            <Menu id='mConfManage' implFunction='objConfManage' xmlName='config_save' />
+            <Menu id='mSoftUpdate' implFunction='objSoftUpdate' xmlName='firmware' />
+            <Menu id='mReboot' implFunction='objReboot' xmlName='reset' />
+            <Menu id='mPowerOffRouter' implFunction='objPowerOffRouter' xmlName='power_off' />
+            <Menu id='mTimeSetting' implFunction='objTimeSetting' xmlName='time_setting' />
+	     <Menu id='mWebDav' implFunction='objWebDav' xmlName='Webdav' />
+	     <Menu id='mWebDav_share_setting' implFunction='objWebDav_share' xmlName='Webdav_share_setting' />
+           <!-- <Menu id='mCfgFileUpdate' implFunction='objCfgFileUpdate' xmlName='' />-->
+        </Menues>
+    </Tab>
+
+</Ui>

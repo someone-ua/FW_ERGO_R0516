@@ -1,0 +1,36 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2006-2011 OpenWrt.org
+
+START=61
+
+TEMP_FILE=/tmp/apns-full-conf.xml
+NEW_FILE=/tmp/apn_new.xml
+
+boot() {
+	apn_update=`fw_printenv apn_update | awk -F "=" '{print $2}'`
+
+	if [ "$apn_update" = "1" ] 
+	then
+		fw_apns=`fw_printenv apns`
+		if [ -z `echo $fw_apns | grep mcc` ]
+		then
+			fw_setenv apn_update 0
+			exit
+		fi
+		echo ${fw_apns#*=} | tr "[;]" "[\n]" > /tmp/test_apn1.xml
+
+		cp /etc/apn/apns-full-conf.xml /tmp/
+		line=`grep -n "apns version=" $TEMP_FILE | awk -F ":" '{print $1}`
+
+		head -n ${line} $TEMP_FILE > $NEW_FILE
+
+		tail -n +$(($line+1)) $TEMP_FILE > /tmp/test_apn2.xml
+
+		cat /tmp/test_apn1.xml >> $NEW_FILE
+		cat /tmp/test_apn2.xml >> $NEW_FILE
+		mv $NEW_FILE /etc/apn/apns-full-conf.xml
+		rm -f /tmp/test_apn1.xml
+		rm -f /tmp/test_apn2.xml
+		fw_setenv apn_update 0
+	fi
+}

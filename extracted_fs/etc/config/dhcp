@@ -1,0 +1,43 @@
+config dnsmasq
+	option domainneeded	1
+	option boguspriv	1
+	option filterwin2k	0  # enable for dial on demand
+	option localise_queries	1
+	option rebind_protection 0  # disable if upstream must serve RFC1918 addresses
+	option rebind_localhost 0  # enable for RBL checking and similar services
+	#list rebind_domain example.lan  # whitelist RFC1918 responses for domains
+	option local	'/lan/'
+	option domain	'lan'
+	option expandhosts	1
+	option nonegcache	0
+	option authoritative	1
+	option readethers	1
+	option leasefile	'/tmp/dhcp.leases'
+	option resolvfile	'/tmp/resolv.conf.auto'
+	#list server		'/mycompany.local/1.2.3.4'
+	#option nonwildcard	1
+	#list interface		br-lan
+	#list notinterface	lo
+	#list bogusnxdomain     '64.94.110.11'
+    option dhcpscript '/lib/stat/dhcp_action.sh'
+
+config dhcp lan
+	option interface	lan
+	option start 	192.168.1.100
+	option end	192.168.1.249
+	option limit	150
+	option leasetime	43200
+	option dhcpv6 'relay'
+	option dhcp 'relay'
+	option ra 'relay'
+	option ndp 'relay'
+	#option ra_management '1'
+	#option ra_default '1'
+	#list dns '2405:9800:a:1::10'
+
+config dhcp wan
+	option interface	wan6
+	option ignore	1
+	option ra 'relay'
+	option ndp 'relay'
+	option master '1'

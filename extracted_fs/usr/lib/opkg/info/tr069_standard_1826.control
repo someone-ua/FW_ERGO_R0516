@@ -1,0 +1,8 @@
+Package: tr069_standard_1826
+Version: 1.0-1
+Depends: libc, libpthread, libubox, libubus, ril_1826, liblog, libpolarssl, libprop2uci
+Source: package/services/tr069_standard_1826
+Section: tr069_standard_1826
+Architecture: ramips_24kec
+Installed-Size: 105899
+Description:  tr069 service applictions and utilities  

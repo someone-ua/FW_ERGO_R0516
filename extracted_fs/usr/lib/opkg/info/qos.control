@@ -1,0 +1,8 @@
+Package: qos
+Version: 2014-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog
+Source: package/services/qos
+Section: qos
+Architecture: ramips_24kec
+Installed-Size: 10712
+Description:  qos-WEB service applictions and utilities

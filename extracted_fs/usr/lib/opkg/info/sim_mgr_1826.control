@@ -1,0 +1,8 @@
+Package: sim_mgr_1826
+Version: 0.1-1
+Depends: libc, libubox, libubus, libuci, ril_1826, libpthread, liblog
+Source: package/services/sim_mgr_1826
+Section: sim_mgr_1826
+Architecture: ramips_24kec
+Installed-Size: 7851
+Description:  Marvell sim management service

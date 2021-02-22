@@ -1,0 +1,8 @@
+Package: sms_1826
+Version: 1.0-1
+Depends: libc, libpthread, libubox, libubus, ril_1826, liblog
+Source: package/services/sms_1826
+Section: opt
+Architecture: ramips_24kec
+Installed-Size: 33894
+Description:  sms service applictions and utilities

@@ -1,0 +1,52 @@
+<a href='#' class='help' onclick="getHelp('WirelessMACFilters')">&nbsp;</a>
+<label id="lt_dmz_title" class="title"></label>
+<div id='divDmzSwitch' >
+    <label id='lt_dmz_dmzSwitch'></label>
+    <select id="selDmzSwitch">
+        <option id='lt_optDisabledSwitch' value='1'>disable</option>
+		<option id='lt_optEnableSwitch' value='0'>enabled</option>	
+    </select>
+</div>   
+		
+<div class="formBox" align="right"><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/> </div>
+<div  id='divDmzIpAddr' style="display:none">  
+    <br style="clear:both" />
+		<label id="lt_dmz_dmzHelper" class="left"> </label>
+    <div class="right">
+    	<input type='button' id='lt_dmz_btnAddDmzIpAddr' value='add' class="btn-apply"/>
+    	<input type='button' id='lt_dmz_btnDeleteDmzIpAddr' value='delete' class="btn-apply" style="display:none;"/> 
+    	<input type='button' id='lt_dmz_btnEditDmzIpAddr' value='edit' class="btn-apply" style="display:none;"/> 
+    </div>    
+    <br style="clear:both" />
+	    
+    <div id="divIpAddr" style="display:none;">  
+	    <label id="lt_dmz_IpAddr" style="float:left;margin-right:20px;"></label>    
+	    <br style="clear:both" />
+	    <br style="clear:both" />
+	    <div id="divhostIpAddrctrl">  </div>
+    </div>
+</div>
+
+<div id="divDmzSetDlg" style="display: none" >
+   <div class="popUpBox popUpBox2">
+        <h1 id="lt_dmz_dmzSetDlg"></h1>
+    	<a href="#" class="close" onclick="CloseDlg()">x</a>
+
+        <div class="pBoxCont">  
+           <div class="boxCont2" style="text-align: center;">  
+           <div id="divdmzdlgipControl" style="display:inline-block;">  </div>
+              	        
+            <br style="clear:both" /></div>
+        	<label id="lt_dmz_ipAddrError" class="lable13 error" style="display: none"></label>
+	        	
+        	<div class="buttonRow1 right_align">
+				<input id="lt_btnSave" type="button" class="btn-apply" />
+        	</div>
+
+           </div>
+      </div>
+</div>
+
+
+
+

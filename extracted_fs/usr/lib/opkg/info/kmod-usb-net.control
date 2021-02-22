@@ -1,0 +1,10 @@
+Package: kmod-usb-net
+Version: 3.10.14-p112871-1
+Depends: kernel (=3.10.14-p112871-1-edfb187ef19e43c9e651f479d0bc12bd), kmod-mii, kmod-usb-core
+Source: package/kernel/linux
+License: GPLv2
+Section: kernel
+Status: unknown hold not-installed
+Architecture: ramips_24kec
+Installed-Size: 13873
+Description:  Kernel modules for USB-to-Ethernet convertors

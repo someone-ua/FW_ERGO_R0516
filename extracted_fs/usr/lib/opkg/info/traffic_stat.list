@@ -1,0 +1,5 @@
+/lib/stat/dhcp_action.sh
+/lib/stat/clients_stat.sh
+/etc/config/statistics
+/usr/bin/traffic_monitor
+/usr/bin/traffic_service

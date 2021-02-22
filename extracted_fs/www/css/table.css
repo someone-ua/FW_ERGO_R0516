@@ -1,0 +1,30 @@
+a img {	border:0	}	
+
+table{width: 100%;
+	font-size:12px;
+    table-layout:fixed;
+    border:1px solid #aaa; 
+	border-left:0;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+table tbody tr{height: 25px;}
+table tbody tr:nth-child(2n){background-color: rgba(0,0,0,0.1);}
+
+table th, table td {
+    word-wrap:break-word;
+    border-left:1px solid #aaa;
+    line-height: 32px; 
+    text-align:center;
+}
+#smsListInfo td{text-align:left;}
+table td.row{overflow : hidden ;text-overflow : ellipsis ;display : -webkit-box;-webkit-box-orient : vertical ;-webkit-line-clamp : 2 ;}
+table thead th {
+    background-color:rgba(227,29,57,0.3);
+    color: #777;
+    background-image: url("../images/1.png");background-repeat: repeat; 
+}
+table th.close{border-left: none;}
+
+.sendMessage{margin-top:7px;}
+.saveLocImg{position: relative;top: 4px;}

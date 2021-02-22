@@ -1,0 +1,8 @@
+Package: traffic_stat
+Version: 2014-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog
+Source: package/services/traffic_stat
+Section: traffic_stat
+Architecture: ramips_24kec
+Installed-Size: 50038
+Description:  traffic_stat-WEB service applictions and utilities

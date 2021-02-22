@@ -1,0 +1,10 @@
+Package: rpcd-mod-diagnostic
+Version: 2016-04-13-73aea9b8b621a1ce034bc6ee00c9d058a40c8a3d
+Depends: libc, libubus, libubox, rpcd
+Source: package/system/rpcd
+License: ISC
+Section: utils
+Maintainer: Jo-Philipp Wich <jow@openwrt.org>
+Architecture: ramips_24kec
+Installed-Size: 5830
+Description:  Provides ubus calls for diagnostics data.

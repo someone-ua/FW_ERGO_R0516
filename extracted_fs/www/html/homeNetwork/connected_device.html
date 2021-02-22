@@ -1,0 +1,82 @@
+<a href='#' class='help' onclick="getHelp('ConnectedDevices')">&nbsp;</a>
+<label id="title" class="title"></label>
+    <div class="pc_device">
+		<table  id="tableConnectedDevice">
+			<thead>
+				<tr>
+					<th style="display: none">index</th>
+					<th width="18%" id="lt_Name"></th>
+					<th width="10%" id="lt_DeviceStatus"></th>
+					<th width="17%" id="lt_IpAddress"> </th>
+					<th width="20%" id="lt_Mac"> </th>
+					<th width="15%" id="lt_Connection"></th>
+					<th width="20%" id="lt_Time"></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+	<div class="phone_device">
+		<table  id="tableConnectedDevice_phone">
+			<thead>
+				<tr>
+					<th style="display: none">index</th>
+					<th width="35%" id="lt_Name"></th>
+					<th width="30%" id="lt_DeviceStatus"></th>
+					<th width="35%" id="lt_Connection"></th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+<div id="box" class="dialog" style="display: none">
+    <h1 id="h1DeviceHeader">  </h1><a href="#" onclick="CloseDlg('box');btnCancelClicked()" class="close">x</a><br style="clear:both" />
+    <div style="text-align:left; padding: 5px">
+        <label id="lModalHeader"></label><br />
+        <input type='text' id="tbModal" maxlength="16" value=""/>
+        <br />
+        <label class='error' id='ErrInvalidName'  style='display: none'></label>
+        <div class="buttonRow1">
+            <span class="btnWrp">  <button  onclick="btnOkSelected()" value="OK" id="btnModalOk"></button></span> &nbsp;&nbsp;
+            <span class="btnWrp" > <button  onclick="hm('box');btnRemoveSelected()" value="Reset" id="btnModalReset"></button></span>
+        </div>
+    </div>
+</div>
+
+<div id="DeviceInfoDiv" style="display: none">
+    <div class="popUpBox popUpBox2" id="connectdevice_traffic">
+        <h1 id="lt_DeviceInfoBoxTitle"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+            <label id="lt_Name"></label>
+            <input type="text" size="30" id="txtDeviceName" maxlength="25" disabled/>
+            <br style="clear: both" />
+			
+            <label id="lt_DeviceStatus"></label>
+            <input type="text" id="deviceStatusSel" disabled/>
+            <br style="clear: both" />
+			
+            <label id="lt_IpAddress"></label>
+            <input type="text" size="30" id="txtIpAddr" maxlength="25" disabled/>
+            <br style="clear: both" />
+			
+			<label id="lt_Mac"></label>
+			<input type="text" size="30" id="txtMac" maxlength="25" disabled/>
+			<br style="clear: both" />
+			
+			<label id="lt_Connection"></label>
+			<input type="text" size="30" id="txtConnection" maxlength="25" disabled/>
+			<br style="clear: both" />
+			
+			<label id="lt_Time"></label>
+			<input type="text" size="30" id="txtTime" maxlength="25" disabled/>
+			<br style="clear: both" />
+            
+            <div class="buttonRow1">
+                    <input id="lt_BtnOk" class="btn-apply" type="button" value="OK" onclick="CloseDlg()"/>
+            </div>
+        </div>
+    </div>
+</div>
+

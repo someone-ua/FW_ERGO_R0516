@@ -1,0 +1,9 @@
+Package: gre
+Version: 1-2
+Depends: libc
+Source: package/network/config/gre
+Section: net
+Maintainer: Hans Dedecker <dedeckeh@gmail.com>
+Architecture: ramips_24kec
+Installed-Size: 1313
+Description:  Generic Routing Encapsulation config support (IPv4 and IPv6) in /etc/config/network.

@@ -1,0 +1,204 @@
+<a href='#' class='help' onclick="getHelp('TrafficStatistics')">&nbsp;</a>
+<label id="lt_trafficSet_generalSetTitle" class="title"></label>
+
+<label id="lt_trafficSet_openOverWarn"></label>
+<select id='SelOverTrafficWarning' style="width:115px;">        	
+	<option id='lt_optEnableOverWarn' value='1'>enabled</option>
+    <option id='lt_optDisabledOverWarn' value='0'>disabled</option>        	
+</select>
+
+<div id="divTrafficOverWarningPercent">
+	<label id='lt_trafficSet_OverWarningPercent'></label>
+	<input id="txtOverWarningPercent" type="text" class="txtEditBox" style="width:100px;"/>
+	<strong> % </strong>
+</div>
+
+<label id="lt_trafficSet_stcDisconnectNetworkLabel"></label>
+<select id='SelOverTrafficDisconnect' style="width:115px;">        	
+	<option id='lt_trafficSet_stcDisconnect' value='1'>enabled</option>
+    <option id='lt_trafficSet_stcNoAction' value='0'>disabled</option>        	
+</select>
+
+<div id="divTrafficOverDisconnectPercent">
+	<label id='lt_trafficSet_OverDisconnectPercent' ></label>
+	<input id="txtOverDisconnectPercent" type="text" class="txtEditBox" style="width:100px;" />
+	<strong> % </strong>
+</div>
+
+<br />
+
+<!------------monthly traffic settings------------------>
+<label id="lt_trafficSet_MonthlyTitle" class="title"></label>
+
+<label id="lt_trafficSet_monthlyTraffciEnabledSwitch"></label>
+<select id='SelMonthlyTrafficEnabledSwitch' style="width:115px;">        	
+	<option id='lt_optEnableSwitch' value='1'>enabled</option>
+    <option id='lt_optDisabledSwitch' value='0'>disabled</option>        	
+</select>
+
+<div id="divMonthlyTrafficSet">
+	<label id='lt_trafficSet_monthlySettlementDay' ></label>
+	<input id="txtMonthlySettlementDay" type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:100px;"/>
+	<input type="button" id="lt_trafficSet_btnChangeMonthlySettlementDay" value="Change"  class="btn-apply" style="margin-left:20px;"/>
+
+	<label id='lt_trafficSet_totalAvailableTraffic'></label>
+	<input id="txtMonthlyTotalTraffic" type="text" class="txtEditBox" style="width:100px;" maxLength="9"/>
+	<select id="MonthTotaldDataUnitSel" style="width:auto;">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select>
+	<div id="monthTip" style="color:#f00;display: none;"></div>
+	<label id='lt_trafficSet_monthlyUsedTraffic'></label>
+	<input id="txtMonthlyUsedTraffic" type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:100px;"/>
+	<input id="MonthUsedDataUnitSel"  type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:30px;text-align: center;">
+	<!-- <select id="MonthUsedDataUnitSel" style="width:auto;disabled">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select> -->
+	<input type="button" id="lt_trafficSet_btnCalibrationMonthUsedTraffic" value="Change"  class="btn-apply" style="margin-left:20px;"/>
+</div>
+<br />
+
+
+<!------------idle traffic settings------------------>
+<label id="lt_trafficSet_idleTrafficSetTitle" class="title"></label>
+
+<label id="lt_trafficSet_idleTrafficEnabledSwitch"></label>
+<select id='SelIdleTrafficEnbledSwitch' style="width:115px;">        	
+	<option id='lt_optEnableSwitch' value='1'>enabled</option>
+    <option id='lt_optDisabledSwitch' value='0'>disabled</option>        	
+</select>
+
+<div id="divIdleTrafficSet">
+	<label id='lt_trafficSet_idleTime'></label>
+	<select id='SelIdleStartTime' style="width:70px;">     	
+	<!--add option value from 00:00 to 23:00 in js-->
+	</select>	
+	<strong> - </strong>
+	<select id='SelIdleEndTime' style="width:70px;">     	
+	<!--add option value from 00:00 to 23:00 in js-->
+	</select>	
+
+	<label id='lt_trafficSet_totalIdleTraffic'></label>
+	<input id="txtIdleTotalTraffic" type="text" class="txtEditBox" style="width:100px;" maxLength="9"/>
+	<select id="IdleTotaldDataUnitSel" style="width:auto;">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select>
+	<div id="idleTip" style="color:#f00;display: none;"></div>
+	<label id='lt_trafficSet_idleUsedTraffic'></label>
+	<input id="txtIdleUsedTraffic" type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:100px;"/>
+	<input id="idleUsedDataUnitSel"  type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:30px;text-align: center;">
+	<!-- <select id="idleUsedDataUnitSel" style="width:auto;disabled;readonly">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select> -->
+	<input type="button" id="lt_trafficSet_btnCalibrationIdleUsedTraffic" value="Change"  class="btn-apply" style="margin-left:20px;"/>
+</div>
+<br />
+
+
+<!------------period traffic settings------------------>
+<label id="lt_trafficSet_periodTrafficSetTitle" class="title"></label>
+
+<label id="lt_trafficSet_periodTrafficEnabledSwitch"></label>
+<select id='SelPeriodTrafficEnbledSwitch' style="width:115px;">        	
+	<option id='lt_optEnableSwitch' value='1'>enabled</option>
+    <option id='lt_optDisabledSwitch' value='0'>disabled</option>        	
+</select>
+
+<div id="divPeriodTrafficSet">
+	<label id='lt_trafficSet_PeriodDate'></label>
+	<input name="time" type="text" maxlength="4"  id="txtStartDate1" class="sml" /> <strong>/</strong>
+    <input name="time" type="text" maxlength="2"  id="txtStartDate2" class="sml" /> <strong>/</strong>
+    <input name="time" type="text" maxlength="2"  id="txtStartDate3" class="sml" /> <strong> - </strong>
+    <input name="time" type="text" maxlength="4"  id="txtEndDate1" class="sml" /> <strong>/</strong>
+    <input name="time" type="text" maxlength="2"  id="txtEndDate2" class="sml" /> <strong>/</strong>
+    <input name="time" type="text" maxlength="2"  id="txtEndDate3" class="sml" />
+
+	<label id='lt_trafficSet_totalPeriodTraffic'></label>
+	<input id="txtPeriodTotalTraffic" type="text" class="txtEditBox" style="width:100px;" maxLength="9"/>
+	<select id="PeriodTotaldDataUnitSel" style="width:auto;">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select>
+	<div id="PeriodTip" style="color:#f00;display: none;"></div>
+	<label id='lt_trafficSet_PeriodUsedTraffic'></label>
+	<input id="txtPeriodUsedTraffic" type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:100px;"/>
+	<input id="PeriodUsedDataUnitSel"  type="text" class="txtEditBox" readonly="readonly" disabled="disabled" style="width:30px;text-align: center;">
+	<!-- <select id="PeriodUsedDataUnitSel" style="width:auto;disabled">        
+		<option value="1">KB</option>        
+		<option value="2">MB</option>        
+		<option value="3">GB</option>     
+	</select> -->
+	<input type="button" id="lt_trafficSet_btnCalibrationPeriodUsedTraffic" value="Change" class="btn-apply" style="margin-left:20px;"/>
+</div>
+
+<label id="trafficSetErrorLogs" class="error" style="display:none;magin-left:50px;"></label>
+
+<br />
+
+
+
+<div class="right_align" >
+	<!-- <input type='button' id='lt_trafficSet_btnClearData' style="width:80px" class="btn-apply"/> -->
+	<input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/>
+</div>
+
+
+<!---traffic data calibration dialog---->
+<div id="divTrafficSetting" style="display: none">    
+	<div class="popUpBox popUpBox2">        
+		<h1 id="lt_trafficSet_stcTrafficSettingTitle"></h1>        
+		<a href="#" class="close" onclick="CloseDlg()">x</a>      
+		<div class="pBoxCont">            
+			<label id='lt_trafficSet_stcTrafficSettingLabel' style="margin-left:40px;width:auto;"></label>
+			<div style="height: 25px;">
+				<div style="float:left;">
+					<input type="text" maxLength="9" id="txtNewTrafficData" class='textfield1' style="width:100px;margin-left:10px;"/>
+				</div>
+				<div style="float:left;">			
+					<select id="newTrafficSel" style="width:auto;margin-left:3px;">
+						<option value="1">KB</option>                
+						<option value="2">MB</option>                
+						<option value="3">GB</option>            
+					</select>
+				</div>
+			</div>        
+			<div id="lTrafficSetError" class="error" style="clear:both;"></div>
+		</div>  
+		
+		<div class="buttonRow1 right_align">
+			<input id="lt_btnSave" type="button" class="btn-apply" />
+            <input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+        </div>
+	</div>
+</div>
+
+<!---monthly settlement day config dialog---->
+<div id="divMonthlySettlementDaySetting" style="display: none">    
+	<div class="popUpBox popUpBox2">        
+		<h1 id="lt_trafficSet_MonthlySettlementDayTitle"></h1>        
+		<a href="#" class="close" onclick="CloseDlg()">x</a>        
+		<div class="pBoxCont">            
+			<label id='lt_trafficSet_monthlySettlementDay' style="margin-left:40px;width:auto;"></label>
+			<select id='selMonthlySettleDay' style="width:70px;">     	
+			<!--add option value from1 to 31 in js-->
+			</select>		
+		</div>  
+		
+		<div class="buttonRow1 right_align">
+			<input id="lt_btnSave" type="button" class="btn-apply" />
+            <input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+        </div>
+	</div>
+</div>
+
+
+
+

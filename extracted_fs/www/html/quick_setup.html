@@ -1,0 +1,126 @@
+<a href='#' class='help quick' onclick="getHelp('QuickSetup')">?</a>
+<div>
+    <div class="title_row">
+        <span id="lt_qs_h1UserSettings" onclick="showDiv('divQsUserNamePage')"></span>
+        <span id="lt_qs_h1InternetConnection" onclick="showDiv('divQsInternetConnPage')"></span>
+        <span id="lt_qs_h1WirelessSeetings" onclick="showDiv('divQsWifiSetPage')"></span>
+        <span id="lt_qs_h1WirelessSeetings_5G" class="wifi5G_qs" onclick="showDiv('divQsWifiSetPage5G')"></span>
+        <span id="lt_qs_h1DevicePlaceGuid" onclick="showDiv('divQsDeviceGuidePage')"></span><br class="clear" />
+    </div>
+    <div id="divQsUserNamePage" style="display: none">
+        <div class="content contQS">
+				<div class="formBox" style="padding: 10px 0 2px 0">
+                <h1 id="lt_qs_h1UserSettings"></h1>
+                 <span class="subhdng" id="lt_qs_h1UserSettingsHeader"></span>
+            </div>
+					  <input type="password" style="display:none;">
+						<label id="lt_EnterPassword">Enter Current Password:</label>
+						<input name="" type="password" maxlength="20" id="txtpwd" class="textfield">
+						<br style="clear:both">
+						<label id="lt_EnterNewPassword1">Enter New Password:</label>
+						<input name="" type="password" maxlength="20" id="txtQsPasswd" class="textfield" onpaste="return false" >
+						<ul class="pwdCharge">
+							<li id="lt_pwd_Low" class="pwd_list">low</li>
+							<li id="lt_pwd_Medium" class="pwd_list">medium</li>
+							<li id="lt_pwd_High" class="pwd_list">high</li>
+						</ul>
+						<br style="clear:both"  />
+						<div id="divConfirmPasswd" style='display: none'>
+							<label id="lt_EnterNewPassword2">Confirm New Password:</label>
+							<input name="" type="password" maxlength="20" id="txtQsRePasswd" class="textfield">
+						</div>
+						<div align='left'>
+								<label class='error' id='lPassErrorMes'  style='display: none'></label>
+						</div>
+            <div class="formBox">&nbsp;</div>
+            <div align="right">
+                <a id="lt_qs_btnExit" onClick="ExitQuickSetup()" class="exit">Exit Setup</a>
+				<input type='button' id='lt_qs_btnNext' value='Save' onclick='SaveQsAccountSet()' class="btn-apply"/>     
+            </div>
+        </div>
+    </div>
+    <div id="divQsInternetConnPage" style="display: none">
+        <div class="content contQS">
+            <br style="clear: both" />
+            <div class="formBox" style="padding: 10px 0 2px 0">
+                <h1 id="lt_qs_lInterConnQS"></h1>
+            </div>
+            <div id="divInternetConnectSet">
+            </div>
+            <div class="formBox">
+                &nbsp;</div>
+            <div align="right">
+                <a id="lt_qs_btnExit" onclick="ExitQuickSetup()" class="exit">Exit Setup</a>
+                <input type='button' id='lt_qs_btnBack' onclick='showDiv("divQsUserNamePage")' class="btn-apply"/>  
+                <input type='button' id='lt_qs_btnNext' onclick='SaveQsInternetConnSet()' class="btn-apply"/>               
+            </div>
+        </div>
+    </div>
+    <div id="divQsWifiSetPage" style="display: none" >
+        <div class="content contQS">
+           <br style="clear:both" />
+            <div class="formBox" style="padding: 10px 0 2px 0">
+                <h1 id="lt_qs_h1WirelessSeetings"></h1>
+            </div> 
+             <div id="divPrimaryNetworkSet">
+            </div>
+            <div class="formBox">
+                &nbsp;</div>
+
+           <div align="right">
+                <a id="lt_qs_btnExit" onClick="ExitQuickSetup()" class="exit">Exit Setup</a>
+                <input type='button' id='lt_qs_btnBack' onclick='showDiv("divQsInternetConnPage")' class="btn-apply"/>  
+                <input type='button' id='lt_qs_btnNext' onclick='SaveQsWifiSet()' class="btn-apply"/>       
+            </div>
+        </div>
+    </div>
+    <div id="divQsWifiSetPage5G" style="display: none" >
+        <div class="content contQS">
+           <br style="clear:both" />
+            <div class="formBox" style="padding: 10px 0 2px 0">
+                <h1 id="lt_qs_h1WirelessSeetings_5G"></h1>
+            </div> 
+            <div id="divPrimaryNetworkSet_5G"></div>
+            <div class="formBox">&nbsp;</div>
+
+           <div align="right">
+                <a id="lt_qs_btnExit" onClick="ExitQuickSetup()" class="exit">Exit Setup</a>
+                <input type='button' id='lt_qs_btnBack' onclick='showDiv("divQsWifiSetPage")' class="btn-apply"/>  
+                <input type='button' id='lt_qs_btnNext' onclick='SaveQsWifiSet5G()' class="btn-apply"/>       
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="divQsDeviceGuidePage" style="display: none" >
+        <div class="content contQS">
+
+            <div class="formBox" style="padding: 10px 0 2px 0">
+                <h1 id="lt_qs_h1DevicePlaceGuid"></h1>
+            </div>
+            <label id="lt_qs_lDevicePlaceGuidText" style="display: block"></label>
+
+            <div class="devices">
+                <img src="images/Micro.gif" alt="" /> <label id="lt_qs_Microwave"></label>
+            </div><div class="devices">
+                <img src="images/BlueTooth.gif" alt="" /> <label id="lt_qs_Bluetooth_Devices"></label>
+            </div><br class="clear" />
+            <div class="devices">
+                <img src="images/WalkyTalky.gif" alt="" /><label id="lt_qs_Cordless_Phone"></label>
+            </div><div class="devices">
+                <img src="images/Dect.gif" alt="" /><label id="lt_qs_ownDevices"> </label>
+            </div><br class="clear" />
+            <div class="devices">
+                <img src="images/BabyMonitor.gif" alt="" /> <label id="lt_qs_Baby_Monitor">  </label>
+            </div>
+            <br class="clear" /><br class="clear" /><div class="formBox">&nbsp;</div>
+            <div align="right">
+            	<input type='button' id='lt_qs_btnBack' onclick='showDiv("divQsWifiSetPage")' class="btn-apply wifiBackBtn" style="display: none;"/>
+            	<input type='button' id='lt_qs_btnBack' onclick='showDiv("divQsWifiSetPage5G")' class="btn-apply wifiBackBtn5G" style="display: none;"/>
+                <input type='button' id='lt_qs_btnNext' onclick='ExitQuickSetup()' class="btn-apply"/>
+            </div>
+        </div>
+    </div>
+    <br class="clear" /><br class="clear clearCrm" /><br class="clear clearCrm" />
+</div>

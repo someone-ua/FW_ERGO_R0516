@@ -1,0 +1,105 @@
+#!/bin/sh
+
+[ "${ACTION}" = "released" ] || exit 0
+
+. /lib/functions.sh
+[ -e /tmp/keytest ] && {
+	echo restore >> /tmp/keytest
+}
+
+logger "$BUTTON pressed for $SEEN seconds"
+
+seen_t=$SEEN
+need_start_wifi=0
+wps_ra0=0
+wps_rai0=0
+wps_ra0_ifname=
+wps_rai0_ifname=
+
+if [ -d "/proc/wps_key" ]
+then
+	if [ "$seen_t" -le 5 ]
+	then
+		logger "restory press $seen_t s"	
+		exit 0
+	fi
+fi
+
+if [ "$seen_t" -gt 5 ] 
+then
+	echo "FACTORY RESET" > /dev/console
+	for sd in /mnt/*; do
+            sd=`echo $sd | grep "mmc" | grep "p"`
+            [ -z "$sd" ] &&  continue
+            umount $sd
+	done
+        killall TRAFFIC
+        killall wireless
+	fw_setenv apn_update 1
+	jffs2reset -y && reboot &
+	exit 0
+else
+	devices=`uci show wireless | grep "=wifi-device" | sed -n "s/=wifi-device//gp"`
+	
+	for device in $devices; do
+		disabled=`uci -q get ${device}.disabled`
+	  	[ "${disabled}" = "0" ] || continue
+	  	wps_en=`uci -q get ${device}.wsc_confmode`
+	  	[ "${wps_en}" = "0" ] && continue
+	  
+		band=`uci -q get ${device}.band`
+		if [ "$band" == "2.4G" ]
+		then
+			wps_ra0=1
+		elif [ "$band" == "5G" ]
+		then
+			wps_rai0=1
+		fi 
+	done
+	vifs=`uci show wireless | grep "=wifi-iface" | sed -n "s/=wifi-iface//gp"`
+	for vif in $vifs; do
+		ssid_disabled=`uci -q get ${vif}.disabled`
+		[ "${ssid_disabled}" = "0" ] || continue
+		project=`cat /etc/operator`
+		[ "$project" = "Uganda" ] && {
+			wps_disabled=`uci -q get ${vif}.wps_pushbutton`
+			[ "${wps_disabled}" = "1" ] || continue
+		}
+		wep_encry=`uci -q get ${vif}.encryption | grep wep`
+		[ -z $wep_encry ] || continue
+		hidden=`uci -q get ${vif}.hidden`
+		[ "${hidden}" = "0" ] || continue
+		
+		dev=`uci -q get ${vif}.device`
+		if [ "${wps_ra0}" == "1" -a "${dev}" = "mt7628" ]
+		then
+			[ -z "$wps_ra0_ifname" ] && {
+				wps_ra0_ifname=`uci -q get ${vif}.ifname`
+			}
+		elif [ "${wps_rai0}" == "1" -a "${dev}" = "mt7612e" ]
+		then
+			[ -z "$wps_rai0_ifname" ] && {
+				wps_rai0_ifname=`uci -q get ${vif}.ifname`
+			}
+		fi 
+	done	
+fi
+
+if [ ! -z "$wps_ra0_ifname" ]
+then
+	ifname=$wps_ra0_ifname
+elif [ ! -z "$wps_rai0_ifname" ]
+then
+	ifname=$wps_rai0_ifname
+else	
+	logger "wps unvailable"
+	exit 0
+fi 
+echo 1 > /sys/class/leds/wps/brightness
+iwpriv ${ifname} set WscConfMode=7
+iwpriv ${ifname} set WscConfStatus=2
+iwpriv ${ifname} set WscMode=2
+iwpriv ${ifname} set WscGetConf=1
+logger "ifname=$ifname"
+ubus send wps.stat.action ' { "stat" : "up" } '
+

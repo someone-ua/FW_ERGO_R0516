@@ -1,0 +1,111 @@
+<a href='#' class='help' onclick="getHelp('WirelessMACFilters')">&nbsp;</a>
+  <label id="lt_portTrigger_title" class="title"></label>
+    <div id="portTriggerNote" class="noteBox">
+			<p id="lt_portTriggerNote_title" class="note_title"></p>
+			<ul>
+				<li>
+					<strong id="lt_portTrigger_outProtocol"></strong>
+					<span id="lt_portTriggerNote_outProtocol"></span>
+				</li>
+				<li>
+					<strong id="lt_portTrigger_outport"></strong>
+					<span id="lt_portTriggerNote_outport"></span>
+				</li>
+				<li>
+					<strong id="lt_portTrigger_inProtocol"></strong>
+					<span id="lt_portTriggerNote_inProtocol"></span>
+				</li>
+				<li>
+					<strong id="lt_portTrigger_inport"></strong>
+					<span id="lt_portTriggerNote_inport"></span>
+				</li>
+			</ul>
+		</div>
+    <br style="clear:both" />
+		<label id="lt_portTrigger_ListLabel" class="left"> </label>
+    <div class="right">
+    	<input type='button' id='lt_portTrigger_btnDelete' value='delete' class="btn-apply" style="display:none;"/> 
+    	<input type='button' id='lt_portTrigger_btnAdd' value='add' class="btn-apply"/>    	
+    </div>
+		<br class="clear">
+    <div class="pc_device clearFloat">
+				<table id="tableIpFilter">
+					<thead>
+							<tr>         
+									<th width="16%" id="lt_portTrigger_rule" ></th>       
+									<th width="16%" id="lt_portTrigger_outport"></th>
+									<th width="16%" id="lt_portTrigger_inport" ></th>              
+									<th width="15%" id="lt_portTrigger_outProtocol"> </th>
+									<th width="15%" id="lt_portTrigger_inProtocol" ></th>
+									<th width="12%" id="lt_portTrigger_status"> </th>
+									<th width="10%"><input type="checkbox" id="DeleteAllIpEntry"></th>
+							</tr>                
+					</thead>
+					<tbody id="tbodyPortTrigger"></tbody>
+			</table>
+		</div>
+		<div class="phone_device clearFloat">
+				<table id="tableIpFilter_phone" >
+					<thead>
+							<tr>         
+									<th width="27%" id="lt_portTrigger_rule" ></th>       
+									<th width="27%" id="lt_portTrigger_outport"></th>
+									<th width="27%" id="lt_portTrigger_status"></th>
+									<th width="19%"><input type="checkbox" id="DeleteAllIpEntry"></th>
+							</tr>                
+					</thead>
+					<tbody id="tbodyPortTrigger_phone"></tbody>
+			</table>
+		</div>
+    <div id="divPortTriggerSetDlg" style="display: none" >
+        <div class="popUpBox popUpBox2" style="width:600" >
+            <h1 id="lt_portTrigger_PortTriggerSetDlgTitle" style="width:550"></h1>
+	        <a href="#" class="close" onclick="CloseDlg()">x</a>
+            <div class="pBoxCont" >  
+            	<label id="lt_portTrigger_rule"></label>
+            	<input type="text" id="txtPortTriggerRule" maxlength="30"  class="txtEditBox" /> 
+				<br style="clear:both" />
+            	
+                <label id="lt_portTrigger_inport"></label>
+                <input name="port" type="text" maxlength="5"  id="txtInPort1" class="sml_port" /> 
+                <br style="clear:both" />
+
+                <label id="lt_portTrigger_outport"></label>
+                <input name="port" type="text" maxlength="5"  id="txtOutPort1" class="sml_port" /> 
+                <br style="clear:both" />
+
+				<label id="lt_portTrigger_inProtocol"></label>
+                <select id="selPortTriggerInProtocol">
+                    <option value="tcp">TCP</option>
+                    <option value="udp">UDP</option>
+					<option value="tcpudp">TCP/UDP</option>      
+                    <!-- <option value="all">All</option>  -->  
+                </select>
+
+                <label id="lt_portTrigger_outProtocol"  class="clear"></label>
+                <select id="selPortTriggerOutProtocol">
+                    <option value="tcp">TCP</option>
+                    <option value="udp">UDP</option>      
+                    <option value="tcpudp">TCP/UDP</option>      
+                    <!-- <option value="all">All</option>    -->
+                </select>
+				
+				
+                <label id="lt_portTrigger_status"></label>
+                <select id="selPortTriggerStatus">
+                    <option value="1" id="lt_optEnableSwitch">enabled</option>
+                    <option value="0" id="lt_optDisabledSwitch">disabled</option>    
+                </select>
+                <br/>
+    
+                <label id="lPortTriggerSetError" class="lable13 error" style="display: none"></label>
+
+                <div class="buttonRow1 right_align">
+					<input id="lt_btnSave" type="button" class="btn-apply" />
+            		<input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+            	</div>
+
+            </div>
+        </div>
+      </div>
+

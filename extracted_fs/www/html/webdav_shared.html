@@ -1,0 +1,203 @@
+
+<style type="text/css"> 
+.graph{ 
+width:400px; 
+border:1px solid #FFFFFF; 
+height:25px; 
+} 
+#bar{ 
+display:block; 
+background:#6CAF00; 
+float:left; 
+height:100%; 
+text-align:center; 
+} 
+#barNum{ 
+position:absolute; 
+} 
+.changeColor{
+	background-color:#4babf5;
+}
+#webdav_Back_label:hover,#webdav_Back_label:active {text-decoration:underline;}
+</style>
+
+<div id="ol" style="display: none; position: absolute; top: 0px; left: 0px; z-index: 998; width: 1746px; height: 492px;"></div>
+
+<div id="mbox" style="display: none; position: absolute; z-index: 999; top: 268.5px; left: 536px; width: 650px; height: 320px;">
+	<div id="mbd"></div>
+</div>
+
+<div id="alertMB" style="display: none">
+
+    <h1 id="lAlert"></h1>
+
+    <a href="#" class="close" onclick="CloseDlg()"><img src="images/close-icon.gif" alt="" /></a><br style="clear:both" />
+
+ <div align="center">
+     <label id="lAlertMessage" class="lable12" style="padding-right: 25px;"></label>
+    <br style="clear:both" />
+    <div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+       <input id="btnModalOk" class="btn-apply" type="button"  value="OK" />
+	</div>
+ </div>
+
+</div>
+
+<div id="alertMBExit" style="display: none">
+
+    <h1 id="lAlertExit"></h1>
+
+    <a href="#" class="close" onclick="shareExit()"><img src="images/close-icon.gif" alt="" /></a><br style="clear:both" />
+
+ <div align="center">
+     <label id="lAlertMessageExit" class="lable12" style="padding-right: 25px;"></label>
+    <br style="clear:both" />
+    <div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+       <input id="btnModalOkExit" class="btn-apply" type="button"  value="OK" onclick="shareExit()" />
+	</div>
+ </div>
+
+</div>
+<div id="confirmDlg" style="display: none">
+    <h1 id="lt_confirmDlg_title"></h1>
+    <a href="#" class="close" onclick="CloseDlg()">x</a>
+ 	<div align="center">
+     	<label id="lt_confirmDlg_msg" class="lable12"></label>
+    	<br style="clear:both" />
+    	<div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+    		<input id="lt_btnConfirmYes" type="button"  class="btn-apply" />
+        	<input id="lt_btnConfirmNo" type="button"  onclick="CloseDlg()" class="btn-apply" />
+		</div>
+    </div>
+</div>
+<div id="mbox"  style="display: none">
+    <div class="" id="PleaseWait" >
+
+        <div align="center">
+            <br />
+            <img src="images/PleaseWait.png" alt="..." class="loading" id="WaitPic" />
+            <br />
+            <label id="lPleaseWait"></label>
+        </div>
+    </div>
+</div>
+
+
+<div id="mkdirInfoDlg" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="mkdirInfoDlgTitle">Create Folder</h1>
+        <a href="#" class="close">
+            <img src="images/close-icon.gif" alt="" onclick="CloseDlg()"/></a><br style="clear: both" />
+        <div class="pBoxCont">
+            <br style="clear: both" />
+            <label id="mkdir_stcName">Please input folder name</label>
+            <input name="" type="text" size="30" id="mkdirtxtName" maxlength="99"/>
+            <br style="clear: both" />            
+            <label id="mkdir_stcSaveLoc">
+            </label>           
+
+            <p id="mkdir_stcInputCheckout" style="text-align:center;color:red;display:none;">mkdir_stcInputCheckout</p>
+            <div class="buttonRow1">
+                    <input id="lt_Mkdir_btnSave" class="btn-apply" type="button" value="OK"/>
+                    <input id="mkdir_stcCancelView" onclick="CloseDlg()" class="btn-apply" type="button" value="cancel"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="webdavuploadscheduleDlg" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="webdavuploadscheduleDlgTitle">Upload Schedule</h1>
+        <a href="#" class="close">
+            <img src="images/close-icon.gif" alt="" onclick="WebDav_Shared_Upload_Cancel()"/></a><br style="clear: both" />
+        <div class="pBoxCont">
+            <br style="clear: both" />
+            <div id="webdavuploadschedule_FileName"></div>
+            <div class="graph"> 
+				<strong id="bar" style="width:0%;"></strong>
+			</div>
+            <br style="clear: both" />         
+
+            <div class="buttonRow1">
+                    <input id="webdavuploadschedule_pause" style="width:86px;" type="button" class="btn-apply" value="Pause" onClick="WebDav_Shared_Upload_Pause()"/>
+                    <input id="upload_stcCancelView" type="button" class="btn-apply" value="cancel" onClick="WebDav_Shared_Upload_Cancel()"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<body onload="initIndex()" class="loginBody">
+<div class="shareFilebox" id="divAdminApp">	
+	<span class="notion_logo" style="padding-left:92px;">&nbsp;</span>
+	<br class="clear" />
+	<div class="box1">
+		
+		<div class="title_box">
+			<label id='lTitleShareFile' style="font-weight: bold">LTE Wireless Router APX-88 , Shared SD Card File</label>
+		</div>
+		<div class="box2">
+		   <a href="#." id="ShareFileBack" onclick="logOut()">Exit</a>
+		</div>
+								
+		<div class="box3">
+			<div id="webdav_shared_function" align="right" style="display: none"> 
+				<span  id="webdav_Shared_Download_Button" style="display: none">
+			    <input type='btnWrp' id='webdavSharedDownload' class="btn-apply" value='Download' style="width:100px; color:#333"/>
+			    </span>
+			    <span  id="webdav_Shared_Delete_Button">
+			    <input type='button' id='webdavSharedDelete' class="btn-apply" value='Delete'  style="width:100px; color:#333">
+			    </span>
+			    <span  id="webdav_Share_Button" style="display: none">
+			    <input type='button' id='webdavShare' class="btn-apply" value='Share'  style="width:100px; color:#333">
+			    </span>  
+				<span  id="webdav_Shared_Upload_Button" style="width:86px;">
+				<input type="file" name="WebdavSharedFileToUpload" id="WebdavSharedFileToUpload" style="position:absolute; width:80px;height:30px;left:1260; filter:alpha(opacity:0);opacity: 0;"/>
+			    <input type='button' id='webdavSharedUpload' class="btn-apply" value='Upload' style="width:100px; color:#333"/>   
+			    </span>
+			    <span  id="webdav_Shared_Mkdir_Button">
+			    <input type='button' id='webdavSharedMkdir'class="btn-apply" style="width:100px; color:#333" value='Mkdir' />
+			    </span>
+			</div>	
+
+			<div id="webdav_Shared_Path_NoRoot" style="display: none">
+			<a id="webdav_Shared_Back_label" href="#" style="font-size:12pt" onclick="WebDav_Shared_BackOnClick()">Back</a>
+			<a href="#" style="color:black;">  |  </a>
+			<a id="webdav_Shared_Path_record" style="color:black; font-weight:bold;">All Shared File</a>
+			</div>
+
+			<div id="webdav_Shared_Path_Root" style="display: none">
+			<a href="#" style="color:black;font-weight:bold;">All Shared File</a>
+			</div>
+
+			<table width="100%" class="webdav_example dataTbl10  table-stripeclass:alternate" style="margin-top: 5px" id="tableSMS">
+			        <thead>
+			            <tr>
+							<th width="8%" name="DeleteAll">
+			                    <div>
+			                        <input align="right" type="checkbox" class="chk11" id="deleteSharedAllWebdavFile">
+			                    </div>
+			                </th>
+			                <th width="62%" id="webdav_Shared_name" name="Name" onclick="WebDav_Shared_NameOrderOnClick()">Name<img id="NameOrder" src=../images/ico_webdav_up.png style="display: none"></th>
+			                <th width="10%" id="webdav_Shared_size" name="Size" onclick="WebDav_Shared_SizeOrderOnClick()">Size<img id="SizeOrder" src=../images/ico_webdav_up.png style="display: none"></th>
+			                <th width="20%" id="webdav_Shared_date" name="Date" onclick="WebDav_Shared_FileDateOrderOnClick()">Date modified<img id="FiledateOrder" src=../images/ico_webdav_up.png style="display: none"></th>
+
+			            </tr>
+			        </thead>
+			        <tbody id="WebdavSharedFileListInfo">
+			        </tbody>
+			</table>
+		</div>								
+								
+		<div>
+			<label id="lacopyright_share" class="copy" style="align:left">Copyright 2010, All Rights Reserved, LTE International Ltd.</label>
+			<label id="version_share" class="version"></label>
+			<label id="last_login_share" class="copy" style="align:left" ></label>
+		</div>   
+
+	</div>
+</div>        
+</body>
+
+<label id="ShareFile_Path_record" style="display: none"></label>

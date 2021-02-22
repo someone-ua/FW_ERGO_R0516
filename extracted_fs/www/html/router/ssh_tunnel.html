@@ -1,0 +1,50 @@
+<a href='#' class='help' onclick="getHelp('SSHTunnel')">&nbsp;</a>
+<label id="lt_ssh_title"  class="title">SSH Tunnel Settings</label>
+<label id="lt_ssh_generate">生成密钥文件</label>
+<input type="button" class="btn-apply" id="lt_ssh_generate_btn">
+<label id="lt_ssh_download">下载公共密钥文件</label>
+<input type="button" class="btn-apply" id="lt_ssh_download_btn">
+
+<label id="lt_ssh_switch">SSH Tunnel 开关</label>
+<select id="SSHTunnel_switch">
+	<option id="lt_optEnableSwitch" value="1"></option>
+	<option id="lt_optDisabledSwitch" value="0"></option>
+</select>
+
+<div id="div_sshTunnel_switch">
+	<input type="text" style="display:none">
+	<label for="text_ssh_username" id="lt_ssh_username">服务器用户名</label>
+	<input type="text" id="text_ssh_username" class="textfield">
+	<label for="text_ssh_hostname" id="lt_ssh_hostname">服务器IP/域名</label>
+	<input type="text" id="text_ssh_hostname" class="textfield">
+	<label id="lt_ssh_tunnelMode">Tunnel Mode</label>
+	<select id="tunnelModeSelect">
+		<option id="lt_ssh_modeLoacl" value="tunnelL">Local Port Forwarding</option>
+		<option id="lt_ssh_modeRemote" value="tunnelR">Remote Port Forwarding</option>
+		<option id="lt_ssh_modeSock" value="tunnelD">SOCKS4\5 Proxy</option>
+	</select>
+	<div id="localPort">
+		<label id="lt_ssh_remoteAddress">Remote Address</label>
+		<input type="text" id="localPort_remoteaddress" class="textfield">
+		<label id="lt_ssh_remotePort">Remote Port</label>
+		<input type="text" id="localPort_remoteport" class="textfield">
+		<label id="lt_ssh_localPort">Local Port</label>
+		<input type="text" id="localPort_localport" class="textfield">
+	</div>
+	<div id="remotePort">
+		<label id="lt_ssh_loaclAddress">Local Address</label>
+		<input type="text" id="remotePort_remoteaddress" class="textfield">
+		<label id="lt_ssh_remotePort">Remote Port</label>
+		<input type="text" id="remotePort_remoteport" class="textfield">
+		<label id="lt_ssh_localPort">Local Port</label>
+		<input type="text" id="remotePort_localport" class="textfield">
+	</div>
+	<div id="sockPort">
+		<label id="lt_ssh_localPort">Local Port</label>
+		<input type="text" id="sockPort_localport" class="textfield">
+	</div>
+</div>
+<div id="ssh_infoError" class="error"></div>
+<div class="right_align">
+	<input style="margin-top:15px;" type="button" id="lt_btnApply"  class="btn-apply">
+</div>

@@ -1,0 +1,83 @@
+<a href='#' id='lt_interCon_helper' class='help' onclick="getHelp('InternetConnection')">&nbsp;</a>
+<label id="lt_interCon_title" class="title"></label>
+<div>
+<label id='lt_interCon_internetConnMode'></label>
+<select id='SelInterConnMode'>
+    <option id='lt_interCon_disabledMode' value='disabled'>Disabled</option>
+    <option id='lt_interCon_cellularMode' value='cellular'>Cellular</option>
+</select>
+</div>
+
+<div id='divCellularConn' style='display: block'>  
+	<div id='divAutoVersionSwitch' style='display: none;'>
+		<label id='lt_interCon_AutoVersionSwitch'></label>
+	    <select id="SelAutoVersionSwitch">
+	        <option value='0' id="lt_optDisabledSwitch"></option>
+	        <option value='1' id="lt_optEnableSwitch"></option>
+	    </select>
+	</div>
+	<div id='divVersionSwitch' style='display: none;'>
+	    <label id='lt_interCon_VersionSwitch'></label>
+	    <select id="SelVersionSwitch">
+	        <option value='0' id="LWGVersion">WCDMA</option>
+	        <option value='1' id="LTGVersion">TD-SCDMA</option>
+	    </select>
+    </div>
+    <div id='divNetworkMode' style='display: none;'>
+	    <label id='lt_interCon_NetworkMode'></label>
+	    <select id='selWorkMode'>
+	        <!-- <option id='lt_interCon_dropdownMultimode' value='1'>4G/3G/2G multimode</option>
+	        <option id='lt_interCon_dropdown4Gonly' value='2'>4G only</option>
+	        <option id='lt_interCon_dropdown43Gonly' value='3'>4G/3G</option>
+	        <option id='lt_interCon_dropdown32Gonly' value='4'>3G/2G</option>
+	        <option id='lt_interCon_dropdown3Gonly' value='5'>3G only</option>
+	        <option id='lt_interCon_dropdown2Gonly' value='6'>2G only</option> -->
+	    </select>
+    </div>
+    
+    <div id='divEngmode' style='display: none;'>
+    <label id='lt_interCon_EngmodeSwitch'></label>
+    <select id="SelEngModeSwitch">
+        <option value='0' id="lt_optDisabledSwitch"></option>
+        <option value='1' id="lt_optEnableSwitch"></option>
+    </select>
+    </div>
+    
+    <div id='div4G3G2GPrefer' style='display: none'>
+        <label id='lt_interCon_preferredNetworkMode'></label>
+        <select id='sel4G3G2GPreferMode'>
+            <option id='lt_interCon_dropdown4GPre' value='1'>4G Preferred</option>
+            <option id='lt_interCon_dropdown3GPre' value='2'>3G Preferred</option>
+            <option id='lt_interCon_dropdown2GPre' value='8'>2G Preferred</option>
+        </select>
+    </div>
+    <div id='div4G3GPrefer' style='display: none'>
+        <label id='lt_interCon_4g3gPreferNetMode'></label>
+        <select id='sel4G3GPreferMode'>
+            <option id='lt_interCon_dropdown4GPre' value='3'>4G Preferred</option>
+            <option id='lt_interCon_dropdown3GPre' value='4'>3G Preferred</option>
+        </select>
+    </div>
+    <div id='divLtePrefer' style='display: none'>
+        <label id='lt_interCon_LtePreferNetMode'></label>
+        <select id='selLtePreferMode'>
+            <option id='lt_interCon_dropdownTDPre' value='0'>TD-LTE preferred</option>
+            <option id='lt_interCon_dropdownFDDPre' value='1'>FDD-LTE preferred</option>
+        </select>
+    </div>
+    <div id='div3G2GPrefer' style='display: none'>
+        <label id='lt_interCon_3g2gPreferNetMode'></label>
+        <select id='sel3G2GPreferMode'>
+            <option id='lt_interCon_dropdown3GPre' value='5'>3G Preferred</option>
+            <option id='lt_interCon_dropdownAuto' value='6'>Auto</option>
+        </select>
+    </div>
+</div>
+
+<div style="padding:12px 0;" id="roamBox" style="display:none">
+    <span id="lt_interCon_RoamTitle" style="color:#666;font-weight:600;margin-right:45px;">Data roaming:</span>
+    <input type="radio" name="roaming" value="1"><span id="lt_EnabledDialInRoaming">Enable</span>
+    <input type="radio" name="roaming" value="0" style="margin-left:20px;"><span id="lt_DisabledDialInRoaming">Disable</span>
+</div>
+
+<div class="right_align" id="divSaveInternetConn"><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/></div>

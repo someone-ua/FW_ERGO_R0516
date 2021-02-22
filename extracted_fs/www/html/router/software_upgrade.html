@@ -1,0 +1,111 @@
+<a href='#' class='help' onclick="getHelp('SoftwareUpgrade')">&nbsp;</a>
+<label id="lt_sw_title" class="title"></label>
+<div id="softwareNote" class="noteBox">
+	<p id="lt_swNote_list1" class="note_list"></p>
+	<p id="lt_swNote_list2" class="note_list"></p>
+	<p id="lt_swNote_list3" class="note_list"></p>
+</div>
+<div class="formBox">
+    <!--label id='lt_sw_versionInfoTitle' ></label-->
+    <table cellpadding="0" cellspacing="0" width="100%" border="0" class="software_table">
+        <tr style="background:0;">
+            <td style="text-align:left">
+                <label id='lt_sw_CurrentSoftVersion'></label>    
+            </td>
+             <td style="text-align:left"> 
+                <label id='txtCurrentSoftwareVersion'></label>
+            </td>          
+        </tr>
+        <tr>
+        	<td style="text-align:left">
+                <label id='lt_sw_CurrentSoftwareDate'></label>    
+            </td>
+            <td style="text-align:left"> 
+                <label id='txtCurrentSoftwareDate'></label>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<form enctype="multipart/form-data" id="upgradeSoftwareForm" method="post" name="SoftFileUpload">
+    <div class="formBox">
+    	<label id="lt_sw_SoftwareInfoText"></label>
+        <div id="divSoftUpgrade" style="position: relative;">
+	    	<input type="file" id="softVersionUpdateFile" class="file" name='fupgrade.bin'>
+	    	<input type="text" id="txtUpgratedFileName" readonly class="txt">
+	    	<input type="button" class="btnWrn" value="Browse" id="lt_sw_btnBrowseFile">
+	    </div>
+		<br style="clear:both;">
+	    <div class="right_align" style="display:none">
+        	<input type='submit' id='lt_sw_btnUpgrade' value='Upgrade' class="btn-apply"/>       
+        </div>
+        <div class="right_align" id="divSoftUpgradeBtn">
+            <input type='button' id='lt_sw_upgrade_save' value='Save' onclick='setData()' class="btn-apply"/>
+        </div>
+    </div>
+</form>
+<form enctype="multipart/form-data" id="cp_upgradeSoftwareForm" method="post" name="cp_SoftFileUpload" style="display: none;">
+    <div class="formBox">
+        <label id='lt_cp_sw_SoftwareInfoText' class="subttl"></label>
+        <div class='file-box'>
+            <input type='file' id='cp_softVersionUpdateFile' name='fupgrade.bin' class='file' />
+            <input type='text' name='textfield' id='cp_txtUpgratedFileName' class='txt' />
+            <input type='button' class='btnWrn' value='Browse' id='lt_cp_sw_btnBrowseFile'/>
+        </div>
+        <br class="clear" />
+        <div class="right_align" style="display:none">
+            <input type='submit' id='lt_cp_sw_btnUpgrade_submit' value='Upgrade' class="btn-apply"/>
+        </div>
+        <div class="right_align" >
+        	<input type='button' id='lt_cp_sw_btnUpgrade' value='Upgrade' class="btn-apply"/>
+        </div>
+    </div>
+</form>
+
+<div id="upgrade_status" style="display:none;">
+	<label id="lt_upgrade_status" style="display:inline-block"></label>
+	<span id="upgrade_status_text" style="margin-left: 160px;color: red;font-weight: bold;"></span>
+	<div id="right_align" align="right" style="border-bottom:1px solid #adaeab;padding-bottom:8px;">
+		<input type="button" value="Check" id="lt_check_upgrade_version" class="btn-apply">
+		<input type="button" value="Upgrade" id="lt_execute_upgrade_version" class="btn-apply">
+	</div>
+</div>
+
+<div style="margin-top:35px;"  style="display: none;" id="triggerCPbox">
+    <label id="lt_cp_upgrade_text" style="display: inline-block;margin-right:15px;" ></label>
+    <input id="lt_cp_upgrade_checkbox" type="checkbox">
+    <p id="lt_cp_upgrade_text_tip" class="cp_upgrade_tip"></p>
+</div>
+
+<div id="divUpgradeModalBox" style="display: none" >
+	<div class="popUpBox popUpBox2" style='width:350px' >
+    	<h1 id="lt_sw_h1RouterUpgrade" style='width:300px;'></h1>
+	    <a href="#" class="close" onclick="CloseDlg()">x</a>
+       	<div align="center">
+        	<label id="lt_sw_WarningLine1">  </label>
+        	<label id="lt_sw_WarningLine2"></label>
+        	<br/>
+        	<img src="images/PleaseWait.png" alt="" class="loading" />
+        	<br/>
+        	<br/>
+    	</div>
+	 </div>
+</div>
+
+
+<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe> 
+
+<div id="updateConfirmAlert" style="display: none" >
+	<div class="popUpBox popUpBox2" style='width:400px'>
+    	<h1 style='width:350px;' id="lt_update_confirm_title"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div align="center">
+       		<label id="update_confirm_title" style="width:350px;"></label>
+   		</div>
+		<div class="buttonRow1 right_align">
+			<input id="lt_update_confirm_btnOK" type="button" class="btn-apply" /> 
+			<input id="lt_update_confirm_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+		</div>            	
+	</div>
+</div>
+

@@ -1,0 +1,10 @@
+Package: libblobmsg-json
+Version: 2016-04-06-155bf39896f126b1ba121b816922a88dc34c31e3
+Depends: libc, libjson-c, libubox
+Source: package/libs/libubox
+License: ISC BSD-3c
+Section: libs
+Maintainer: Felix Fietkau <nbd@openwrt.org>
+Architecture: ramips_24kec
+Installed-Size: 3693
+Description:  blobmsg <-> json conversion library

@@ -1,0 +1,49 @@
+#!/bin/sh /etc/rc.common
+# Marvell lte telephony production init script
+
+mount_mdb() {
+	echo "mounting mdb partition"
+
+	mdb_mtdpart_idx="$(find_mtd_index mdb)"
+	if [ "$mdb_mtdpart_idx" = "" ]; then
+		echo "ERROR: mdb partition not found";
+		return 1;
+	fi
+	mkdir -p /NVM/mdb/
+	mdb_mtd_mountpoint="/NVM$1"
+
+	mdb_mtdimage=/dev/mtdblock$mdb_mtdpart_idx
+	mount -t squashfs $mdb_mtdimage $mdb_mtd_mountpoint
+}
+
+start() {
+	echo "Starting LTE-Telephony Production Service"
+
+	chmod 664 /dev/kmsg
+
+	export NVM_ROOT_DIR=/NVM
+	export ANDROID_PRINTF_LOG=time
+
+	[ ! -e /www/webdav/NVM/ ] && ln -s /NVM/ /www/webdav/
+	mount_mdb /mdb
+
+	#Delete proerties UCI
+	rm -f /etc/config/properties
+	#Set UCI file "cmdline" from /proc/cmdline
+	cmdline2uci
+
+	#Set default properties
+	setprop sys.telephony.default.loglevel 5
+	setprop sys.telephony.atcmdsrv.loglevel 8
+
+	/bin/cp_load
+	/bin/eeh -M yes&
+	/bin/nvmproxy&
+	/bin/diag&
+	/bin/mrdloader &
+	/bin/atcmdsrv&
+	/bin/pppmodem&
+	# WA: start with cfun=0 if in production mode
+	sleep 2
+	serial_atcmd at*cfun=0
+}

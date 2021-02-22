@@ -1,0 +1,8 @@
+Package: DiagTransfer
+Version: 2019-1.0
+Depends: libc, libpthread
+Source: package/notion/DiagTransfer
+Section: DiagTransfer
+Architecture: ramips_24kec
+Installed-Size: 8869
+Description:  DiagTransfer notion 1826

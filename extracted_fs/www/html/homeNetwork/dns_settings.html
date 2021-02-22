@@ -1,0 +1,27 @@
+<a href='#' class='help' onclick="getHelp('DHCPSettings')">&nbsp;</a>
+
+<label id="lt_dns_settings" class="title"></label>
+<p id="lt_dns_pageTip"> </p>
+
+<div id="dnsSettings" style="margin-top:8px;">
+	<label id="lt_dns_PrimaryDNS"></label>
+	<div id='ipCtrlDNSPrimaryDNS'></div>
+	<label id="lt_dns_SecondaryDNS"></label>
+	<div id='ipCtrlDNSSecondaryDNS'></div>	
+</div>
+<div id="dns_error" style="color:red;margin-top:10px;"></div>
+<div class="right_align" ><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/></div>
+
+<div id="setDNSConfirm" style="display:none">
+	<div class="popUpBox popUpBox2">
+		<h1 id="lt_DNS_title"></h1>
+		    <a href="#" class="close" onclick="CloseDlg()">x</a>
+			<div align="center">
+				<label id="lSetDNS" style="width:350px"></label>
+			</div>
+			<div class="buttonRow1 right_align">
+				<input type="button" id="lt_btnOK" class="btn-apply"/>
+				<input type="button" id="lt_btnCancel" class="btn-apply" onclick="CloseDlg()"/>
+			</div>
+	</div>
+</div>

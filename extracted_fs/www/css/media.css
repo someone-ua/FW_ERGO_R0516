@@ -1,0 +1,83 @@
+@media screen and (min-width: 1256px){
+	.loginArea{right:0;left:auto;}
+	}
+@media screen and (max-width: 1255px){
+	.loginArea{left:1090px;right:auto;}
+}
+@media screen and (max-width: 430px){
+	body {-webkit-user-select:none;
+	  -moz-user-select:none;
+	  -khtml-user-select:none;
+	   user-select:none;
+	}
+	body{font-family: "Microsoft Yahei";font-size: 14px;color:#777;background-color: #fff;}
+	.notion_logo {width:auto}
+	.header, .mainColumn, .footer{width:100%;}
+	.liginbox{width: 100%;min-width: 100%;}
+	.box1{width: 95%;}
+	.loginArea{width: 80%;margin-left: 20%;left:auto;right:auto}
+	.loginArea a {display: inline-block;text-align: left;}
+	.media_menu{display: block;width: 30px; height: 30px;background-image: url(../images/menu.png);position: absolute; left: 15px;top:67px; }
+	.media_sub_menu{display: none;width: 30px;height: 30px;background-image: url(../images/sub_menu.png);position: absolute; left: 50px;top:66px; }
+	.navigation{display:none; margin-top: 9px;border: 0;width: 60%;position:fixed;z-index: 100;}
+	.navigation ul li{float:none;}
+	.menu{background: #fff;}
+	.menu a{text-align: left;padding: 10px 0 10px 20px;background-color: rgba(255,255,255,0.8);}
+	.menu a.on{color: #fff;border:none;text-shadow:0 0 15px #e31d39;background-image: rgba(59,195,22,0.2); background-image: linear-gradient(270deg,rgba(0,0,0,0),rgba(227,29,57,0.3));}
+	.leftBar{width:100%;}
+	.leftMenu{position:fixed;width:60%;display:none;margin-top:-15px;z-index: 100;background: #fff;}
+	.content{width:100%;box-sizing: border-box;padding:10px;z-index: 10;}
+	.mainColumn .help.quick, .content a.help::before{right:10px;}
+	table td .row{overflow : hidden ;text-overflow : ellipsis ;display : -webkit-box;-webkit-box-orient : vertical ;-webkit-line-clamp : 2 ;}
+	td a{color:#777;}
+	.btn_padding{padding: 0 7px;}
+	.btn_padding_10{padding:0 10px;}
+.online_phone{overflow : hidden; text-overflow : ellipsis;white-space : nowrap;}
+	 /*tankuang */
+	 #mbox .popUpBox .lable12, #mbox .popUpBox .lable13{width:100%;}
+	 #mbox .pBoxCont label{padding-left:0;width:40%;margin:0;}
+	 #mbox .popUpBox2 input[type="text"],
+	 #mbox .popUpBox2 input[type="password"]{width:50%;}
+	 #mbox .popUpBox2 input.sml{width:30px;}
+	 #mbox .popUpBox2 input.sml_port{width:40px;}
+	 #mbox .popUpBox2 select{width:50%}
+	/* dashbord */
+	.networkImg{display:none;}
+	.homeBox{width:100%;min-height:auto;margin:0;padding-bottom:5px;}
+	.footer{font-size:12px;}
+	 /*quickSet */
+	 .title_row span{display:block;width:55%}
+	 .mainColumn .help.quick{top:-10px;}
+	 /* dhcp */
+	 .clear360{clear:both;}
+	 /* phonebook */
+	 #moveContact,#copyContact{margin-left:0;}
+	 textarea,.sms_textarea {width:100%;box-sizing: border-box;}
+	 /* SMS */
+	 .sms_bottom{text-align: left;}
+	 .block360{display: block;}
+	 .sms_numTip{margin-right:0;float:right;}
+	 .sms_btn360{clear:both;float:right;margin-top:10px;}
+	 /* homework */
+	 .pc_device{display:none;}
+	 .phone_device{display:block;}
+	 .condevice_tra{font-size:12px;}
+	 #connectdevice_traffic{font-size:12px;height:100%;overflow-y: auto;}
+	 #mbox .inputW input[type="text"],
+	 #mbox .inputW input[type="password"],
+	 #mbox #connectdevice_traffic input[type="text"],
+	 #mbox #connectdevice_traffic input[type="password"]{width:55%;font-size:12px;}
+	 /* wifi */
+	 .wifi_right{margin-left:0;}
+	 .wps_title{width:100%;margin-bottom:8px;}
+	 .wps_group ul li{margin-left:0}
+	.divbox{width:95%}
+	.divbox img{width:100%;}
+}
+@media screen and (max-width: 360px){
+	.leftMenu{width:70%;}
+	.box360{font-size:12px;}
+	.box360  .btn-apply{padding:0 15px;}
+	#mbox label, .popUpBox label{font-size:12px;}
+	
+}

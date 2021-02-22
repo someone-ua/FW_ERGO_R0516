@@ -1,0 +1,8 @@
+Package: liblog
+Version: 1.0-1
+Depends: libc, libprop2uci, libpthread
+Source: package/libs/liblog
+Section: libs
+Architecture: ramips_24kec
+Installed-Size: 9576
+Description:  Marvell implementation for liblog (Android logging)

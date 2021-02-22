@@ -1,0 +1,3 @@
+/usr/bin/wireless
+/lib/wifi_ctrl/wifi_ssid_change.sh
+/lib/wifi_ctrl/wifi_auto_off.sh

@@ -1,0 +1,155 @@
+<a href='#' class='help' onclick="getHelp('phonebookAll')">&nbsp;</a>
+<div id="divPhonebookList" style="display: block">
+    <label id="lt_Phonebook_stcFormTitle" class="title">
+    </label>
+    <div id='DeleteSMSdiv' align='right' style='display: block'>
+            <input type='button' class="btn-apply" id='lt_Phonebook_btnNew' value='New' />
+            <input type="button" class="btn-apply" id="lt_Phonebook_btnDelete" value="delete" disabled>       
+    </div>
+    <table width="100%" class="example dataTbl10  table-stripeclass:alternate" style="margin-top: 5px"
+        id="tablePhoneBook">
+        <thead>
+            <tr>
+                <th width="28%" id="lt_Phonebook_stcName" name="name" style="text-align:center">
+                </th>              
+                <th width="26%" id="lt_Phonebook_stcMobileNum" name="MobileNum" style="text-align:center">
+                </th>
+                <th width="20%" id="lt_Phonebook_stcGroup" name="Group" style="text-align:center">
+                </th>
+                <th width="20%" id="lt_Phonebook_stcSaveLoc" name="SaveLoc" style="text-align:center">
+                </th>                        
+                <th width="10%" name="DeleteAll" style="text-align:center;">
+                        <input type="checkbox" id="deleteAllPhone">
+                </th>
+            </tr>
+        </thead>
+        <tbody id="PhoneBookList">
+        </tbody>
+    </table>
+    <div align="right" style="display: block;" id="divPhoneBookPageNum">
+       <!-- <a style="color: red; font-weight: 700; text-decoration: underline;" href="###">1</a>-->  
+    </div>
+</div>
+
+<div id='divSendMessageInPhoneBook' style='display: none;'>
+    <div class="popUpBox popUpBox2">
+        <h1 id="lt_Phonebook_stcNewMessage"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+            <label class="title" id='lt_Phonebook_stcContact'> To:</label>
+            <!-- <br /> -->
+            <input type="text" id="txtContact" readonly="readonly"/>
+            <br />
+            <label class="title" id='lt_Phonebook_stcContents'> Content:</label>
+            <br />
+            <div style="text-align: center;">
+							<textarea name="smstxtx" rows="5" cols="50" id="txtSmsContentInPhoneBook"></textarea>
+						</div>
+            <br />
+            <div align="right">
+                <span id="lt_phonebook_stcSmsErrorInfo" class="error" style="display:none;color:#f00"></span>
+                <span style="margin-right: 50px;"><em id="inputcountInPhoneBook">(0/765)</em>  <em id="inputItemCountInPhoneBook">(0/5)</em></span>
+            </div>
+        </div>
+        <div class="buttonRow1">
+                <input id="lt_Phonebook_btnSendMsg"   class="btn-apply" type="button" />
+                <input id="lt_Phonebook_btnCancelSend" onclick="CloseDlg()" class="btn-apply" type="button" />
+        </div>
+    </div>
+</div>
+
+
+<div class="popUpBox" id="SendSMSResultBox" style="display: none">
+    <h1 id="lt_Phonebook_stcSendResultTittle"></h1>
+    <a class="close" onclick="CloseDlg()">x</a>
+    <div align="center">
+        <label id="lSendResult"></label>
+    </div>
+    <div class="bottonRow1" style="border-top: 1px solid #a7a7a7; padding: 7px 0; margin: 7px 0 0 0;
+        text-align: right">
+        <span class="btnWrp">
+            <button onclick="CloseDlg()" id="lt_Phonebook_btnOK"></button>
+        </span>
+    </div>
+</div>
+
+
+<div id="phoneInfoDlg" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="lt_Phonebook_stcPhoneInfoDlgTitle"></h1>
+        <a href="#" class="close"  onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+            <label id="lt_Phonebook_stcName"></label>
+            <input name="" type="text" size="30" id="txtName" maxlength="25"/> 
+						<br style="clear: both" />
+            <label id="lt_Phonebook_stcSaveLoc"></label>           
+            <select id="selSaveLoc">
+                <option value="0" id="lt_Phonebook_stcDevice">device</option>
+                <option value="1" id="lt_Phonebook_stcSimCard">SIM</option>    
+            </select>
+            <br style="clear: both" />
+            <label id="lt_Phonebook_stcMobileNum"></label>
+            <input name="" type="text" size="30" id="txtMobilePhone" maxlength="25"/>
+            <br style="clear: both" />
+            <div id="divDeviceSupport">
+             <label id="lt_Phonebook_stcGroup">
+                </label>
+                <select id="selGroup">
+                    <option value="0" id="lt_Phonebook_stcCommonPhoneBook">common</option>
+                    <option value="1" id="lt_Phonebook_stcFamilyPhoneBook">family</option>
+                    <option value="2" id="lt_Phonebook_stcFriendPhoneBook">friend</option>
+                    <option value="3" id="lt_Phonebook_stcColleaguePhoneBook">colleague</option>
+                </select>
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcEmail">
+                </label>
+                <input name="" type="text" size="30" id="txtEmail" maxlength="25" />
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcHomeNum">
+                </label>
+                <input name="" type="text" size="30" id="txtHomePhone" maxlength="25" />
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcOfficeNum">
+                </label>
+                <input name="" type="text" size="30" id="txtOfficePhone" maxlength="25" />
+               <!-- <br style="clear: both"/>
+                <label id="lt_Phonebook_stcNickName">
+                </label>
+                <input name="" type="text" size="30" id="txtNickName" maxlength="25" />-->
+                <br style="clear: both" />
+            </div>
+            <p id="lt_Phonebook_stcInputerror" class="error" style="text-align:center;color:red;display:none;">lt_Phonebook_stcInputerror</p>
+            <div class="buttonRow1">
+                    <input id="lt_Phonebook_btnSave" class="btn-apply"type="button" value="OK"/>
+                    <input id="lt_Phonebook_stcCancelView" class="btn-apply"type="button" onclick="CloseDlg()"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="DivCopyMoveContact" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="lt_Phonebook_stcCopyMoveTitle"></h1>
+        <a href="#" class="close" onclick="CloseDlg()" >x</a>
+        <div class="pBoxCont">
+            <input type="radio" name="moveCopyContact" style="width: 20px;height: 15px;" id="moveContact" checked="checked"/>
+            <span id="lt_Phonebook_stcMove">lt_Phonebook_stcMove </span>
+            <br style="clear: both" />
+            <br style="clear: both" />
+            <input type="radio" name="moveCopyContact" style="width: 20px;height: 15px;" id="copyContact"/>
+            <span id="lt_Phonebook_stcCopy">lt_Phonebook_stcCopy </span>
+            <br style="clear: both" />
+            <br style="clear: both" />
+            <div class="buttonRow1" id="div2">
+                    <input id="lt_Phonebook_btnCopyMove"  class="btn-apply" type="button" value="OK" />
+                    <input id="lt_Phonebook_btnCancelCopyMove" onclick="CloseDlg()"  class="btn-apply" type="button" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    

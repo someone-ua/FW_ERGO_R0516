@@ -1,0 +1,9 @@
+Package: lte-telephony
+Version: 2014-1
+Depends: libc, librt, libstdcpp, libprop2uci, libuci, liblog, libml_utils, libssp, libopenssl, libubus
+Source: package/network/services/lte-telephony
+Section: opt
+Architecture: ramips_24kec
+Installed-Size: 82849
+Description:  Marvell telephony applictions and utilities
+ This will mount NVM partition as JFFS2.

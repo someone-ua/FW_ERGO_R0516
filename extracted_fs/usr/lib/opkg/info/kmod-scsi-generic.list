@@ -1,0 +1,2 @@
+/lib/modules/3.10.14/sg.ko
+/etc/modules.d/65-scsi-generic

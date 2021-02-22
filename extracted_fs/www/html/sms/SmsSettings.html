@@ -1,0 +1,41 @@
+<a class="help" href="#" onclick="getHelp('smsSettings')">&nbsp;</a>
+<label class="title" id="lt_SmsSet_stcTitle"></label>
+ <div>
+    <label id="lt_SmsSet_stcDeliveryReport"></label>
+    <input type="radio" name="smsReport" id="SendReportEnabled"/><span id="lt_SmsSet_stcSendReportEnabled" style="margin-right:40px;"></span>
+    <input type="radio" name="smsReport" id="SendReportDisabled"/><span id="lt_SmsSet_stcSendReportDisabled"></span>
+</div>
+<div>
+    <label id="lt_SmsSet_stcSaveLoc"></label>
+        <select id="smsSaveLocSel">
+        <option id="lt_SmsSet_stcSaveLocSimCard" value="1"></option>
+        <option id="lt_SmsSet_stcSaveLocDevice" value="0"></option>
+    </select>
+</div>
+<!-- <div>
+    <label id="lt_SmsSet_stcSMSOverCSMode">
+        SMSOverCSMode</label>
+        <select id="smsSMScsModeSel">
+        <option id="lt_SmsSet_stcPackageDomain" value="1"></option>
+        <option id="lt_SmsSet_stcCircuitSwitched" value="0"></option>
+    </select>
+</div> -->
+<div>
+    <label id="lt_SmsSet_stcValidity"></label>
+    <select id="validitySel">
+        <option id="lt_SmsSet_stcTwelveHours" value="143"></option>
+        <option id="lt_SmsSet_stcOneDay" value="167"></option>
+        <option id="lt_SmsSet_stcOneWeek" value="173"></option>
+        <option id="lt_SmsSet_stcLargest" value="255"></option>
+    </select>
+</div>
+<div>
+    <label id="lt_SmsSet_stcCenterNumber"></label>
+    <input type="text" class="textfield" id="txtCenterNumber"/>
+</div>
+<label id="lt_sms_setting_error" class="error" style="display: none"></label>
+<div class="formBox" align="right">
+	<input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/> 
+</div>
+
+

@@ -1,0 +1,8 @@
+Package: ip6tables-extra
+Version: 1.4.21-1
+Depends: libc, ip6tables, kmod-ip6tables-extra
+Source: package/network/utils/iptables
+Section: net
+Architecture: ramips_24kec
+Installed-Size: 9954
+Description:  IPv6 header matching modules

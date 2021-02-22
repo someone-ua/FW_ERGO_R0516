@@ -1,0 +1,94 @@
+#!/bin/sh /etc/rc.common
+
+START=19
+USE_PROCD=1
+QUIET=""
+
+validate_firewall_redirect()
+{
+	uci_validate_section firewall redirect "${1}" \
+		'proto:or(uinteger, string)' \
+		'src:string' \
+		'src_ip:cidr' \
+		'src_dport:or(port, portrange)' \
+		'dest:string' \
+		'dest_ip:cidr' \
+		'dest_port:or(port, portrange)' \
+		'target:or("SNAT", "DNAT")'
+}
+
+validate_firewall_rule()
+{
+	uci_validate_section firewall rule "${1}" \
+		'proto:or(uinteger, string)' \
+		'src:string' \
+		'dest:string' \
+		'src_port:or(port, portrange)' \
+		'dest_port:or(port, portrange)' \
+		'target:string'
+}
+
+service_triggers() {
+	procd_add_reload_trigger firewall	
+
+	procd_open_validate
+	validate_firewall_redirect
+	validate_firewall_rule
+	procd_close_validate
+}
+
+vpn_add(){
+	local proto_pptp="pptp"
+	local proto_l2tp="l2tp"
+	config_load network
+	config_get vpn_proto vpn proto
+	config_get vpn_server vpn server
+	echo "$vpn_server"
+	echo "$vpn_proto"
+	if [[ $vpn_proto = $proto_pptp || $vpn_proto = $proto_l2tp ]] 
+	then 
+		iptables -t filter -N OUT_VPN
+		if [ $? -eq 0 ]; then
+			iptables -t filter -I OUTPUT -j OUT_VPN
+			iptables -t filter -I OUT_VPN -o eth1 ! -d $vpn_server -j REJECT
+			iptables -t filter -I OUT_VPN -o eth0.2 ! -d $vpn_server -j REJECT
+			echo "success"
+		else
+			iptables -t filter -F OUT_VPN
+			echo "fail"
+			iptables -t filter -I OUT_VPN -o eth1 ! -d $vpn_server -j REJECT
+			iptables -t filter -I OUT_VPN -o eth0.2 ! -d $vpn_server -j REJECT
+		fi
+	else
+		iptables -t filter -F OUT_VPN
+		iptables -t filter -D OUTPUT -j OUT_VPN
+		iptables -X OUT_VPN
+		echo "$vpn_proto"
+	fi
+}
+
+restart() {
+	fw3 restart
+	vpn_add
+}
+
+start_service() {
+	fw3 ${QUIET} start
+	vpn_add
+}
+
+stop_service() {
+	fw3 flush
+}
+
+reload_service() {
+	fw3 reload
+	vpn_add
+}
+
+boot() {
+	# Be silent on boot, firewall might be started by hotplug already,
+	# so don't complain in syslog.
+	QUIET=-q
+	start
+}

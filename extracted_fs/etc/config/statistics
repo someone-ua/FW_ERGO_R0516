@@ -1,0 +1,24 @@
+
+config stat_ctrl
+	option type 'basic_mon'
+	option enable '0'
+	option avl_data '0'
+
+config stat_ctrl
+	option type 'period'
+	option enable '0'
+
+config stat_ctrl
+	option type 'idle'
+	option enable '0'
+	option start_hour '0'
+	option end_hour '0'
+	option avl_data '0'
+
+config stat_ctrl
+	option type 'general'
+	option warn_percent '90'
+	option warn_enable '0'
+	option dis_enable '0'
+	option dis_percent '100'
+

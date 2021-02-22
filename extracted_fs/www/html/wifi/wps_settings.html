@@ -1,0 +1,45 @@
+<a href='#' class='help' onclick="getHelp('WPSSettings')"></a>
+<label id="lt_wpsSet_title" class="title" style="margin-bottom:6px;">WPS Settings</label>
+<div id="divWifiAPClass" class="wps_group" style="display:none;">
+	    <span id="lt_macFilter_WifiModule" class="wps_title">WIFI Module</span>
+	    <select id="SelWifiModule">
+	        <option id="lt_macFilter_wifiModule0" value="0">WIFI 2.4G</option>
+			<option id="lt_macFilter_wifiModule1" value="1">WIFI 5G</option>	
+	    </select>
+    </div>
+<div class="wps_group">
+	<span class="wps_title" id="lt_wpsSst_wps">WPS</span>
+	<input type="radio" id="wpsSwitch_enable" name="wpsSwitch" value="1">
+	<span  id="lt_optEnableSwitch" style="margin-right:20px;"></span>
+	<input type="radio" id="wpsSwitch_disable" name="wpsSwitch" value="0">
+	<span id="lt_optDisabledSwitch"></span>
+</div>
+<div class="wps_group">
+	<span id="lt_wpsSet_add" class="wps_title" style="float:left;"></span>
+	<ul>
+		<li>
+			<input type="radio" id="wpsDevice_pbc" name="wpsDevice" value="1">
+			<span id="lt_wps_pbc">PBC</span>
+		</li>
+		<li>
+			<input type="radio" id="wpsDevice_pin" name="wpsDevice" value="0">
+			<span id="lt_wps_enterPIN"></span>
+		</li>
+		<li>
+			<span id="lt_wps_pin" style="margin-left:19px;margin-right:10px;">PIN</span>
+			<input type="text" class="textfield" id="txt_pin" maxlength="8">
+			<p class="error" id="lWPSError" style="display:none;"></p>
+		</li>
+		<li>
+			<label id="lWPSStatus"></label>
+			<span id="divcancel_session" class="divcancel_session">
+				<a href="#" id="cancel_session" onclick="cancelSessionClicked()"><strong id="lt_CancelWpsSession">cancel session</strong></a>
+			</span>
+		</li>
+		<li>
+			<input type="button" class="btn-apply" id="lt_mobile_con">
+		</li>
+		<li id="lt_mobile_con_pbc" style="display:none;"></li>
+		<li id="lt_mobile_con_pin" style="display:none;"></li>
+	</ul>
+</div>

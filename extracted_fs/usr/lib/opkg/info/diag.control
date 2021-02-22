@@ -1,0 +1,8 @@
+Package: diag
+Version: 2014-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog, libpolarssl, tr069_standard_1826
+Source: package/services/diag
+Section: diag
+Architecture: ramips_24kec
+Installed-Size: 8343
+Description:  diag-WEB service applictions and utilities

@@ -1,0 +1,10 @@
+Package: libcgi
+Version: 1.0
+Depends: libc
+Source: package/libs/libcgi
+License: MIT
+LicenseFiles: COPYING
+Section: libs
+Architecture: ramips_24kec
+Installed-Size: 13092
+Description:  CGI library for C

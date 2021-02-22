@@ -1,0 +1,8 @@
+Package: wireless_5g
+Version: 2.0-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog
+Source: package/services/wireless_5g
+Section: wireless_5g
+Architecture: ramips_24kec
+Installed-Size: 25958
+Description:  wireless-WEB 5G and 2.4G service applictions and utilities

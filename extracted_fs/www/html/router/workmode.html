@@ -1,0 +1,167 @@
+<a href='#' class='help' onclick="getHelp('workmode')">&nbsp;</a>
+<label id="lt_workmode"  class="title"></label>
+
+<div>
+	<label id="lt_selectnatmode">Select NAT model</label>
+	<select id="selNatMode">
+	   <option value="0" id="lt_selnatmode_disable">NAT Disable</option>
+	   <option value="1" id="lt_selnatmode_nat" >NAT</option>
+	   <option value="2" id="lt_selnatmode_napt">NAPT</option>
+	</select>
+</div>
+
+<div class="workmodel_napt">
+   <label >NAPT Proto</label>
+   <select id="sel_napt_proto">
+      <option value="tcpudp">tcpudp</option>
+      <option value="tcp">tcp</option>
+      <option value="udp">udp</option>
+   </select>
+</div>
+
+<div class="workmodel_napt">
+   <label>NAPT Port</label>
+   <input id="in_napt_port_start" name="napt_port_start" maxlength="5" type="number" style="width: 90px; height: 30px; border: 1px solid #aaa; ">
+   <input id="in_napt_port_end" name="napt_port_end" maxlength="5" type="number" style="margin-left:5px; width: 90px; height: 30px; border: 1px solid #aaa; ">
+</div>
+<p id="nat_error" class="error"></p>
+
+
+<label id="lt_selectworkmode">Select work mode</label>
+<select id="selWorkMode">
+	<option value="router" id="lt_workmode_router">Router mode</option>
+	<option value="bridge" id="lt_workmode_bridge">Bridge mode</option>
+	<!-- <option value="wifiexten" id="lt_workmode_wifi">wifi Extender</option> -->
+</select>
+<div>
+	<label id='lt_typeMode'>Ethemet Type Mode</label>
+	<select id='SelTypeMode'>
+		<option id='lt_LAN' value='lan'>LAN</option>
+		<option id='lt_WAN' value='wan'>WAN</option>
+	</select>
+</div>
+
+<div id="divRouterMode" class="workmode" style="display: none;">
+	
+	<div id="wanCtr" style="display: none;">
+	    <div>
+	        <label id='lt_WANConnMode'>WAN Connection Mode</label>
+	        <select id='SelWANConnMode'>
+				<option id='lt_WANCon_EthernetOnly' value='wanonly'>Ethernet only</option>
+	            <option id='lt_WANCon_ModemOnly' value='lteonly'>Modem only</option>
+	            <option id='lt_WANCon_Ethernet' value='wanfirst'>Ethernet(preferred) + Modem</option>
+	            <option id='lt_WANCon_Modem' value='ltefirst'>Modem(preferred)) + Ethernet</option>
+	        </select>
+	    </div>
+	    <div>
+	        <label id="lt_ip_setting">IP Setting</label>
+	        <select id="IPSelect">
+	            <option id="lt_ipselect_dhcp" value="dhcp">DHCP(Auto Config)</option>
+	            <option id="lt_ipselect_static" value="static">Static IP(Fixed IP)</option>
+	        </select>
+	    </div>
+	    <div id="StaticIP" style="display: none">
+	        <label id="lt_staticIP">Static IP</label>
+	        <ul>
+	            <li>
+	                <span id="lt_IPAddress">IP Address</span>
+	                <input type="text" id="txt_IPAddress">
+	            </li>
+	            <li>
+	                <span id="lt_subnetMask">Subnet Mask</span>
+	                <input type="text" id="txt_subnetMask">
+	            </li>
+	            <li>
+	                <span id="lt_Default_Gateway">Default Gateway</span>
+	                <input type="text" id="txt_Default_Gateway">
+	            </li>
+	            <li>
+	                <span id="lt_primary_DNS">Primary DNS Server</span>
+	                <input type="text" id="txt_primary_DNS">
+	            </li>
+	        </ul>
+	    </div>
+	    
+	</div>
+</div>
+<div id="divBridgeMode" class="workmode" style="display: none;">
+
+	<label id="lt_bridge_selectmode"></label>
+	<select id="seleBridgeMode"></select>
+</div>
+<div id="divWifiExten" class="workmode" style="display: none;">
+	
+</div>
+<p id="error" class="error"></p>
+<div class="right_align">
+	<input id="lt_btnSave" type="button" class="btn-apply" onclick='setData()'/>
+</div>
+<br>
+<div id="workModeNote" class="noteBox">
+	<p id="lt_workModeNote_title" class="note_title"></p>
+	<ul>
+		<li>
+			<strong id="lt_routermode_lte">Modem Router Mode</strong>
+			<span id="lt_routermode_lte_note">
+				Wireless and Ethernet connects to the local network, The 4G LTE USB router connects to the Internet.
+			</span>
+			<div class="divbox">
+				<img src="../../images/lte-mode.png" alt="">
+			</div>
+		</li>
+		<li>
+			<strong id="lt_routermode_wan">Ethernet Router Mode</strong>
+			<span id="lt_routermode_wan_note">
+				Wireless and Ethernet connects to the local network, The Ethernet connects to the Internet.
+			</span>
+			<div class="divbox">
+				<img src="../../images/wan-mode.png" alt="">
+			</div>
+		</li>
+		<li>
+			<strong id="lt_routermode_ltefirst">Modem Router Mode (preferred)</strong>
+			<span id="lt_routermode_ltefirst_note">
+				When there is Ethernet Router Mode and Modem Router Mode, preference is given to Modem Router Mode.
+			</span>
+		</li>
+		<li>
+			<strong id="lt_routermode_wanfirst">Ethernet Router Mode (preferred)</strong>
+			<span id="lt_routermode_wanfirst_note">
+				When there is Ethernet Router Mode and Modem Router Mode, preference is given to Ethernet Router Mode.
+			</span>
+		</li>
+		<li>
+			<strong id="lt_bridgemode_lte">LTE Bridge Mode</strong>
+			<span id="lt_bridgemode_lte_note">
+				Wireless works for access point, AP Clients connects to remote AP, Ethernet connects to the local network.
+			</span>
+			<div class="divbox">
+				<img src="../../images/lte-mode.png" alt="">
+			</div>
+		</li>
+		<li>
+			<strong id="lt_bridgemode_wan">WAN Bridge Mode</strong>
+			<span id="lt_bridgemode_wan_note">Wireless works for access point, AP Clients connects to remote AP, Ethernet
+				connects to Internet.</span>
+			<div class="divbox">
+				<img src="../../images/wan-mode.png" alt="">
+			</div>
+		</li>
+	</ul>
+</div>
+<div id="workmodeNote" class="noteBox">
+	<p id="lt_workmodeNote_title" class="note_title"></p>
+	<ul>
+		<li id="lt_eth_note">
+			Ethemet Type Mode setting will reboot device automactically
+		</li>
+		<li id="lt_bridge_note">
+			Successful bridge mode setup will restart the device
+		</li>
+		<li id="lt_bridgemode_note">
+			After selecting wan bridge, you cannot select LAN of Ethemet type
+		</li>
+
+	</ul>
+</div>
+<br style="clear:both" />

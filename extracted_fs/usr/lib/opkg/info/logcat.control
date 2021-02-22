@@ -1,0 +1,8 @@
+Package: logcat
+Version: 1.0-1
+Depends: libc, liblog, libstdcpp
+Source: package/services/logcat
+Section: sys
+Architecture: ramips_24kec
+Installed-Size: 7557
+Description:  Logcat service

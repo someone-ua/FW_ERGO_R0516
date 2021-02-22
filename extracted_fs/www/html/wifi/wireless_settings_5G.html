@@ -1,0 +1,446 @@
+<a href='#' class='help' id="lt_wifiSet_helper" onclick="getHelp('WirelessSettings5G')">&nbsp;</a>
+<label id="lt_wifiSet_title" class="title"></label>
+
+<div class="publicInfo">
+	<div class="publicInformation1" style="float:left">
+		<div id='divWifiEnabledSwitch5G' >
+		    <label id='lt_wifiSet_WifiEnabledSwitch'></label>
+		    <select id="selWifiEnabledSwitch5G">
+		        <option id='lt_optEnableSwitch' value='1'>Enabled</option>
+				<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+		    </select>
+		</div>
+		<div id="divDisabledWifi5G"> 
+		    <div id='divFreqBandSwitch5G' style="display:block">
+			    <label id='lt_wifiSet_FreqBand'></label>
+			    <input type="text" value="5GHz" id="selRfBand5G" class="txtEditBox" disabled>
+		    </div>   
+		    <div id='divWifiConnNum5G' style="display:block">
+			    <label id='lt_wifiConn_Number'></label>
+			   	<select id="wifi_conn_num5G" class="dropdown"></select>
+		    </div>
+			<div id='div5G80211Protocol' style="display:none;">
+				<label id='lt_wifiSet_wifiNetMode'></label>
+				<select id="sel5G80211Protocol">
+					<option id='lt_wifiSet_opt80211aanac_only' value='11aanac'>802.11aanac</option>
+					<option id='lt_wifiSet_opt80211anac_only' value='11anac'>802.11anac</option>
+				</select>
+			 </div>
+		</div>
+	</div>
+	<div class="publicInformation2 wifi_right">
+		<div>
+			<div id="selWIFI5GChannelDiv">
+				<label id='lt_wifiSet_wifiChannel'></label>
+				<select id='selWifi5GChannel5G'>
+				  	  <option id='lt_wifiSet_optChannelAuto' value='0'>Automatic</option>
+							<option id='lt_wifiSet_optCH36' value='36'>CH 36</option>
+							<option id='lt_wifiSet_optCH40' value='40'>CH 40</option>
+							<option id='lt_wifiSet_optCH44' value='44'>CH 44</option>
+							<option id='lt_wifiSet_optCH48' value='48'>CH 48</option>
+							<option id='lt_wifiSet_optCH52' value='52'>CH 52</option>
+							<option id='lt_wifiSet_optCH56' value='56'>CH 56</option>
+							<option id='lt_wifiSet_optCH60' value='60'>CH 60</option>
+							<option id='lt_wifiSet_optCH64' value='64'>CH 64</option>
+				      <option id='lt_wifiSet_optCH149' value='149'>CH 149</option>
+				      <option id='lt_wifiSet_optCH153' value='153'>CH 153</option>
+				      <option id='lt_wifiSet_optCH157' value='157'>CH 157</option>
+							<option id='lt_wifiSet_optCH161' value='161'>CH 161</option>
+							<option id='lt_wifiSet_optCH165' value='165'>CH 165</option>
+			  	</select>
+		  	</div>
+		</div>
+		<div id="div80211nBandWidth5G_channel_165">
+			 <label id='lt_wifiSet_wifiBandwidth'></label>
+			 <select id='sel80211nBandWidth5G_channel_165'>
+			     <option id='dropdownBWAuto' value='HT20'>HT20</option>
+			 </select>
+		</div>
+		<div id="div80211nBandWidth5G">
+			 <label id='lt_wifiSet_wifiBandwidth'></label>
+			 <select id='sel80211nBandWidth5G'>
+			     <option id='dropdownBWAuto' value='HT20'>HT20</option>
+			     <option id='dropdownBW80' value='HT40'>HT40</option>
+			     <option id='dropdownBW80' value='HT80'>HT80</option>
+			     
+			 </select>
+		</div>
+		<div id='divAutoOffWifi5G'>
+			<label  id="lt_wifiSet_AutoOffWifi"></label>
+			<select id='selAutoOffWifiSwitch5G'>
+		    	<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+		 	<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+			</select>
+		</div>
+		<div id="divWifiAutoOffTimeout5G">
+			<label id="lt_wifiSet_AutoOffWifiTimeout"> </label>
+			<select id='selAutoOffWifiTimeout5G'>
+		    	<option value='600'>10</option>
+		 		<option value='1200'>20</option>
+		 		<option value='1800'>30</option>
+			</select>
+		</div>
+	</div>
+	<br class="clear"/>
+	<label id="wifiSetErrorLogs5G" class="error" style="display: none"></label>
+	<div class="formBox" align = "right" id="divSaveWifiConfig5G"><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/> </div>
+</div>
+<br class="clear"/>
+<div class="ssids" id="ssids_detail5G">
+	<label id="lt_wifiset_ssids" class="title">SSID</label>
+		<div class="ssid_0">
+			<div class="ssid_detail_info_0" style="margin-top:10px">
+				<div style="float:left">
+						<div>
+							<label id='lt_wifiSet_SSIDStatus'></label>
+								<select id="selCurrentSSIDStatus5G_0" disabled = "disabled" style=" background-color: #d3d3d3;" onchange="hideOrShowWPSBtn5G(this,0)">
+										<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+										<option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+								</select>
+						</div>
+					<div>
+						<label id='lt_wifiSet_hideSSID'></label>
+							<select id="selHideSSID5G_0" onchange = "hideSSID(this,0)">
+									<option id='lt_optEnableSwitch' value='1'>hide</option>
+							<option id='lt_optDisabledSwitch' value='0'>open</option>
+							</select>
+					</div>
+					
+				     <label id="lt_wifiSet_SSID"> </label>
+				     <input type="text" maxlength="32" id="txtWifiSSID5G_0" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+					
+				     <label id="lt_wifiSet_AuthType"></label>
+				     <select id="selWifiAuthType5G_0" onchange = "changeAuthType5G(this,'0')">
+				         <option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK  </option>
+				         <option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+				         <option id='dropdownWPA' value="WPA-PSK">WPA-PSK  </option>
+				         <option id='lt_wifiSet_WEP' value="WEP"> WEP  </option>
+				 		 <option id='lt_wifiSet_None' value="none">NONE</option>
+				     </select>
+
+				     <!--add div for WPS operation -->
+				    <!-- <div id="divWpsCfgDlg5G_0">
+				     	<input type="button" value="Add WPS Client" id="lt_lWpsCfgBtn" class="wps_btn" onclick="ShowWPSCfgDlg5G('0')"/>
+				     </div> -->
+				     <div id="divEncryAlg5G_0">
+				       <label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+				       <select id="selEncryAlg_For_WPA_PSK5G_0">
+							<option value='AES-CCMP'>AES-CCMP</option>
+							<option value='TKIP'>TKIP</option>
+							<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+				       </select>
+				       <select id="selEncryAlg_For_WEP5G_0">
+							<option value='Shared-key'>Shared-key</option>
+				       </select>
+				     </div>
+				</div>
+				<div class="wifi_right">
+     				 <div id="divwepKeyFormat5G_0" style="display:none;">
+					    <label id="lt_wifiSet_wepKeyFormat"></label>
+					    <select id="selWepKeyFormat5G_0">
+					         <option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					     </select>
+				     </div>
+
+					 <div id="divPassWd5G_0">
+					     <label id="lt_wifiSet_passwd"></label>
+					     <input  type="text" class="txtEditBox" id="txtPasswd5G_0" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')"/>
+				     </div>
+				    <div id="divWpaGroupKey5G_0">
+					    <label id='lt_wifiSet_wpaGroupRekey'></label>
+					    <input type='text' maxlength="3" value='' id='txtWpaGroupKeyUpdateInterval5G_0' class='txtEditBox' /><strong id='sDTIMInterval'>(1~100)</strong>
+				    </div>
+
+				    <div id='divApIsolateSwitch5G_0'>
+					    <label  id="lt_wifiSet_ApIsolateSwitch"></label>
+					    <select id='selApIsolateSwitch5G_0'>
+					        <option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						    <option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					    </select>
+				    </div>
+			    </div>
+			</div>
+			<br class="clear"/>
+			<label id="wifiSetErrorLogs5G_0" class="error" style="display: none"></label>
+			<div class="formBox" align = "right" id="divSaveWifiConfig5G"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID5G(0)' class="btn-apply"/> </div>
+		</div>
+		<br class="clear"/>
+		<div class="ssid_1" style="margin-top:20px;display:none">
+			<strong id="lt_wifiset_ssids" class="title">SSID1</strong>
+			<div align = "right" id="deleteSSID1"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID5G("1")' class="btn-apply"/> </div>
+			<div class="ssid_detail_info_1" style="margin-top:10px">
+				<div style="float:left;">
+					<div>
+						<label id='lt_wifiSet_SSIDStatus'></label>
+					    <select id="selCurrentSSIDStatus5G_1" onchange="hideOrShowWPSBtn5G(this,1)">
+							<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+					        <option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+					    </select>
+					</div>
+					<div>
+						<label id='lt_wifiSet_hideSSID'></label>
+					    <select id="selHideSSID5G_1"  onchange = "hideSSID5G(this,1)">
+					        <option id='lt_optEnableSwitch' value='1'>hide</option>
+							<option id='lt_optDisabledSwitch' value='0'>open</option>
+					    </select>
+					</div>
+				     <label id="lt_wifiSet_SSID"> </label>
+				     <input type="text" maxlength="32" id="txtWifiSSID5G_1" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+				     <label id="lt_wifiSet_AuthType"></label>
+				     <select id="selWifiAuthType5G_1" onchange = "changeAuthType5G(this,'1')">
+				         <option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK  </option>
+				         <option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+				         <option id='dropdownWPA' value="WPA-PSK">WPA-PSK  </option>
+				         <option id='lt_wifiSet_WEP' value="WEP"> WEP  </option>
+				 		 <option id='lt_wifiSet_None' value="none">NONE</option>
+				     </select>
+
+				     <!--add div for WPS operation -->
+				     <!-- <div id="divWpsCfgDlg5G_1">
+				     	<input type="button" value="Add WPS Client" id="lt_lWpsCfgBtn" style="width:190px;height:30px;" onclick="ShowWPSCfgDlg5G('1')"/>
+				     </div> -->
+				</div>
+				<div class="wifi_right">
+					 <div id="divEncryAlg5G_1">
+				       <label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+				       <select id="selEncryAlg_For_WPA_PSK5G_1">
+							<option value='AES-CCMP'>AES-CCMP</option>
+							<option value='TKIP'>TKIP</option>
+							<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+				       	</select>
+				       	<select id="selEncryAlg_For_WEP5G_1">
+							<option value='Shared-key'>Shared-key</option>
+				       	</select>
+				     </div>
+					<div id="divwepKeyFormat5G_1" style="display:none;">
+					    <label id="lt_wifiSet_wepKeyFormat"></label>
+					    <select id="selWepKeyFormat5G_1">
+					         <option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+					         <option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					     </select>
+				     </div>
+
+					 <div id="divPassWd5G_1">
+					     <label id="lt_wifiSet_passwd"></label>
+					     <input  type="text" class="txtEditBox" id="txtPasswd5G_1" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')"/>
+				     </div>
+				    <div id="divWpaGroupKey5G_1">
+					    <label id='lt_wifiSet_wpaGroupRekey'></label>
+					    <input type='text' maxlength="3" value='' id='txtWpaGroupKeyUpdateInterval5G_1' class='txtEditBox' /><strong id='sDTIMInterval'>(1~100)</strong>
+				    </div>
+
+				    <div id='divApIsolateSwitch5G_1'>
+					    <label  id="lt_wifiSet_ApIsolateSwitch"></label>
+					    <select id='selApIsolateSwitch5G_1'>
+					        <option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						    <option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					    </select>
+				    </div>
+				</div>
+			</div>
+			<br class="clear"/>
+			<label id="wifiSetErrorLogs5G_1" class="error" style="display: none"></label>
+			<div class="formBox" align = "right" id="divSaveWifiConfig5G"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID5G(1)' class="btn-apply"/> </div>
+		</div>
+	<br class="clear"/>
+	<div class="ssid_2" style="display:none">
+		<strong id="lt_wifiset_ssids_2" class="title">SSID2</strong>
+		<div align = "right" id="deleteSSID2"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID5G("2")' class="btn-apply"/> </div>
+		<div class="ssid_detail_info_2" style="margin-top:10px">
+		<div style="float:left;">
+			<div>
+				<label id='lt_wifiSet_SSIDStatus'></label>
+			    <select id="selCurrentSSIDStatus5G_2" onchange="hideOrShowWPSBtn5G(this,2)">
+					<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+			        <option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+			    </select>
+			</div>
+			<div>
+				<label id='lt_wifiSet_hideSSID'></label>
+			    <select id="selHideSSID5G_2"  onchange = "hideSSID(this,2)">
+			        <option id='lt_optEnableSwitch' value='1'>hide</option>
+					<option id='lt_optDisabledSwitch' value='0'>open</option>
+			    </select>
+			</div>
+		     <label id="lt_wifiSet_SSID"> </label>
+		     <input type="text" maxlength="32" id="txtWifiSSID5G_2" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+		     <label id="lt_wifiSet_AuthType"></label>
+		     <select id="selWifiAuthType5G_2" onchange = "changeAuthType5G(this,'2')">
+		         <option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK  </option>
+		         <option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+		         <option id='dropdownWPA' value="WPA-PSK">WPA-PSK  </option>
+		         <option id='lt_wifiSet_WEP' value="WEP"> WEP  </option>
+		 		 <option id='lt_wifiSet_None' value="none">NONE</option>
+		     </select>
+
+		     <!--add div for WPS operation -->
+		    <!-- <div id="divWpsCfgDlg_2">
+		     	<input type="button" value="Add WPS Client" id="lt_lWpsCfgBtn" style="width:190px;height:30px;" onclick="ShowWPSCfgDlg5G('2')"/>
+		     </div> -->
+		</div>
+		<div class="wifi_right">
+			 <div id="divEncryAlg5G_2">
+		       <label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+		       <select id="selEncryAlg_For_WPA_PSK5G_2">
+					<option value='AES-CCMP'>AES-CCMP</option>
+					<option value='TKIP'>TKIP</option>
+					<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+		       	</select>
+		       	<select id="selEncryAlg_For_WEP5G_2">
+					<option value='Shared-key'>Shared-key</option>
+		       	</select>
+		     </div>
+			<div id="divwepKeyFormat5G_2" style="display:none;">
+			    <label id="lt_wifiSet_wepKeyFormat"></label>
+			    <select id="selWepKeyFormat5G_2">
+			         <option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+			         <option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+			         <option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+			         <option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+			     </select>
+		     </div>
+
+			 <div id="divPassWd5G_2">
+			     <label id="lt_wifiSet_passwd"></label>
+			     <input  type="text" class="txtEditBox" id="txtPasswd5G_2" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')"/>
+		     </div>
+		    <div id="divWpaGroupKey5G_2">
+			    <label id='lt_wifiSet_wpaGroupRekey'></label>
+			    <input type='text' maxlength="3" value='' id='txtWpaGroupKeyUpdateInterval5G_2' class='txtEditBox' /><strong id='sDTIMInterval'>(1~100)</strong>
+		    </div>
+
+		    <div id='divApIsolateSwitch5G_2'>
+			    <label  id="lt_wifiSet_ApIsolateSwitch"></label>
+			    <select id='selApIsolateSwitch5G_2'>
+			        <option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+				    <option id='lt_optEnableSwitch' value='1'>Enabled</option>
+			    </select>
+		    </div>
+		</div>
+		</div>
+		<br class="clear"/>
+		<label id="wifiSetErrorLogs5G_2" class="error" style="display: none"></label>
+		<div class="formBox" align = "right" id="divSaveWifiConfig5G"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID5G(2)' class="btn-apply"/> </div>
+	</div>
+	<br class="clear"/>
+	<div class="ssid_3" style="display:none">
+		<strong id="lt_wifiset_ssids_3" class="title">SSID3</strong>
+		<div align = "right" id="deleteSSID3"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID5G("3")' class="btn-apply"/> </div>
+		<div class="ssid_detail_info_3" style="margin-top:10px">
+			<div style="float:left">
+				<div>
+					<label id='lt_wifiSet_SSIDStatus'></label>
+				    <select id="selCurrentSSIDStatus5G_3" onchange="hideOrShowWPSBtn5G(this,3)">
+						<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+				        <option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+				    </select>
+				</div>
+				<div>
+					<label id='lt_wifiSet_hideSSID'></label>
+				    <select id="selHideSSID_3"  onchange = "hideSSID5G(this,3)">
+				        <option id='lt_optEnableSwitch' value='1'>hide</option>
+						<option id='lt_optDisabledSwitch' value='0'>open</option>
+				    </select>
+				</div>
+			     <label id="lt_wifiSet_SSID"> </label>
+			     <input type="text" maxlength="32" id="txtWifiSSID5G_3" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+			     <label id="lt_wifiSet_AuthType"></label>
+			     <select id="selWifiAuthType5G_3" onchange = "changeAuthType5G(this,'3')">
+			         <option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK  </option>
+			         <option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+			         <option id='dropdownWPA' value="WPA-PSK">WPA-PSK  </option>
+			         <option id='lt_wifiSet_WEP' value="WEP"> WEP  </option>
+			 		 <option id='lt_wifiSet_None' value="none">NONE</option>
+			     </select>
+
+			     <!--add div for WPS operation -->
+			     <!-- <div id="divWpsCfgDlg5G_3">
+			     	<input type="button" value="Add WPS Client" id="lt_lWpsCfgBtn" style="width:190px;height:30px;" onclick="ShowWPSCfgDlg5G('3')"/>
+			     </div> -->
+			</div>
+			<div class="wifi_right">
+				 <div id="divEncryAlg5G_3">
+			       <label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+			       <select id="selEncryAlg_For_WPA_PSK5G_3">
+						<option value='AES-CCMP'>AES-CCMP</option>
+						<option value='TKIP'>TKIP</option>
+						<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+			       	</select>
+			       	<select id="selEncryAlg_For_WEP5G_3">
+						<option value='Shared-key'>Shared-key</option>
+			       	</select>
+			     </div>
+
+				<div id="divwepKeyFormat5G_3" style="display:none;">
+				    <label id="lt_wifiSet_wepKeyFormat"></label>
+				    <select id="selWepKeyFormat5G_3">
+				         <option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+				         <option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+				         <option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+				         <option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+				     </select>
+			     </div>
+
+				 <div id="divPassWd5G_3">
+				     <label id="lt_wifiSet_passwd"></label>
+				     <input  type="text" class="txtEditBox" id="txtPasswd5G_3" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')"/>
+			     </div>
+			    <div id="divWpaGroupKey5G_3">
+				    <label id='lt_wifiSet_wpaGroupRekey'></label>
+				    <input type='text' maxlength="3" value='' id='txtWpaGroupKeyUpdateInterval5G_3' class='txtEditBox' /><strong id='sDTIMInterval'>(1~100)</strong>
+			    </div>
+
+			    <div id='divApIsolateSwitch5G_3'>
+				    <label  id="lt_wifiSet_ApIsolateSwitch"></label>
+				    <select id='selApIsolateSwitch5G_3'>
+				        <option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+					    <option id='lt_optEnableSwitch' value='1'>Enabled</option>
+				    </select>
+			    </div>
+			</div>
+		</div>
+		<br class="clear"/>
+		<label id="wifiSetErrorLogs5G_3" class="error" style="display: none"></label>
+		<div class="formBox" align = "right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID5G(3)' class="btn-apply"/> </div>
+	</div>
+	<br class="clear"/>
+</div>
+	
+   <!-- div MBAddWPSClient start -->
+    <!-- <div id="MBAddWPSClient5G" style="display:none">
+    	<div class="popUpBox popUpBox2">
+			<h1 id="h1AddWPSClient5G">Add WPS Client</h1>
+			<a href="#" class="close" onclick="WPSClientClose()">x</a>
+			<br style="clear:both"/>
+			<div style="padding:5px 15px">
+				<strong><label id="lWPStext5G">Choose a method to associate WPS certified client</label></strong>
+				<br style="clear:both"/>
+				<input id="btnPush5G" type="button" class="btn-apply" value="Push" onclick="btnPushClicked5G()" style="float:right; margin-top:-4px; width:110px;"/><span id="spanWPSPushButton5G">WPS Push Button</span>
+				<br style="clear:both"/>
+				<input id="btnRegister5G" type="button" class="btn-apply" value="Register" onclick="btnRegisterClicked5G()" style="float:right; margin-top:17px;width:110px;"/><span id="spanEnterPin5G">Enter PIN</span>
+				<br/>
+				<input id="txtRouterPinMB5G" type="text" maxlength="10" onclick="RouterPinMBChange5G()" onchange="RouterPinMBChange5G()" style=" margin-top:2px;"/>
+				<br style="clear:both"/>
+				<div id="divcancel_session5G" style="display:none; float:right;">
+					<a href="#" id="cancel_session" onclick="cancelSessionClicked5G()"><strong id="lCancelWpsSession">cancel session</strong></a>
+				</div>
+				<label id="lWPSStatus5G" style="color:#f00;"></label>
+				<br style="clear:both"/>
+				<label id="lWPSError" class="lable13" style="display:none"></label>
+				<div align="right">
+					<input id="btnClose5G" type="button" class="btn-apply" value="Close" onclick="WPSClientClose5G()" style="float:right; width:110px;"/>
+				</div>
+			</div>
+		</div>
+    </div> -->
+    <!-- div MBAddWPSClient end -->
+    
+    </div>

@@ -1,0 +1,14 @@
+config pdp_conf_type default
+	option connection_num 0
+	option type default
+	option auto_apn 0
+	option connect_mode 1
+	option lte_default 1
+	option data_on_roaming 1
+	option enable 1
+	option ip_type 1
+	option mtu 1492
+	option pdp_name default
+	option apn 3g.utel.ua
+	option lte_apn 3g.utel.ua
+	option modifiable 0

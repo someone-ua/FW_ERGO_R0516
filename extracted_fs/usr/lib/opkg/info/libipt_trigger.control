@@ -1,0 +1,8 @@
+Package: libipt_trigger
+Version: 2014-1
+Depends: libc, libxtables
+Source: package/network/utils/ipt_trigger/libipt_trigger
+Section: libipt_trigger
+Architecture: ramips_24kec
+Installed-Size: 2450
+Description:  wireless-WEB service applictions and utilities  

@@ -1,0 +1,5 @@
+
+config reboot_set 'settings'
+	option hour '1'
+	option enable '0'
+

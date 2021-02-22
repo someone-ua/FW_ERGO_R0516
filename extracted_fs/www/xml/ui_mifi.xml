@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<Ui>
+    <Tab Name='mDashboard' type='submenuabsent' implFunction='objdashboard'> </Tab>
+
+    <Tab Name='tInternet' type='submenupresent'>
+        <Menues>
+            <Menu id='mInternetConn' implFunction='objInternetConn' type='submenuabsent'/>
+            <Menu id='mProfileManagement' implFunction='objProfileManagement' type='submenuabsent'/>
+            <Menu id='mManulNetwork' implFunction='objManualNetwork' type='submenuabsent'/>           
+            <Menu id='mPinPuk' implFunction='objPinPuk' type='submenuabsent'/>            
+            <!--Menu id='mMEPSetting' implFunction='objMEPSetting' type='submenuabsent'/-->    
+        </Menues>
+    </Tab>
+    <Tab Name='tHome_Network' type='submenupresent'>
+        <Menues>
+            <Menu id='mDHCP_Settings' implFunction='objDHCPSettings' type='submenuabsent'/>
+            <Menu id='mDNS_Settings' implFunction='objDNSSettings' type='submenuabsent'/>
+            <Menu id='mDeviceManagement'  type='submenupresent'> 
+                <ThirdlevelMenus>
+                    <ThirdlevelMenu id='mConnected_Devices' implFunction='objConnectedDev'  />
+                    <ThirdlevelMenu id='mAllConnect_Devices' implFunction='objDeviceTraffic'  />  
+                </ThirdlevelMenus>
+            </Menu>
+            <Menu id='mTrafficManagement'  type='submenupresent'> 
+                <ThirdlevelMenus>
+                    <ThirdlevelMenu id='mTrafficSetting' implFunction='objTrafficSettings'  />
+                    <ThirdlevelMenu id='mTrafficStatistical' implFunction='objTrafficStatistic'  />                   
+                </ThirdlevelMenus>
+            </Menu>
+            <!-- <Menu id='mUssd' implFunction='objussd' type='submenuabsent'/> -->
+            <!--<Menu id='mwanConvert' implFunction='objWanConvert' type='submenuabsent'/-->
+            <!--Menu id='mStk' implFunction='objStk' type='submenuabsent'/-->    
+    	</Menues>
+    </Tab>
+     <Tab Name='tPhoneBook' type='submenupresent' >
+         <Menues>
+            <Menu id='mAllContact' implFunction='objPhoneBook' type='submenuabsent' />
+            <Menu id='mLocationContact'  type='submenupresent'> 
+                <ThirdlevelMenus>
+                    <ThirdlevelMenu id='mLoactionAll' implFunction='objPhoneBook'  />
+                    <ThirdlevelMenu id='mLoactionCommon' implFunction='objPhoneBook'  />
+                    <ThirdlevelMenu id='mLoactionFriends' implFunction='objPhoneBook'/>
+					<ThirdlevelMenu id='mLoactionFamliy' implFunction='objPhoneBook'/>
+					<ThirdlevelMenu id='mLoactionColleague' implFunction='objPhoneBook'/>
+                </ThirdlevelMenus>
+            </Menu>
+            <Menu id='mSimContact' implFunction='objPhoneBook' type='submenuabsent' />         
+        </Menues>
+    </Tab>
+      <Tab Name='tSms' type='submenupresent'>
+    <Menues>
+      <Menu id='mDeviceInbox' implFunction='objSms' type='submenuabsent'/>    
+      <Menu id='mSimInbox' implFunction='objSms' type='submenuabsent' />
+      <Menu id='mSmsOutbox' implFunction='objSms' type='submenuabsent'/>      
+      <Menu id='mSmsDrafts' implFunction='objSms' type='submenuabsent'/>
+      <Menu id='mSmsSet' implFunction='objSmsSet' type='submenuabsent' />
+    </Menues>
+  </Tab>
+    <Tab Name='tWireless' type='submenupresent'>
+        <Menues>
+            <Menu id='mWifiInfoSet' implFunction='objWifiSet' type='submenuabsent'/>
+            <!-- <Menu id='mWifiInfoSet5G' implFunction='objWifiSet5G' type='submenuabsent'/> -->
+	    <Menu id='mWPSSet' implFunction='objWPSSet' type='submenuabsent'/>
+            <Menu id='mWifiMACFilter' implFunction='objWifiMACFilter' type='submenuabsent'  />
+            <Menu id='mFireWall'  type='submenupresent'> 
+                <ThirdlevelMenus>
+                    <ThirdlevelMenu id='mWifiIpFilter' implFunction='objWifiIpFilter' />
+            		<ThirdlevelMenu id='mWifiPortMap' implFunction='objWifiPortMap'/>
+            		<ThirdlevelMenu id='mWifiPortTrigger' implFunction='objWifiPortTrigger'/>
+            		<ThirdlevelMenu id='mWifiDmzSet' implFunction='objWifiDmzSet'/>
+            		<ThirdlevelMenu id='mWifiDnfilter' implFunction='objWifiDnfilter'/>        
+		    <ThirdlevelMenu id='mWifiDDNS' implFunction='objWifiDDNS'/>
+                    <ThirdlevelMenu id='mWifiSAC' implFunction='objWifiSAC'/>
+                </ThirdlevelMenus>
+            </Menu>       
+        </Menues>
+    </Tab>
+    <Tab Name='tRouter' type='submenupresent' >
+        <Menues>
+            <Menu id='mRouterManage' implFunction='objRouterManage' type='submenuabsent' />
+            <Menu id='mAccountManage' implFunction='objAccountManage' type='submenuabsent' />
+            <Menu id='mSoftUpdate' implFunction='objSoftUpdate' type='submenuabsent'/>
+            <Menu id='mConfManage' implFunction='objConfManage' type='submenuabsent'/>       
+            <Menu id='mAccess_Logs' type='submenupresent'>
+                <ThirdlevelMenus>
+            		<ThirdlevelMenu id='mlogAccessLogs' implFunction='objAccess_Logs'/>
+            		<ThirdlevelMenu id='mlogLoginOperationLogs' implFunction='objlogin_operation_Logs'/>  
+                </ThirdlevelMenus>
+            </Menu>
+            <Menu id='mVPN' implFunction='objVPNManage' type='submenuabsent'/>
+	    
+            <!--  <Menu id='mopenVPN' implFunction='objopenVPNManage' type='submenuabsent'/> -->
+            <!-- <Menu id='mPortal' implFunction='objPortal' type='submenuabsent'/> -->
+            <Menu id='mTimeSetting' implFunction='objTimeSetting' type='submenuabsent'/>
+            <!-- <Menu id='mWebDav' implFunction='objWebDav' type='submenuabsent'/>
+            <Menu id='mWebDav_share_setting' implFunction='objWebDavmanagement' type='submenuabsent'/> -->
+						<Menu id='mdiagnostics_ping' implFunction='objDiagnostics' type='submenuabsent'/>
+						<!--<Menu id='mtr069_setting' implFunction='objTR069Setting' type='submenuabsent'/>-->
+						<Menu id='mstaticRoute' implFunction='objStaticRoute' type='submenuabsent'/>
+						<!-- <Menu id='mqos_management' implFunction='objQosSetting' type='submenuabsent'/> -->
+						
+        </Menues>
+    </Tab>
+</Ui>

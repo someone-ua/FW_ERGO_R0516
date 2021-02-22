@@ -1,0 +1,25 @@
+<a href='#' class='help' onclick="getHelp('UserManagement')">&nbsp;</a>
+<label id="lt_change_password_title" class="title"></label>
+<div id="ChangeUser">
+	<label id="lt_EnterPassword"> </label>
+	<input type="password" style="display:none;">
+	<input name="" type="password" maxlength="20" id="txtpwd" class="textfield" onclick="clearPasswordError()"/>
+ 	<br style="clear:both" />
+	<label id="lt_EnterNewPassword1"> </label>
+	<input name="" type="password" maxlength="20" id="txtNewPwd" class="textfield" onclick="clearPasswordError()"/>
+	<br style="clear:both" />
+	<ul class="pwdCharge">
+		<li id="lt_pwd_Low" class="pwd_list">low</li>
+		<li id="lt_pwd_Medium" class="pwd_list">medium</li>
+		<li id="lt_pwd_High" class="pwd_list">high</li>
+	</ul>
+	<br style="clear:both"  />
+	<label id="lt_EnterNewPassword2"> </label>
+	<input name="" type="password" maxlength="20" id="txtNewPwd2" class="textfield" onclick="clearPasswordError()" />
+  <div class="pBoxCont" ><label id="lAlertPasswordError" class="error"></label></div>
+	<div>
+		<input type="checkbox" id="lt_pwd_showChange" style="float:left;margin-top:3px;">
+		<label for="lt_pwd_showChange" id="lt_pwd_showChangeTip" class="label_tip"></label>
+	</div>
+	<div align='right'><input type='button' class="btn-apply" id='lt_btUpdate' value='Save' onclick='ChangePassword()'  /> </div>
+</div>

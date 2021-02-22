@@ -1,0 +1,11 @@
+Package: minicom
+Version: 2.7-1
+Depends: libc, libncurses
+Source: external/packages/utils/minicom
+License: GPL-2.0
+LicenseFiles: COPYING
+Section: utils
+Maintainer: Álvaro Fernández Rojas <noltari@gmail.com>
+Architecture: ramips_24kec
+Installed-Size: 71826
+Description:  Terminal emulation program

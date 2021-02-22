@@ -1,0 +1,106 @@
+<canvas class="bg_canbas" id="bgCanvas"></canvas>
+<div class="loginArea">
+    <span><a href="#." id="quickSetup" onclick="GotoQuickSetup()">Quick Setup</a><a href="#." id="MainHelp" onclick="getMainHelp()">Help</a><a href="#." id="MainLogOut" onclick="logOut()">Log Out</a></span>
+</div>
+<div class="header" id="header">
+	<img id="header-logo" src="../images/logo.png" alt="" class="logo_icon">
+	<br style="clear:both;"/>
+	<div class="media_menu" id="media_menu"></div>
+	<div class="media_sub_menu" id="media_sub_menu"></div>
+    <div class="navigation" id="navigation">
+		<div class="menu_bg" id="menu_bg"></div>
+        <ul id ="menu" class="menu"></ul>
+    </div>
+</div>
+<div class="mainColumn" id="mainColumn">
+    <div class="leftBar">
+        <ul class="leftMenu" id="submenu"> </ul>
+    </div>
+
+    <div id="Content" class="content"></div>
+    <br class="clear" /><br class="clear" />
+</div>
+
+<div id="alertMB" style="display: none">
+    <div class='popUpBox2'>
+		<h1 id="lAlert"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div align="center">
+			<label id="lAlertMessage" class="lable12"></label>
+			<br style="clear:both" />
+			<div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+				<input id="btnModalOk" type="button"  value="OK" onclick="CloseDlg()" class="btn-apply" />
+			</div>
+		</div>
+	</div>
+</div>
+<div id="confirmDlg" style="display: none">
+    <div class='popUpBox2'>
+		<h1 id="lt_confirmDlg_title"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div align="center">
+			<label id="lt_confirmDlg_msg" class="lable12"></label>
+			<br style="clear:both" />
+			<div class="buttonRow1" style="border-top:1px solid #a7a7a7; padding:7px 0; margin:7px 0 0 0; text-align:center">
+				<input id="lt_btnConfirmYes" type="button"  class="btn-apply" />
+				<input id="lt_btnConfirmNo" type="button"  onclick="CloseDlg()" class="btn-apply" />
+			</div>
+		</div>
+	</div>
+</div>
+<div id="PleaseWait" style="display:none;">
+        <div class="pleaseWait" >
+			<div align="center" class="waitContent">
+				<br />
+				<br />
+				<img src="images/PleaseWait.png" alt="..." class="loading" id="WaitPic" />
+				<br />
+				<label id="lPleaseWait"></label>
+			</div>
+		</div>
+</div>
+
+<div id="mbox1"  style="display: none">
+    <div class="popUpBox popUpBox3" id="MBQuickSetup">
+        <div class="pBoxCont" style="padding:10px 55px 10px 20px;">
+            <h2 class="subtlt" id="lt_QsText"></h2>
+			<br />
+            <b id="lt_QsText1"></b>
+            <br />
+            <p id="lt_QsText2" style="width:520px;"></p>
+			<br />
+			<div align='center'>	
+			<input type="button" id="lt_btnSkip"  onclick="btnSkipQSClicked()"  class="btn-apply" style="width:100px;height:25px;"/>			
+			<input type="button" id="lt_btnQuickSetup" value="Quick Setup" onclick="CloseDlg(); quickSetup()"  class="btn-apply" style="margin-left:10px;width:100px;height:25px;"/>			
+			</div>
+			<br/>
+			<input id="btnSkipQsCheckBox" type="checkbox" value="" class="chk" /><label id="lt_QsText3" style="padding-top:2px;margin-left:5px;width:auto;"></label>
+			<br/>
+            <br style="clear:both" />
+            <label class="error" style="width:auto; margin-left:22px" id="lt_QsText4"></label>
+            <br style="clear:both" />
+        </div>
+    </div>
+</div>
+<div id="pawChangeBox" style="display:none;">
+	<div class="popUpBox">
+		<h1 id="lt_changepwd_Text"></h1>
+		<a href="#" class="close" onclick="btnChangeLate()">x</a>
+		<div style="padding:10px 15px;">
+			<p id="lt_changepwd_tip"></p>
+			<div>
+				<input type="checkbox" id="RemindBox" style="margin-top:6px;">
+				<label for="RemindBox" id="lt_changepwd_noRemind" style="display: inline-block;"></label>
+			</div>
+			<div style="text-align: right;">
+				<input type="button" id="lt_btn_nowchange"  onclick="btnChangePwd()"  class="btn-apply"/>			
+				<input type="button" id="lt_btn_latterchange" onclick="btnChangeLate();"  class="btn-apply"/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="footer" >
+    <div class="footerMast" id="lt_lacopyright">
+        <div >Copyright 2018, All Rights Reserved, LTE International Ltd.</div>
+    </div>
+</div>

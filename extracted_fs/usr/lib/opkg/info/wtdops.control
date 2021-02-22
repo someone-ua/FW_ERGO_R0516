@@ -1,0 +1,8 @@
+Package: wtdops
+Version: 1.0-1
+Depends: libc, libpthread, libubox, libubus, liblog
+Source: package/services/wtdops
+Section: opt
+Architecture: ramips_24kec
+Installed-Size: 2573
+Description:  wtdops service applictions and utilities

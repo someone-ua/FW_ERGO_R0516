@@ -1,0 +1,509 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="X-VA-Compatible" content="IE=edge,chrome=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="pragma" content="no-cache" />
+		<meta http-equiv="cache-control" content="no-cache" />
+		<title>LTE Wireless Router</title>
+
+		<script type="text/javascript" src="js/jquery/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript">
+			var u = navigator.userAgent;
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); 
+			var g_platformName = "mifi";
+			if (typeof jQuery == 'undefined') {
+				window.location.reload(true);
+			}
+		</script>
+		<script type="text/javascript" src="js/jquery/jquery.i18n.properties-1.0.4.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery.easydropdown.min.js"></script>
+		<script type="text/javascript" src="js/jquery/jquery-form.js"></script>
+		<script type="text/javascript" src="js/library/spark-md5.min.js"></script>
+		<script type="text/javascript" src="js/library/all.js"></script>
+
+		<script type="text/javascript" src="js/base/utils.js"></script>
+		<script type="text/javascript" src="js/base/xml_helper.js"></script>
+		<script type="text/javascript" src="js/base/ajax_calls.js"></script>
+		<script type="text/javascript" src="js/base/config.js"></script>
+
+		<script type="text/javascript" src="js/base/layout_manager.js"></script>
+		<script type="text/javascript" src="js/base/validator.js"></script>
+		<script type="text/javascript" src="js/control/ip_address.js"></script>
+		<script type="text/javascript" src="js/control/mac_address.js"></script>
+
+
+		<script type="text/javascript" src="js/panel/dashboard.js"></script>
+		<script type="text/javascript" src="js/panel/quick_setup.js"></script>
+
+		<script type="text/javascript" src="js/panel/internet/internet_connection.js"></script>
+		<script type="text/javascript" src="js/panel/internet/profileManagement.js"></script>
+		<script type="text/javascript" src="js/panel/internet/manual_network.js"></script>
+		<script type="text/javascript" src="js/panel/internet/pin_puk.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiSetting.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiSetting5G.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiMacFilter.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiIpFilter.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiPortMap.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiDmzSet.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiPortTrigger.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiDnfilter.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/WPSSettings.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiSAC.js"></script>
+		<script type="text/javascript" src="js/panel/wifi/wifiDDNS.js"></script>
+		<script type="text/javascript" src="js/panel/sms/sms.js"></script>
+		<script type="text/javascript" src="js/panel/sms/SMSSettings.js"></script>
+		<script type="text/javascript" src="js/panel/phonebook/phonebook.js"></script>
+
+		<script type="text/javascript" src="js/panel/homeNetwork/dhcp_settings.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/dns_settings.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/traffic_settings.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/traffic_statistic.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/connected_device.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/connectdevice_traffic.js"></script>
+		<script type="text/javascript" src="js/panel/homeNetwork/network_activity.js"></script>
+		<!-- <script type="text/javascript" src="js/panel/homeNetwork/wan_convert.js" ></script> -->
+
+		<script type="text/javascript" src="js/panel/router/time_setting.js"></script>
+		<script type="text/javascript" src="js/panel/router/router_management.js"></script>
+		<script type="text/javascript" src="js/panel/router/user_management.js"></script>
+		<script type="text/javascript" src="js/panel/router/software_upgrade.js"></script>
+		<script type="text/javascript" src="js/panel/router/conf_management.js"></script>
+		<script type="text/javascript" src="js/panel/router/diagnostics.js"></script>
+		<script type="text/javascript" src="js/panel/router/StaticRoute.js"></script>
+		<script type="text/javascript" src="js/panel/stk/stk.js"></script>
+		<script type="text/javascript" src="js/panel/stk/ussd.js"></script>
+
+		<script type="text/javascript" src="js/panel/router/webdav_management.js"></script>
+		<script type="text/javascript" src="js/panel/router/webdavobj.js"></script>
+		<script type="text/javascript" src="js/panel/webdavobj_shared.js"></script>
+		<script type="text/javascript" src="js/panel/router/log_login_operation.js"></script>
+		<script type="text/javascript" src="js/panel/router/vpn.js"></script>
+		<script type="text/javascript" src="js/panel/router/ssh_tunnel.js"></script>
+		<!-- <script type="text/javascript" src="js/panel/router/openvpn.js" ></script> -->
+		<script type="text/javascript" src="js/panel/router/portal.js"></script>
+		<!--script type="text/javascript" src="js/panel/router/qos.js" ></script-->
+		<script type="text/javascript" src="js/panel/router/tr069_setting.js"></script>
+		<script type="text/javascript" src="js/panel/router/workmode.js"></script>
+
+		<link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="css/table.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/modaldbox.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/webdav_table.css" media="all">
+		<link rel="stylesheet" type="text/css" href="css/media.css" media="all">
+
+
+		<link type="application/rss+xml" rel='alternate' href='ap-x.rss' />
+
+		<script type="text/javascript">
+			var g_version = ''
+			function setLocale(value) {
+				var setLangMap = new Map();
+				setLangMap.put('RGW/router/language_choice_policy', value);
+				PostXmlNoShowWaitBox("router", "set_language_choice", setLangMap);
+
+				// SetCookie("locale",value,365);
+				setLocalization(value);
+
+				displayControls();
+				$("#tbarouter_username").focus();
+			}
+
+			function displayControls() {
+				document.getElementById("laUsername").innerHTML = jQuery.i18n.prop("laUsername");
+				document.getElementById("laPassword").innerHTML = jQuery.i18n.prop("laPassword");
+				document.getElementById("btnSignIn").value = jQuery.i18n.prop("btnSignIn");
+				document.getElementById("lTitleUAPXC").innerHTML = jQuery.i18n.prop("lTitleUAPXC");
+			}
+
+			function sharefile() {
+				$("#divAdminApp").css("width", "1500px");
+				$("#divAdminApp").html(CallHtmlFile("html/webdav_shared.html"));
+				$("#lTitleShareFile").html(jQuery.i18n.prop("lTitleShareFile"));
+				$("#ShareFileBack").html(jQuery.i18n.prop("ShareFileBack"));
+				ShareFileShowInit();
+			}
+
+
+			function Login() {
+				var username = document.getElementById("tbarouter_username").value;
+				username = encodeURIComponent(username);
+				var password = document.getElementById("tbarouter_password").value;
+				var login_done;
+
+				if (username == "" || password == "")
+					login_done = 0;
+				else
+					login_done = doLogin(username, password);
+				if (1 == login_done) {
+					document.getElementById("divAdminApp").innerHTML = CallHtmlFile("html/adminApp.html");
+					$('#header-logo').click(function(){
+						if(g_nav != 'quicksetup'){
+							createMenu(1);
+						}else{
+							ExitQuickSetup();
+						}
+					})
+					document.getElementById("quickSetup").innerHTML = jQuery.i18n.prop("quickSetupName");
+					document.getElementById("MainHelp").innerHTML = jQuery.i18n.prop("helpName");
+					document.getElementById("MainLogOut").innerHTML = jQuery.i18n.prop("LogOutName");
+					document.getElementById("lt_lacopyright").innerHTML = jQuery.i18n.prop("lt_lacopyright");
+					document.getElementById("divAdminApp").className = "";
+					document.getElementsByTagName("body")[0].className = "";
+					g_loginPasswd = password;
+					g_username = username;
+					g_pwdstrength = checkPWStrength(g_loginPasswd);
+					initAPP(g_pwdstrength);
+
+				} else {
+					document.getElementById('lloginfailed').style.display = 'block';
+					if (login_done == 0)
+						document.getElementById("lloginfailed").innerHTML = jQuery.i18n.prop("lloginfailed");
+					else if (login_done == -1)
+						document.getElementById("lloginfailed").innerHTML = jQuery.i18n.prop("lnoconn");
+				}
+			}
+
+			function checkEnter(e) {
+				var characterCode;
+				if (e && e.which) {
+					e = e
+					characterCode = e.which
+				} else {
+					e = event
+					characterCode = e.keyCode
+				}
+				if (characterCode == 13) {
+					Login();
+				}
+			}
+
+			function hideError() {
+				document.getElementById('lloginfailed').style.display = 'none';
+			}
+
+
+			function initIndex() {
+				var isLogined = checkIfLogin();
+				var page = '';
+				if(isLogined){
+					page = $(isLogined).find('html').text();
+				}
+				//forbid mouse button
+				var bodyObj = document.body;
+				if (bodyObj && forbiddenMouseRightBtn) {
+					bodyObj.oncontextmenu = function() {
+						return false
+					};
+				}
+				g_version = GetBrowserType();
+				if ("IE6" == g_version) {
+					var fileref = document.createElement('script');
+					fileref.setAttribute("type", "text/javascript");
+					fileref.setAttribute("src", 'js/jquery/jquery.bgiframe.min.js');
+					document.getElementsByTagName("head")[0].appendChild(fileref);
+				}
+				if (config_langue == 'both') {
+					$('#languageBox').show();
+					var langXml = PostXml("router", "get_language_choice");
+					if (!langXml || $(langXml).find("language").text() == "") {
+						langXml = PostXml("router", "get_language_choice");
+					}
+					var lang = $(langXml).find("language").text();
+					if (lang != "cn") {
+						lang = "en";
+					}
+				} else {
+					$('#languageBox').hide();
+					var lang = config_langue;
+				}
+				setLocalization(lang);
+				displayControls();
+				if(page && page.indexOf('500 - Internal Server Error')<0 && $(isLogined).find('html').text()!='::'){
+					var pages = page.split(':');
+					var nav_ = pages[0];
+					var firstMenu_ = pages[1];
+					var secondMenu_ = pages[2];
+					g_username = $(isLogined).find('name').text();
+					g_loginPasswd = $(isLogined).find('password').text();
+					document.getElementById("divAdminApp").innerHTML = CallHtmlFile("html/adminApp.html");
+					document.getElementById("divAdminApp").style.display = 'block';
+					document.getElementById("divAdminApp").className = "";
+					document.getElementsByTagName("body")[0].className = "";
+					initmb();
+					setDlgStyle();
+					createMenuFromXML();
+					if(nav_=="quicksetup"){
+						quickSetup(firstMenu_);
+						return;
+					}
+					createMenu(nav_);
+					if(secondMenu_){
+						displaySubForm(firstMenu_);
+						displayForm(secondMenu_,'1');
+					}else if(firstMenu_){
+						displayForm(firstMenu_);
+					}
+				}else{
+					$("#divAdminApp").show();
+					setDlgStyle();
+				}
+				
+			}
+			
+			function checkIfLogin(){
+				var url = window.location.protocol + '//' + window.location.host + getHeader('GET','iflogin');
+				var result = sendAjax(url);
+				return result;
+			}
+
+			function initAPP(strength) {
+				initmb();
+				setDlgStyle();
+				if (("" == GetCookie("showChangePaw") || '0' == GetCookie("showChangePaw")) && strength == MACRO_PASSWORD_LOW) {
+					if (g_bodyWidth < 430) {
+						ShowDlg("pawChangeBox", '95%', 195);
+					} else {
+						ShowDlg("pawChangeBox", 450, 195);
+					}
+					$('#lt_changepwd_Text').text(jQuery.i18n.prop('lt_changepwd_Text'));
+					$('#lt_changepwd_tip').text(jQuery.i18n.prop('lt_changepwd_tip'));
+					$('#lt_changepwd_noRemind').text(jQuery.i18n.prop('lt_changepwd_noRemind'));
+					$('#lt_btn_nowchange').val(jQuery.i18n.prop('lt_btn_nowchange'));
+					$('#lt_btn_latterchange').val(jQuery.i18n.prop('lt_btn_latterchange'));
+
+					$('#RemindBox').change(function() {
+						var isSelect = 0;
+						if ($(this).prop('checked')) {
+							isSelect = 1;
+						}
+						SetCookie('showChangePaw', isSelect, 365);
+					});
+				} else {
+					createMenuFromXML();
+					createMenu(1);
+				}
+			}
+
+			function btnChangePwd() {
+				CloseDlg();
+				createMenuFromXML();
+				createMenu(7);
+				displayForm("mAccountManage");
+			}
+
+			function btnChangeLate() {
+				CloseDlg();
+				createMenuFromXML();
+				createMenu(1);
+			}
+
+			var maxWindowW = 430;
+
+			function setDlgStyle() {
+				if(g_version == "IE8"){
+					return;
+				}
+				drawTriangle(600);
+			}
+
+			function drawTriangle(maxH) {
+				var bgCanvas = document.getElementById("bgCanvas");
+				var ctx_bg = bgCanvas.getContext("2d");
+				drawPoint(bgCanvas, ctx_bg, maxH);
+				if (document.getElementById("bgCanvas1")) {
+					var bgCanvas1 = document.getElementById("bgCanvas1");
+					var ctx_bg1 = bgCanvas1.getContext("2d");
+					drawPoint(bgCanvas1, ctx_bg1, maxH);
+				}
+			}
+
+			function drawPoint(bgCanvas, ctx_bg, maxH) {
+				var bodyW = parseInt(document.body.offsetWidth);
+				var windowW = parseInt($("#divAdminApp").width());
+				var maxW = (bodyW > windowW) ? bodyW : windowW;
+
+				var bgCanvasW;
+				var bgCanvasH = maxH;
+				if (bodyW < 430) {
+					bgCanvasW = bodyW;
+				} else {
+					bgCanvasW = maxW;
+				}
+				bgCanvas.width = bgCanvasW;
+				bgCanvas.height = bgCanvasH;
+				var totalP = 7;
+				var triangle = [
+					[4, 48, 155, 160, 128, 0],
+					[128, 0, 155, 160, 230, 45],
+					[230, 45, 155, 160, 320, 235],
+					[230, 45, 320, 235, 395, 140],
+					[230, 45, 395, 140, 560, 0],
+					[560, 0, 535, 128, 395, 140],
+					[560, 0, 535, 128, 628, 80],
+					[628, 80, 620, 270, 535, 128],
+					[395, 140, 320, 235, 375, 270],
+					[375, 270, 395, 140, 535, 128],
+					[375, 270, 485, 355, 535, 128],
+					[535, 128, 485, 355, 620, 270],
+					[620, 270, 628, 439, 485, 355],
+					[485, 355, 628, 439, 545, 515],
+					[545, 515, 485, 355, 385, 415],
+					[385, 415, 485, 355, 375, 270],
+					[4, 48, 65, 140, -50, 95],
+					[4, 48, 155, 160, 65, 140],
+					[155, 160, 320, 235, 145, 305],
+					[320, 235, 375, 270, 285, 385],
+					[375, 270, 385, 415, 285, 385],
+					[385, 415, 545, 515, 340, 510],
+					[545, 515, 628, 439, 615, 590]
+				];
+				var upPoint = [];
+				var downPoint = [];
+
+				ctx_bg.clearRect(0, 0, bgCanvasW, bgCanvasH);
+				var pw = bgCanvasW - 628;
+				if (bgCanvasW < maxWindowW) {
+					pw = Math.floor(windowW / 3);
+				}
+				for (var i = 0; i < triangle.length; i++) {
+					var x1, x2, y1, y2, x3, y3;
+					x1 = pw + triangle[i][0];
+					y1 = triangle[i][1];
+					x2 = pw + triangle[i][2];
+					y2 = triangle[i][3];
+					x3 = pw + triangle[i][4];
+					y3 = triangle[i][5];
+					ctx_bg.beginPath();
+					ctx_bg.save();
+					var lGrd = ctx_bg.createLinearGradient(x1, y1, x3, y3);
+					lGrd.addColorStop(0, "#000");
+					lGrd.addColorStop(1, "#fff");
+					ctx_bg.fillStyle = lGrd;
+					ctx_bg.globalAlpha = 0.1;
+					ctx_bg.moveTo(x1, y1);
+					ctx_bg.lineTo(x2, y2);
+					ctx_bg.lineTo(x3, y3);
+					ctx_bg.lineTo(x1, y1);
+					ctx_bg.fill();
+					ctx_bg.restore();
+					ctx_bg.closePath();
+
+					if (i > 0) {
+						ctx_bg.beginPath();
+						ctx_bg.save();
+						ctx_bg.strokeStyle = "#000";
+						ctx_bg.globalAlpha = 0.2;
+
+						// ctx_bg.rotate(GetRandomNum(1,20)*0.1*Math.PI);
+						// var sc=GetRandomNum(5,8)*0.1;
+						var sc, transY;
+						if (i % 3 == 1) {
+							sc = 0.6;
+							transY = 30;
+						} else if (i % 4 == 1) {
+							sc = 0.5;
+							transY = 20;
+						} else if (i % 5 == 1) {
+							sc = 0.7;
+							transY = 10;
+						} else {
+							sc = 0.8;
+							transY = 50;
+						}
+						ctx_bg.scale(sc, sc);
+						ctx_bg.translate(pw - 100, transY);
+						ctx_bg.moveTo(x1, y1);
+						ctx_bg.lineTo(x2, y2);
+						ctx_bg.lineTo(x3, y3);
+						ctx_bg.lineTo(x1, y1);
+						ctx_bg.stroke();
+
+						ctx_bg.restore();
+						ctx_bg.closePath();
+					}
+				}
+			}
+
+			function btnSkipQSClicked() {
+				if ($("#btnSkipQsCheckBox").prop("checked")) {
+					SetCookie("skipQs", 1, 365);
+				}
+				document.getElementById("lableWelcome").innerHTML = jQuery.i18n.prop("lableWelcome");
+				document.getElementById("quickSetupSpan").innerHTML =
+					'<a href="#."  onclick="GotoQuickSetup()" id="quickSetup" >Quick Setup</a>  |  <a href="#." id="HelpName" onclick="getMainHelp()">Help</a>  |  <a href="#."  id="LogOutName"  onclick="logOut()">Log Out</a>';
+				document.getElementById("quickSetup").innerHTML = jQuery.i18n.prop("quickSetupName");
+				document.getElementById("HelpName").innerHTML = jQuery.i18n.prop("helpName");
+				document.getElementById("LogOutName").innerHTML = jQuery.i18n.prop("LogOutName");
+				CloseDlg();
+				createMenuFromXML();
+				createMenu(1);
+			}
+		</script>
+	</head>
+	<body onload="initIndex()" class="loginBody">
+		<div class="liginbox" id="divAdminApp" style="display:none;">
+			<canvas class="bg_canbas" id="bgCanvas"></canvas>
+			<div class="notion_logo">&nbsp;</div>
+			<div class="box1">
+				<div class="title_box"><label id='lTitleUAPXC' style="font-weight: bold"></label></div>
+				<div class="box2" id="languageBox" style="display: none;">
+					<a href="#." onclick="setLocale('cn')">Ukraine</a> | 
+					<a href="#." onclick="setLocale('en')">English</a>
+					
+				</div>
+				<div class="box3">
+					<label id='laUsername'>Username</label>
+					<input type='text' name='router_username' maxlength="32" value='' id='tbarouter_username' class='textfield'
+					 onchange='hideError()' onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+					<br />
+					<label id='laPassword'>Password</label>
+					<input type='password' value='' id='tbarouter_password' maxlength="20" class='textfield' onkeypress='checkEnter(event)' />
+					<br />
+					<label class='error' id='lloginfailed' style='display: none'>Invalid username or password </label>
+					<label class='error' id='E7683FTEFTA8HT08HFH09' style='display: none'> </label>
+					<input name="" type="button" class="button" id="btnSignIn" value="Sign In" onclick='Login()' />
+					<br />
+					<!-- <input name="" style="margin-left:450px; padding:2px 0px;" type="button" class="button" id="btnSharedFile" value="Share File" onclick='sharefile()' /> -->
+				</div>
+			</div>
+			<!-- <label id="lt_lacopyright" class="copy" style="align:left">Copyright 2010, All Rights Reserved, LTE International Ltd.</label> -->
+		</div>
+		<script type="text/javascript">
+			var g_bodyWidth;
+			$(function() {
+				var docEl = document.documentElement;
+				var resizeEvt = "orientationchange" in window ? "orientationchange" : "resize";
+				// docEl.style.fontSize=13+"px";
+				g_bodyWidth = parseInt(document.body.offsetWidth);
+
+				function recalc() {
+					// docEl.style.fontSize=13+"px";      
+					var bodyW = parseInt(document.body.offsetWidth);
+					g_bodyWidth = bodyW;
+					setDlgStyle();
+					if (bodyW < maxWindowW) {
+						$("#navigation,#submenu").hide();
+						$(".navigation ul li").width("100%");
+					} else {
+						$("#navigation,#submenu").show();
+						$(".navigation ul li").width($(".header").width() / g_navtabNum);
+					}
+				}
+
+				if (document.addEventListener) {
+					window.addEventListener(resizeEvt, recalc, false);
+					document.addEventListener("DOMcontentLoaded", recalc, false);
+				} else if (document.attachEvent) {
+					document.attachEvent("on" + resizeEvt, recalc);
+					document.attachEvent("on" + "DOMcontentLoaded", recalc);
+				}
+			})
+		</script>
+	</body>
+</html>

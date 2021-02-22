@@ -1,0 +1,25 @@
+<a class="help" href="#" onclick="getHelp('portalSettings')">&nbsp;</a>
+<label id="lt_portal_title" class="title"></label>
+<div>
+  	<div id='divPortalStatusSwitch' >
+	    <label id='lt_portal_status'></label>
+	    <select id="selPortalStatusSwitch">
+			<option id='lt_portalCloseSwitch' value='0'>Close</option>
+	        <option id='lt_portalOpenSwitch' value='1'>Open</option>
+	    </select>
+    </div>   
+
+	<div id="divPortalUrl" style="display:none">
+		<label id="lt_protal_url"></label>
+		<input name="" type="text" id="textPortalUrl" class="textfield" value="http://" onmousedown="clearInputError()"/>
+	</div>
+	
+	<!-- <div id="divPortalKey" style="display:none">
+		<label id="lt_protal_key"></label>
+		<input name="" type="text" id="textPortalKey" class="textfield" onmousedown="clearInputError()"/>
+	</div> -->
+    <div class="pBoxCont" ><label id="lPortalAlertError" class="error"  style="display:none"></label></div>
+	<div align='right'>
+		<input type='button' id='lt_protal_save' value='Save' onclick='setData()' class="btn-apply"/>
+	</div>
+</div>

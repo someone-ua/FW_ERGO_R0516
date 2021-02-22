@@ -1,0 +1,101 @@
+#!/bin/sh /etc/rc.common
+# (C) 2013 openwrt.org
+
+START=90
+
+g_qos_enable=""
+g_qos_up_band=""
+g_qos_dn_band=""
+
+OUT_NET_PORT="eth1"
+IN_NET_PORT="br-lan"
+
+qos_set_enable(){
+  iptables -t mangle -I PREROUTING -i $OUT_NET_PORT -j PACKAGE_PRI_DEAL
+  iptables -I FORWARD 3 -i $OUT_NET_PORT -j BANDWIDTH_IN
+  iptables -I FORWARD 3 -i $IN_NET_PORT -j BANDWIDTH_OUT
+  iptables -I FORWARD 5 -i $OUT_NET_PORT -j CLIENT_BANDWIDTH_IN
+  iptables -I FORWARD 5 -i $IN_NET_PORT -j CLIENT_BANDWIDTH_OUT
+
+}
+
+qos_set_client_limit(){
+  local config=$1
+  local client_mac=""
+  local client_ipaddr=""	
+  local client_up_bd=""
+  local client_dn_bd=""
+
+  config_get client_mac $config mac
+  config_get client_ipaddr $config ipaddr
+  config_get client_up_bd $config up_bandwidth
+  config_get client_dn_bd $config down_bandwidth 
+
+  echo "$client_mac $client_ipaddr $client_up_bd $client_dn_bd"
+  if [ -z "$client_mac" -o -z "$client_ipaddr" -o -z "$client_up_bd" -o -z "$client_dn_bd" ] ; 
+  then
+     exit -1 
+  fi
+
+  if [ "0" != "$client_up_bd" ] ; 
+  then
+     iptables -A CLIENT_BANDWIDTH_OUT -s $client_ipaddr/32 ! -d 127.0.0.1 -m limit --limit $client_up_bd/s -j RETURN
+     iptables -A CLIENT_BANDWIDTH_OUT -s $client_ipaddr/32 ! -d 127.0.0.1 -j DROP
+  fi
+
+  if [ "0" != "$client_dn_bd" ] ; 
+  then
+     iptables -A CLIENT_BANDWIDTH_IN -d $client_ipaddr/32 ! -s 127.0.0.1 -m limit --limit $client_dn_bd/s -j RETURN
+     iptables -A CLIENT_BANDWIDTH_IN -d $client_ipaddr/32 ! -s 127.0.0.1 -j DROP
+  fi
+}
+
+qos_set_pkg_pri(){
+  local qos_pk_type
+  local qos_pk_pri
+
+  config_get qos_pk_type qos_pkg_pri type
+  config_get qos_pk_pri qos_pkg_pri pkg_pri
+		
+  if [ -z "qos_pk_type" -o -z "qos_pk_pri" ] ; then
+  	exit 0
+  fi
+		
+   iptables -t mangle -A PACKAGE_PRI_DEAL -i $OUT_NET_PORT -p $qos_pk_type -j TOS --set-tos $qos_pk_pri
+}
+
+start() {                            
+  /lib/qos/qos.sh qos_init
+  config_load qos
+  config_get g_qos_enable qos_ctrl enable
+  config_get g_qos_up_band qos_ctrl up_bandwidth
+  config_get g_qos_dn_band qos_ctrl down_bandwidth
+
+  if [ -z "$g_qos_enable" -o -z "$g_qos_up_band" -o -z "g_qos_dn_band" ] ; then
+     exit -1
+  fi
+
+  if [ "enable" = "$g_qos_enable" ] ; then
+     qos_set_enable
+  else 
+     exit 0
+  fi
+
+  if [ -n "$g_qos_up_band" ] ; then
+     iptables -F BANDWIDTH_OUT
+     iptables -A BANDWIDTH_OUT -i $IN_NET_PORT -m limit --limit $g_qos_up_band/s -j RETURN
+     iptables -A BANDWIDTH_OUT -j DROP
+  fi
+
+  if [ -n "g_qos_dn_band" ] ; then
+     iptables -F BANDWIDTH_IN                                                
+     iptables -A BANDWIDTH_IN -i $OUT_NET_PORT -m limit --limit $g_qos_dn_band/s -j RETURN 
+     iptables -A BANDWIDTH_IN -j DROP
+  fi
+
+  config_foreach qos_set_client_limit qos_client_limit	
+  config_foreach qos_set_pkg_pri qos_pkg_pri 
+
+}
+
+

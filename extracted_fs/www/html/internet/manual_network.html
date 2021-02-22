@@ -1,0 +1,45 @@
+<a href='#' class='help' onclick="getHelp('ManualNetwork')">&nbsp;</a>
+<label id="lt_ManualNet_title" class="title"></label>
+<div>
+	<label id='lt_ManualNet_SearchNetwork'></label>
+	<input id="lt_ManualNet_btnSearchNetwork" type="button" class="btn-apply" />
+</div>
+<br />
+<div id='BgScanNetwork' style='display: block'>
+	<label id="lt_ManualNet_BgScanTime"></label>
+	<select id='BgScanTimedropdown'>        	
+			<option id='lt_ManualNet_bgScan_immediately' value='0'>0 secondes</option>
+        	<option id='lt_ManualNet_bgScan_30sec' value='1'>30 secondes</option>
+        	<option id='lt_ManualNet_bgScan_1min' value='2'>1 minutes</option>
+        	<option id='lt_ManualNet_bgScan_3min' value='3'>3 minutes</option>
+        	<option id='lt_ManualNet_bgScan_5min' value='4'>5 minutes</option>
+        	<option id='lt_ManualNet_bgScan_10min' value='5'>10 minutes</option>
+	        <option id='lt_ManualNet_bgScan_15min' value='6'>15 minutes</option>
+	        <option id='lt_ManualNet_bgScan_30min' value='7'>30 minutes</option>
+	        <option id='lt_ManualNet_bgScan_60min' value='8'>60 minutes</option>
+	        <option id='lt_ManualNet_bgScan_Disable' value='9'>Disable</option>
+	</select>
+</div>
+<div>
+	<label id='lt_ManualNet_lMannualNetwork'></label>
+	<select id='SelRearchNetworkList'></select>
+</div>
+
+
+<div class="right_align" ><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/></div>
+
+<div id="ManualScanConfigure" style="display: none" >
+    <div class="popUpBox popUpBox2" >
+        <h1 id="lt_manualnetwork"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <strong style="margin:0 15px;color:red;font-size:16px;" id="lt_ManualNet_lManualPromte">
+        	    Manual scan network may take more than one minute, please wait.
+        </strong>
+         <div class="buttonRow1 right_align">
+			<input id="lt_ManualNet_btnConfirm" type="button" class="btn-apply" />
+         	<input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+         </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,143 @@
+<div id="divSmsList" style="display: block">
+    <a href='#' class='help' onclick="getHelp('smsLocal')">&nbsp;</a>
+    <label id="lt_sms_stcTitle" class="title"> </label>
+    
+    <div id='DeleteSMSdiv' align='right' style='display: block'>   
+      		<input type="button" id="lt_sms_btnCopy" value="Copy" class="btn-apply btn_padding" style="display:none;">
+            <input type="button" id="lt_sms_btnMove" value="Move" class="btn-apply btn_padding" style="display:none;"> 
+            <input type='button' id='lt_sms_btnDelete' value='Delete' class="btn-apply btn_padding" style="display:none;"/>              
+             <input type='button' id='lt_sms_btnNew' value='New' class="btn-apply btn_padding"/>
+     </div>
+    
+    <div  class="pc_device">
+			<table id="tableSMS">
+					<thead>
+							<tr>
+									<th width="25%" id="lt_sms_stcFrom" ></th>
+									<th width="35%" id="lt_sms_stcSubject"></th>
+									<th width="25%" id="lt_sms_stcRecvTime"></th>
+									<th width="10%" id="lt_sms_stcStatus"></th>          
+									<th width="5%">
+										<input type="checkbox" id="deleteAllSms">         
+									</th>
+							</tr>
+					</thead>
+					<tbody id="smsListInfo">            
+					</tbody>
+			</table>
+		</div>
+		<div  class="phone_device">
+			<table id="tableSMS_phone">
+					<thead>
+							<tr>
+									<th width="30%" id="lt_sms_stcFrom" ></th>
+									<th width="37%" id="lt_sms_stcSubject"></th>
+									<!-- <th width="25%" id="lt_sms_stcRecvTime"></th> -->
+									<th width="16%" id="lt_sms_stcStatus"></th>          
+									<th width="12%">
+										<input type="checkbox" id="deleteAllSms">         
+									</th>
+							</tr>
+					</thead>
+					<tbody id="smsListInfo_phone">            
+					</tbody>
+			</table>
+		</div>
+		
+		
+    <div align="right" style="display: block;" id="divSmsPageNum">
+        <a style="color: red; font-weight: 700; text-decoration: underline;" href="###">1</a>
+    </div>
+</div>
+
+<div id="divSmsChatRoom" style="display:none">
+    <div id='divChosenUser' class="chzn-container">
+        <ul id="ulchosenUser" class="chzn-choices" style="list-style: none outside none; padding: 3px; margin: 0px">
+            <li id="chosen-search-field-input">
+                <input type="text" id="txtNumberList" maxlength="40" value="" style="width: 100%; height: 30px;">
+			</li>
+        </ul>
+        <div id="chosenUserSelectDiv"  class="chzn-drop" style="left: 0px;top: 50px; display: none;">
+            <select style="width:100%;height:80px;" multiple="" id="chosenUserSelect"></select>
+        </div>
+    </div>
+    <div id="divRecvSmsContent" style="background-color: #D4DAE2; box-shadow: 0 -3px 2px #DDDDDD;
+        padding-bottom: 35px; border: 1px solid #0099CC;word-break:break-all;">
+        <div id="txtRecvSmsContent" style="height: 150px;box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;padding: 4px;" readonly="true">hello,word!</div>
+        <img id="forwardSmsImg" src="images/ico_forward.png" align="right" style="margin-right: 10px; cursor: pointer;">
+       <span id="recvSmsTimeImg" align="right" style="margin-right: 10px;"></span>
+    </div>
+    <div id='divNewSmsContent'>
+        <textarea id="txtSmsContent" class="sms_textarea"></textarea>
+    </div>
+    <div class="sms_bottom">
+        <span id="lt_sms_stcSmsErrorInfo" class="error left" style="display:none;"></span>
+        <span class="sms_numTip"><em id="txtSmsCharaNum">(0/765)</em> <em id="txtSmsItemNum">(0/5)</em></span> 
+        <span class="sms_btn360">
+					<input type='button' id='lt_sms_btnSend' value='Send' class="btn-apply">           
+					<input type="button" id="lt_sms_btnSaveDraft" value="Save" class="btn-apply">
+					<input type='button' id='lt_sms_btnCancel' value='Cancel' class="btn-apply">
+				</span>
+    </div>    
+
+</div>
+
+<div id="divAddPhoneInfoDlg" style="display: none">
+    <div class="popUpBox popUpBox2">
+        <h1 id="lt_Phonebook_stcPhoneInfoDlgTitle"></h1>
+        <a href="#" class="close" onclick="CloseDlg()">x</a>
+        <div class="pBoxCont">
+            <label id="lt_Phonebook_stcName"></label>
+            <input name="" type="text" size="30" id="txtName" maxlength="25"/>
+            <br style="clear: both" />            
+            <label id="lt_Phonebook_stcSaveLoc">
+            </label>           
+            <select id="selSaveLoc">
+                <option value="0" id="lt_Phonebook_stcDevice">device</option>
+                <option value="1" id="lt_Phonebook_stcSimCard">SIM</option>    
+            </select>
+            <br style="clear: both" />
+            <label id="lt_Phonebook_stcMobileNum">
+            </label>
+            <input name="" type="text" size="30" id="txtMobilePhone" maxlength="25"/>
+            <br style="clear: both" />
+            <div id="divDeviceSupport">
+             <label id="lt_Phonebook_stcGroup">
+                </label>
+                <select id="selGroup">
+                    <option value="0" id="lt_Phonebook_stcCommonPhoneBook">common</option>
+                    <option value="1" id="lt_Phonebook_stcFamilyPhoneBook">family</option>
+                    <option value="2" id="lt_Phonebook_stcFriendPhoneBook">friend</option>
+                    <option value="3" id="lt_Phonebook_stcColleaguePhoneBook">colleague</option>
+                </select>
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcEmail">
+                </label>
+                <input name="" type="text" size="30" id="txtEmail" maxlength="25" />
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcHomeNum">
+                </label>
+                <input name="" type="text" size="30" id="txtHomePhone" maxlength="25" />
+                <br style="clear: both" />
+                <label id="lt_Phonebook_stcOfficeNum">
+                </label>
+                <input name="" type="text" size="30" id="txtOfficePhone" maxlength="25" />
+               <!-- <br style="clear: both"/>
+                <label id="lt_Phonebook_stcNickName">
+                </label>
+                <input name="" type="text" size="30" id="txtNickName" maxlength="25" />-->
+                <br style="clear: both" />
+            </div>
+            <p id="lt_Phonebook_stcInputCheckout" style="text-align:center;color:red;display:none;">lt_Phonebook_stcInputCheckout</p>
+            <div class="buttonRow1">
+                    <input id="lt_Phonebook_btnSave" class="btn-apply"type="button" value="OK"/>
+                    <input id="lt_Phonebook_stcCancelView"  onclick="CloseDlg()" class="btn-apply"type="button" value="Cancel"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    

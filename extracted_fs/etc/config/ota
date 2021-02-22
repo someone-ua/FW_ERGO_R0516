@@ -1,0 +1,8 @@
+
+config ota
+	option fota_upgrade_url 'http://112.124.110.213:9091/openacs-client/acs/fotaUpgrade?'
+	option fota_register_url 'http://112.124.110.213:9091/openacs-client/acs/fotaRegist'
+	option cp_upgrade_result '0'
+	option cp_bak_file_size '0'
+	option cp_upgrade_flag '0'
+

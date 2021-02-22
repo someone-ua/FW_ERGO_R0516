@@ -1,0 +1,106 @@
+<a href='#' class='help' onclick="getHelp('DHCPSettings')">&nbsp;</a>
+<label id="lt_dhcp_title" class="title"></label>
+   
+<label id='lt_dhcp_lanIPAddr'></label>
+
+<strong class='dot'>192</strong>
+<strong class='dot'>&middot;</strong>
+<strong class='dot'>168</strong>
+<strong class='dot'>&middot;</strong>
+<input type='text' id='txtDhcpIpAddr2' maxlength='3' class='textfield1' style="width:25px;font-weight:bold;"/> 
+<strong class='dot'>&middot;</strong>
+<input type='text' id='txtDhcpIpAddr3' maxlength='3' class='textfield1' style="width:25px;font-weight:bold;"/>
+<!-- <strong class='dot'>1</strong> -->
+<br class="clear" />
+
+
+<label id='lt_dhcp_ServerSwitch'></label>
+<select id='SelDhcpServerSwitch'>
+    <option id='lt_optEnableSwitch' value='0'></option>
+	  <option id='lt_optDisabledSwitch' value='1'></option>
+</select>
+
+
+<div id="divDhcpInfo">  
+	
+	<label id="lt_dhcp_netMask"></label>
+	<div id="ipCtrlDhcpNetmask"></div>
+
+	<label id='lt_dhcp_leaseTime'></label>
+    <input type="text"  id='txtDhcpLeaseTime' class="txtEditBox" /> 
+
+ 	<label id='lt_dhcp_startIpAddr'></label>
+    <div id='ipCtrlDhcpStartAddr'></div>
+
+    <label id='lt_dhcp_endIpAddr'></label>
+    <div id='ipCtrlDhcpEndAddr'></div>    
+
+
+	<label id='lt_dhcp_gateway'></label>
+	<div id='ipCtrlDhcpGateway'></div>		
+
+	<br style="clear:both" />
+ 	<label id="lt_dhcp_StaticIpList" style="display:inline;" class="title"></label>
+
+ 	<div style="float: right;">
+    	<input type='button' id='lt_dhcp_btnDeleteStaticIp' value='delete' class="btn-apply" style="display:none;" /> 
+    	<input type='button' id='lt_dhcp_btnAddStaticIp' value='add' class="btn-apply"/>    	
+    </div>
+    <br style="clear:both" />
+         <table width="100%" id="tableStaticIP" class="dataTbl10 example table-stripeclass:alternate" style="margin-top: 5px">
+            <thead>
+                <tr>         
+                    <th width="30%" id="lt_dhcp_clientName" ></th>
+                    <th width="30%" id="lt_dhcp_macAddr" ></th>     
+               		<th width="30%" id="lt_dhcp_ipAddr"></th>                           
+                    <th width="10%"><input type="checkbox" id="DeleteAllIpEntry"></th>
+                </tr>                
+            </thead>
+            <tbody id="tbodyDhcpStaticIp"></tbody>
+       </table>    
+ 
+
+</div>
+ 
+<div id="MBStaticIpDlg" style="display: none" >
+	<div class="popUpBox popUpBox2">
+    	<h1 id="lt_dhcp_AddStaticIpTitle"></h1>
+	    <a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div class="pBoxCont">
+			  <label id='lt_dhcp_clientName'></label>
+    		  <input type="text"  id='txtClientName' class="txtEditBox" maxlength="30"/>
+    
+              <label id="lt_dhcp_macAddr"></label>
+              <div id="macCtrlClientMacAddr" class="clear360"></div>
+
+              <label id="lt_dhcp_ipAddr"></label>
+              <div id="ipCtrlDhcpStaticIp" class="clear360"></div>
+
+              <label id="lStaticIpSetError" class="lable13 error" style="display: none"></label>
+                
+              <div class="buttonRow1 right_align">
+								<input id="lt_btnSave" type="button" class="btn-apply" />            		
+           	  </div>    	
+		</div>
+	</div>
+</div>
+
+<label id="dhcpSetErrorLogs" class="error" style="display: none"></label>
+
+<br style="clear:both" />
+
+<div class="right_align" ><input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/></div>
+
+<div id="setDHCPConfirm" style="display:none">
+	<div class="popUpBox popUpBox2">
+		<h1 id="lt_DHCP_title"></h1>
+		    <a href="#" class="close" onclick="CloseDlg()">x</a>
+			<div align="center">
+				<label id="lSetDHCP" style="width:350px"></label>
+			</div>
+			<div class="buttonRow1 right_align">
+				<input type="button" id="lt_btnOK" class="btn-apply"/>
+				<input type="button" id="lt_btnCancel" class="btn-apply" onclick="CloseDlg()"/>
+			</div>
+	</div>
+</div>

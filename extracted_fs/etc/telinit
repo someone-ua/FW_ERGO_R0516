@@ -1,0 +1,17 @@
+#!/bin/sh
+# Copyright (C) 2006 OpenWrt.org
+# Copyright (C) 2010 Vertical Communications
+export NVM_ROOT_DIR=/NVM
+#Delete proerties UCI
+rm -f /etc/config/properties
+#Set UCI file "cmdline" from /proc/cmdline
+cmdline2uci
+
+#Set default properties
+setprop sys.telephony.default.loglevel 5
+setprop sys.telephony.atcmdsrv.loglevel 8
+
+/bin/cp_load
+/bin/nvmproxy &
+/bin/atcmdsrv &
+/bin/rild &

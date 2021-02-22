@@ -1,0 +1,49 @@
+<a href='#' class='help' id="lt_wifiSet_helper" onclick="getHelp('VPNSettings')">&nbsp;</a>
+<label id="lt_vpn_title" class="title"></label>
+<div id='divVPNProtocolSwitch'>
+	<label id='lt_vpn_protocol'></label>
+	<select id="selVPNProtocolSwitch">
+		<option id='lt_vpn_protocol_none' value='none'>NONE</option>
+		<option id='lt_vpn_protocol_pptp' value='pptp'>PPTP</option>
+		<option id='lt_vpn_protocol_l2tp' value='l2tp'>L2TP</option>
+		<option id='lt_vpn_protocol_gre' value='gre'>GRE Tunnel</option>
+	</select>
+</div>
+<div id="divVPNstatus" style="display:none">
+	<label id='lt_vpn_VPNStatus'></label>
+	<span id="txt_connectStatus"></span>
+</div>
+<div id="divVPNInfo" style="display:none">
+	<div id='divVPNServer'>
+		<label id='lt_vpn_server'></label>
+		<input type="text" maxlength="32" id="txtVPNServer" class="txtEditBox" />
+	</div>
+
+	<div id='divUsername'>
+		<label id='lt_vpn_username'></label>
+		<input type="text" maxlength="32" id="txtVPNUsername" class="txtEditBox" />
+	</div>
+
+	<div id='divPassword'>
+		<label id='lt_vpn_passwrod'></label>
+		<input type="text" maxlength="32" id="txtVPNPassword" class="txtEditBox" />
+	</div>
+</div>
+<div id="divVPNInfo_gre" style="display:none">
+	<div id="div_gre_peeraddr">
+		<label id="lt_gre_peeraddr"></label>
+		<div id="grePeeraddr"></div>
+	</div>
+	<div id='div_gre_ipaddr'>
+		<label id='lt_gre_ipaddr'></label>
+		<div id='greIpaddr'></div>
+	</div>
+	<div id='div_gre_netmask'>
+		<label id='lt_gre_netmask'></label>
+		<div id='greNetmask'></div>
+	</div>
+</div>
+<label id="vpnSetErrorLogs" class="error" style="display: none"></label>
+<div class="right_align" id="divSaveWifiConfig">
+	<input type='button' id='lt_vpn_save' value='Save' onclick='setData()' class="btn-apply" />
+</div>

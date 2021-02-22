@@ -1,0 +1,8 @@
+Package: libmxml
+Version: 2.8-1
+Depends: libc
+Source: package/libs/libmxml
+Section: libs
+Architecture: ramips_24kec
+Installed-Size: 17823
+Description:  mini xml parser library

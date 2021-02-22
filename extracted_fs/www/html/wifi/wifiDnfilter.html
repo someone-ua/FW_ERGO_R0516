@@ -1,0 +1,77 @@
+   <a href='#' class='help' onclick="getHelp('WirelessMACFilters')">&nbsp;</a>
+   <label id="lt_dnfilter_title" class="title"></label>
+
+    <div>
+    <label id='lt_dnfilter_Switch'></label>
+    <select id="selOpenDnFilterSwitch">       
+		<option id='lt_optEnableSwitch' value='0'>enabled</option>
+		 <option id='lt_optDisabledSwitch' value='1'>disable</option>
+    </select>
+    </div>   
+    
+    <div align="right" class="formBox">
+    <input type="button" class="btn-apply" onclick="setData()" value="Save" id="lt_btnApply"> </div>
+
+    <div  id='divDnFilterList' style="display:none">
+				<br style="clear:both" />
+				<label id="lt_dnfilter_ListLabel" class="left"></label>
+				<div class="right">
+					<input type='button' id='lt_dnfilter_btnDeleteDnfilter' value='delete' class="btn-apply" style="display:none;"/> 
+					<input type='button' id='lt_dnfilter_btnAddDnfilter' value='add' class="btn-apply"/>    	
+				</div>
+				<br style="clear:both" />
+        <table id="tablednFilter">
+           <thead>
+                <tr>         
+                    <th width="20%" id="lt_dnfilter_startTime" ></th>          
+                    <th width="20%" id="lt_dnfilter_stopTime" ></th>
+                    <th width="20%" id="lt_dnfilter_domainName"></th>
+                    <th width="20%" id="lt_dnfilter_status"></th>
+                    <th width="20%"><input type="checkbox" id="DeleteAlldnfilterEntry"></th>
+                </tr>                
+            </thead>
+            <tbody id="tbodydnfilter"></tbody>
+       </table>
+    </div>
+
+
+    <div id="divDnfilterSetDlg" style="display: none" >
+        <div class="popUpBox popUpBox2" >
+            <h1 id="lt_dnfilter_filterSetDlgTitle"></h1>
+	        <a href="#" class="close" onclick="CloseDlg()">x</a>
+            <div class="pBoxCont" >    
+            	<label id="lt_dnfilter_startTime"></label>
+                <input name="time" type="text" maxlength="2"  id="txtStartTime1" class="sml" /> <strong>:</strong>
+                <input name="time" type="text" maxlength="2" id="txtStartTime2" class="sml" />
+                <br style="clear:both" />                
+
+                <label id="lt_dnfilter_stopTime"></label>
+                <input name="time" type="text" maxlength="2"  id="txtStopTime1" class="sml" /> <strong>:</strong>
+                <input name="time" type="text" maxlength="2"  id="txtStopTime2" class="sml" />
+                <br style="clear:both" />   
+
+           
+                
+                <label id="lt_dnfilter_domainName"></label>
+                 <input name="time" type="text" id="txtDomainName"/>
+                <br style="clear:both" />
+
+				
+                <label id="lt_dnfilter_status"></label>
+                <select id="selDnfilterStatus">
+                    <option value="1" id="lt_optEnableSwitch">enabled</option>
+                    <option value="0" id="lt_optDisabledSwitch">disabled</option>    
+                </select>
+                <br/>
+    
+                <label id="lDnFilterSetError" class="lable13 error" style="display: none"></label>
+
+                <div class="buttonRow1 right_align">
+					<input id="lt_btnSave" type="button" class="btn-apply" />
+            		<input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+            	</div>
+
+            </div>
+        </div>
+        </div>  
+

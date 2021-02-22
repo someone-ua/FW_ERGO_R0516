@@ -1,0 +1,8 @@
+Package: libblobmsg-xml
+Version: 0.1-1
+Depends: libc, libubox, libmxml
+Source: package/network/services/cgi
+Section: net
+Architecture: ramips_24kec
+Installed-Size: 2660
+Description:  blobmsg <-> xml conversion library

@@ -1,0 +1,7 @@
+
+config DiagSaver-settings 'DiagSaver_setting'
+	option enable  'false'
+	option path    '/tmp/'
+	option maxsize '20'
+	option transfer  'false'
+	option modem     '1802'

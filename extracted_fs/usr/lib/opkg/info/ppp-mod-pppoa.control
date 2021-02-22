@@ -1,0 +1,9 @@
+Package: ppp-mod-pppoa
+Version: 2.4.7-2
+Depends: libc, linux-atm, kmod-pppoa
+Source: package/network/services/ppp
+Section: net
+Maintainer: Jo-Philipp Wich <xm@subsignal.org>
+Architecture: ramips_24kec
+Installed-Size: 7225
+Description:  This package contains a PPPoA (PPP over ATM) plugin for ppp.

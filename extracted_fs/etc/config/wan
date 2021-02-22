@@ -1,0 +1,27 @@
+config connect-switch connect_switch
+	option proto cellular
+	option dial_switch cellular
+
+config net-mode net_mode
+	option nw_mode 3
+	option prefer_mode  3
+	option prefer_lte_type   0
+
+config bgscan-time bgscan_time
+	option bgscan_time   1
+
+config profile_conf_type profile_conf_name
+	option actived_profile default
+	list profile_names default
+	list profile_names Kyivstar_Prepaid
+	list profile_names Kyivstar_Contract
+	list profile_names Kyivstar_3G
+	list profile_names Vodafon_3G
+	list profile_names Utel_Ukraine
+	list profile_names LifeCell_3G_4G
+
+config eng-mode eng_mode
+	option mode 0
+
+config roaming-switch roaming_switch
+	option switch 0

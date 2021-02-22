@@ -1,0 +1,8 @@
+Package: DiagSaver
+Version: 1.0-0
+Depends: libc
+Source: package/notion/DiagSaver
+Section: DiagSaver
+Architecture: ramips_24kec
+Installed-Size: 5790
+Description:  This package is for hypermance.

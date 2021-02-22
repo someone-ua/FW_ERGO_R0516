@@ -1,0 +1,8 @@
+Package: kmod-ipt_trigger
+Version: 3.10.14-p112871-1
+Depends: kernel (=3.10.14-p112871-1-edfb187ef19e43c9e651f479d0bc12bd), kmod-ipt-core, kmod-ipt-conntrack, kmod-ipt-nat, kmod-x_tables
+Source: package/network/utils/ipt_trigger/ipt_trigger_ko
+Section: kernel
+Architecture: ramips_24kec
+Installed-Size: 2200
+Description:  Kernel module for Micrel/Kendin KS8995 ethernet switch

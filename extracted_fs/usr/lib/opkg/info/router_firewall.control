@@ -1,0 +1,8 @@
+Package: router_firewall
+Version: 2014-1
+Depends: libc, libpthread, libubox, libubus, libprop2uci, libuci, liblog
+Source: package/services/router_firewall
+Section: router_firewall
+Architecture: ramips_24kec
+Installed-Size: 22036
+Description:  router_firewall-WEB service applictions and utilities

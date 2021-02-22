@@ -1,0 +1,44 @@
+
+	<a class="help" href="#" onclick="getHelp('UserManagement')">&nbsp;</a>
+    <label id="lt_rm_title" class="title"></label>
+    
+    <label id='lt_rm_reboot'></label>
+    <input type='button' id='lt_rm_btnReboot' class="btn-apply"/>
+    <br/>
+
+    <label id='lt_rm_resetFactory'></label>
+    <input type='button' id='lt_rm_btnResetFactory' class="btn-apply"/>
+	
+	<div id="router_management_setting">
+		<br/>
+		<div>
+			<label id="lt_scheduled_reboot">Auto Reboot</label>
+			<select id="scheduled_reboot_switch">
+				<option id="lt_scheduled_reboot_disabled" value="0">Disabled</option>
+				<option id="lt_scheduled_reboot_enable" value="1">Enable</option>
+			</select>
+			<div id="schedule_reboot_time">
+				<label id="lt_scheduled_reboot_time">Reboot time</label>
+				<select id="scheduled_reboot_time"></select>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="right_align" >
+		<input type='button' id='lt_btnApply' value='Save' onclick='setData()' class="btn-apply"/>
+		</div>
+
+<div id="MBRouterManageDlg" style="display: none" >
+	<div class="popUpBox popUpBox2" style='width:450px' >
+    	<h1 id="lt_rm_title"></h1>
+	    <a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div align="center">
+      		<label id="lQueryRouterInfo"></label>
+  		</div>
+        <div class="buttonRow1 right_align">
+			<input id="lt_btnOK" type="button" class="btn-apply" /> 
+			<input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+   	  	</div>            	
+	</div>
+</div>

@@ -1,0 +1,27 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2008 OpenWrt.org
+                                                                        
+START=97
+
+. /usr/share/libubox/jshn.sh 
+
+start() {
+	local nw_mode
+	local prefer_mode
+	local prefer_lte_type
+	local bgscan_time
+	
+	config_load wan
+	config_get nw_mode net_mode nw_mode
+	config_get prefer_mode net_mode prefer_mode
+	config_get prefer_lte_type net_mode prefer_lte_type
+	config_get bgscan_time bgscan_time bgscan_time
+	json_init
+	json_add_string nw_mode "$nw_mode"
+	json_add_string prefer_mode "$prefer_mode"
+	json_add_string prefer_lte_type "$prefer_lte_type"
+	ubus call util_wan set_network_mode "$(json_dump)"
+	json_init
+	json_add_string bgscan_time "$bgscan_time"
+	ubus call util_wan set_bgscan_time "$(json_dump)"
+}                                    

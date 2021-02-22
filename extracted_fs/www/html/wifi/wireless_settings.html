@@ -1,0 +1,490 @@
+<a href='#' class='help' id="lt_wifiSet_helper" onclick="getHelp('WirelessSettings')">&nbsp;</a>
+<label id="lt_wifiSet_title" class="title"></label>
+
+<div class="publicInfo">
+	<div class="publicInformation1" style="float:left">
+		<div id='divWifiEnabledSwitch'>
+			<label id='lt_wifiSet_WifiEnabledSwitch'></label>
+			<select id="selWifiEnabledSwitch">
+				<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+				<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+			</select>
+		</div>
+		<div id="divDisabledWifi">
+			<div id='divFreqBandSwitch' style="display:block">
+				<label id='lt_wifiSet_FreqBand'></label>
+				<input type="text" value="2.4GHz" id="selRfBand" class="txtEditBox" disabled>
+			</div>
+			<div id='divWifiConnNum' style="display:block">
+				<label id='lt_wifiConn_Number'></label>
+				<select id="wifi_conn_num" class="dropdown"></select>
+			</div>
+			<!--802.11 protocol for 2.4G--->
+			<div id='div2_4G80211Protocol' style="display:none;">
+				<label id='lt_wifiSet_wifiNetMode'></label>
+				<select id="sel2_4G80211Protocol">
+					<!-- <option id='lt_wifiSet_opt80211n_only' value='11n'>802.11n</option> -->
+					<option id='lt_wifiSet_opt80211n' value='11ng'>802.11n (b/g compatible)</option>
+					<option id='lt_wifiSet_opt80211gb' value='11bg'>802.11 b/g</option>
+					<option id='lt_wifiSet_opt80211b_only' value='11b'>802.11 b only</option>
+					<option id='lt_wifiSet_opt80211g_only' value='11g'>802.11 g only</option>
+				</select>
+			</div>
+		</div>
+	</div>
+	<div class="publicInformation2 wifi_right">
+		<div>
+			<label id="lt_wifiSet_countryCode"></label>
+			<select id="selWifiCountryCode">
+				<option id="lt_UK" value="UK">UK (Ukraine)</option>
+				<option id="lt_US" value="US">US (United States)</option>
+				<option id="lt_MX" value="MX">MX(Mexico)</option>
+				<option id="lt_CN" value="CN">CN (China)</option>
+				<option id="lt_ES" value="ES">ES(Spain)</option>
+				<option id="lt_DE" value="DE">DE(Germany)</option>
+				<option id="lt_GB" value="GB">GB(England)</option>
+				<option id="lt_RF" value="FR">FR(France)</option>
+				<option id="lt_JP" value="JP">JP(Japan)</option>
+			</select>
+		</div>
+		<div>
+			<div id="24GChannel">
+				<div id="24GChannelFor1_13" style="display:none">
+					<label id='lt_wifiSet_wifiChannel'></label>
+					<select id='selWifi24GChannelFor1_13'>
+						<option id='lt_wifiSet_optChannelAuto' value='0'>Automatic</option>
+						<option id='lt_wifiSet_optCH1' value='1'>CH 1</option>
+						<option id='lt_wifiSet_optCH2' value='2'>CH 2</option>
+						<option id='lt_wifiSet_optCH3' value='3'>CH 3</option>
+						<option id='lt_wifiSet_optCH4' value='4'>CH 4</option>
+						<option id='lt_wifiSet_optCH5' value='5'>CH 5</option>
+						<option id='lt_wifiSet_optCH6' value='6'>CH 6</option>
+						<option id='lt_wifiSet_optCH7' value='7'>CH 7</option>
+						<option id='lt_wifiSet_optCH8' value='8'>CH 8</option>
+						<option id='lt_wifiSet_optCH9' value='9'>CH 9</option>
+						<option id='lt_wifiSet_optCH10' value='10'>CH 10</option>
+						<option id='lt_wifiSet_optCH11' value='11'>CH 11</option>
+						<option id='lt_wifiSet_optCH12' value='12'>CH 12</option>
+						<option id='lt_wifiSet_optCH13' value='13'>CH 13</option>
+					</select>
+				</div>
+				<div id="24GChannelFor1_11" style="display:none">
+					<label id='lt_wifiSet_wifiChannel'></label>
+					<select id='selWifi24GChannelFor1_11'>
+						<option id='lt_wifiSet_optChannelAuto' value='0'>Automatic</option>
+						<option id='lt_wifiSet_optCH1' value='1'>CH 1</option>
+						<option id='lt_wifiSet_optCH2' value='2'>CH 2</option>
+						<option id='lt_wifiSet_optCH3' value='3'>CH 3</option>
+						<option id='lt_wifiSet_optCH4' value='4'>CH 4</option>
+						<option id='lt_wifiSet_optCH5' value='5'>CH 5</option>
+						<option id='lt_wifiSet_optCH6' value='6'>CH 6</option>
+						<option id='lt_wifiSet_optCH7' value='7'>CH 7</option>
+						<option id='lt_wifiSet_optCH8' value='8'>CH 8</option>
+						<option id='lt_wifiSet_optCH9' value='9'>CH 9</option>
+						<option id='lt_wifiSet_optCH10' value='10'>CH 10</option>
+						<option id='lt_wifiSet_optCH11' value='11'>CH 11</option>
+					</select>
+				</div>
+				<div id="24GChannelFor1_14" style="display:none">
+					<label id='lt_wifiSet_wifiChannel'></label>
+					<select id='selWifi24GChannelFor1_14'>
+						<option id='lt_wifiSet_optChannelAuto' value='0'>Automatic</option>
+						<option id='lt_wifiSet_optCH1' value='1'>CH 1</option>
+						<option id='lt_wifiSet_optCH2' value='2'>CH 2</option>
+						<option id='lt_wifiSet_optCH3' value='3'>CH 3</option>
+						<option id='lt_wifiSet_optCH4' value='4'>CH 4</option>
+						<option id='lt_wifiSet_optCH5' value='5'>CH 5</option>
+						<option id='lt_wifiSet_optCH6' value='6'>CH 6</option>
+						<option id='lt_wifiSet_optCH7' value='7'>CH 7</option>
+						<option id='lt_wifiSet_optCH8' value='8'>CH 8</option>
+						<option id='lt_wifiSet_optCH9' value='9'>CH 9</option>
+						<option id='lt_wifiSet_optCH10' value='10'>CH 10</option>
+						<option id='lt_wifiSet_optCH11' value='11'>CH 11</option>
+						<option id='lt_wifiSet_optCH12' value='12'>CH 12</option>
+						<option id='lt_wifiSet_optCH13' value='13'>CH 13</option>
+						<option id='lt_wifiSet_optCH14' value='14'>CH 14</option>
+					</select>
+				</div>
+			</div>
+			<select id='selWifi5GChannel' style="display:none">
+				<option id='lt_wifiSet_optChannelAuto' value='0'>Automatic</option>
+				<option id='lt_wifiSet_optCH36' value='36'>CH 36</option>
+				<option id='lt_wifiSet_optCH40' value='40'>CH 40</option>
+				<option id='lt_wifiSet_optCH44' value='44'>CH 44</option>
+				<option id='lt_wifiSet_optCH48' value='48'>CH 48</option>
+				<option id='lt_wifiSet_optCH52' value='52'>CH 52</option>
+				<option id='lt_wifiSet_optCH56' value='56'>CH 56</option>
+				<option id='lt_wifiSet_optCH60' value='60'>CH 60</option>
+				<option id='lt_wifiSet_optCH64' value='64'>CH 64</option>
+				<option id='lt_wifiSet_optCH149' value='149'>CH 149</option>
+				<option id='lt_wifiSet_optCH153' value='153'>CH 153</option>
+				<option id='lt_wifiSet_optCH157' value='157'>CH 157</option>
+				<option id='lt_wifiSet_optCH161' value='161'>CH 161</option>
+			</select>
+		</div>
+		<!--
+	802.11n :
+		HT20 (single 20MHz channel),
+		HT40- (2x 20MHz channels, primary/control channel is upper, secondary channel is below)
+		HT40+ (2x 20MHz channels, primary/control channel is lower, secondary channel is above).-->
+		<div id="div80211nBandWidth">
+			<label id='lt_wifiSet_wifiBandwidth'></label>
+			<select id='sel80211nBandWidth'>
+				<option id='dropdownBWAuto' value='HT20'>HT20</option>
+				<option id="dropdownBW2040" value="AUTO">HT20/40</option>
+				<option id='dropdownBW20' value='HT40'>HT40</option>
+			</select>
+		</div>
+		<div id="div80211nBandWidth_forBG">
+			<label id='lt_wifiSet_wifiBandwidth'></label>
+			<select id='sel80211nBandWidth_forBG'>
+				<option id='dropdownBWAuto' value='HT20'>HT20</option>
+			</select>
+		</div>
+		<!-- 802.11ac:    VHT20 / VHT40 / VHT80 -->
+		<div id="div80211acBandWidth" style="display:none;">
+			<label id='lt_wifiSet_wifiBandwidth'></label>
+			<select id='sel80211acBandWidth'>
+				<option value='VHT20'>VHT20</option>
+				<option value='VHT40'>VHT40</option>
+				<option value='VHT80'>VHT80</option>
+				<option value='VHT160'>VHT160</option>
+			</select>
+		</div>
+		<div id='divAutoOffWifi'>
+			<label id="lt_wifiSet_AutoOffWifi"></label>
+			<select id='selAutoOffWifiSwitch'>
+				<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+				<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+			</select>
+		</div>
+		<div id="divWifiAutoOffTimeout">
+			<label id="lt_wifiSet_AutoOffWifiTimeout"> </label>
+			<select id='selAutoOffWifiTimeout'>
+				<option value='600'>10</option>
+				<option value='1200'>20</option>
+				<option value='1800'>30</option>
+			</select>
+		</div>
+	</div>
+	<br class="clear" />
+	<label id="wifiSetErrorLogs" class="error" style="display: none"></label>
+	<div class="formBox" align="right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='setData()'
+		 class="btn-apply" /> </div>
+</div>
+<br class="clear" />
+<div class="ssids" id="ssids_detail">
+	<label id="lt_wifiset_ssids" class="title">SSID</label>
+	<div align="right" id="divAddSSID" style="display: none;"><input type='button' id='lt_btnAddSSID' value='Save' onclick='addNewSSID(this)'
+		 class="btn-apply" /></div>
+	<div class="ssid_0">
+		<div class="ssid_detail_info_0" style="margin-top:10px">
+			<div style="float:left">
+				<div>
+					<label id='lt_wifiSet_SSIDStatus'></label>
+					<select id="selCurrentSSIDStatus_0" disabled="disabled" style=" background-color: #d3d3d3;" onchange="hideOrShowWPSBtn(this,0)">
+						<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+						<option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+					</select>
+				</div>
+				<div>
+					<label id='lt_wifiSet_hideSSID'></label>
+					<select id="selHideSSID_0" onchange="hideSSID(this,0)">
+						<option id='lt_optEnableSwitch' value='1'>hide</option>
+						<option id='lt_optDisabledSwitch' value='0'>open</option>
+					</select>
+				</div>
+				<label id="lt_wifiSet_SSID"> </label>
+				<input type="text" maxlength="32" id="txtWifiSSID_0" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+				<label id="lt_wifiSet_AuthType"></label>
+				<select id="selWifiAuthType_0" onchange="changeAuthType(this,'0')">
+					<option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK </option>
+					<option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+					<option id='dropdownWPA' value="WPA-PSK">WPA-PSK </option>
+					<option id='lt_wifiSet_WEP' value="WEP"> WEP </option>
+					<option id='lt_wifiSet_None' value="none">NONE</option>
+				</select>
+				<div id="divEncryAlg_0">
+					<label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+					<select id="selEncryAlg_For_WPA_PSK_0">
+						<option value='AES-CCMP'>AES-CCMP</option>
+						<option value='TKIP'>TKIP</option>
+						<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+					</select>
+					<select id="selEncryAlg_For_WEP_0">
+						<option value='Shared-key'>Shared-key</option>
+					</select>
+				</div>
+			</div>
+			<div class="wifi_right">
+				<div id="divwepKeyFormat_0" style="display:none;">
+					<label id="lt_wifiSet_wepKeyFormat"></label>
+					<select id="selWepKeyFormat_0">
+						<option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					</select>
+				</div>
+
+				<div id="divPassWd_0">
+					<label id="lt_wifiSet_passwd"></label>
+					<input type="text" class="txtEditBox" id="txtPasswd_0" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+				</div>
+
+				<div id='divApIsolateSwitch_0'>
+					<label id="lt_wifiSet_ApIsolateSwitch"></label>
+					<select id='selApIsolateSwitch_0'>
+						<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br class="clear" />
+		<label id="wifiSetErrorLogs_0" class="error" style="display: none"></label>
+		<div class="formBox" align="right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID(0)'
+			 class="btn-apply" /> </div>
+	</div>
+	<br class="clear" />
+	<div class="ssid_1" style="margin-top:20px;display:none">
+		<strong id="lt_wifiset_ssids" class="title">SSID1</strong>
+		<div align="right" id="deleteSSID1"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID("1")'
+			 class="btn-apply" /> </div>
+		<div class="ssid_detail_info_1" style="margin-top:10px">
+			<div style="float:left;">
+				<div>
+					<label id='lt_wifiSet_SSIDStatus'></label>
+					<select id="selCurrentSSIDStatus_1" onchange="hideOrShowWPSBtn(this,1)">
+						<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+						<option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+					</select>
+				</div>
+				<div>
+					<label id='lt_wifiSet_hideSSID'></label>
+					<select id="selHideSSID_1" onchange="hideSSID(this,1)">
+						<option id='lt_optEnableSwitch' value='1'>hide</option>
+						<option id='lt_optDisabledSwitch' value='0'>open</option>
+					</select>
+				</div>
+
+				<label id="lt_wifiSet_SSID"> </label>
+				<input type="text" maxlength="32" id="txtWifiSSID_1" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+				<label id="lt_wifiSet_AuthType"></label>
+				<select id="selWifiAuthType_1" onchange="changeAuthType(this,'1')">
+					<option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK </option>
+					<option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+					<option id='dropdownWPA' value="WPA-PSK">WPA-PSK </option>
+					<option id='lt_wifiSet_WEP' value="WEP"> WEP </option>
+					<option id='lt_wifiSet_None' value="none">NONE</option>
+				</select>
+			</div>
+			<div class="wifi_right">
+				<div id="divEncryAlg_1">
+					<label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+					<select id="selEncryAlg_For_WPA_PSK_1">
+						<option value='AES-CCMP'>AES-CCMP</option>
+						<option value='TKIP'>TKIP</option>
+						<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+					</select>
+					<select id="selEncryAlg_For_WEP_1">
+						<option value='Shared-key'>Shared-key</option>
+					</select>
+				</div>
+				<div id="divwepKeyFormat_1" style="display:none;">
+					<label id="lt_wifiSet_wepKeyFormat"></label>
+					<select id="selWepKeyFormat_1">
+						<option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					</select>
+				</div>
+				<div id="divPassWd_1">
+					<label id="lt_wifiSet_passwd"></label>
+					<input type="text" class="txtEditBox" id="txtPasswd_1" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+				</div>
+
+				<div id='divApIsolateSwitch_1'>
+					<label id="lt_wifiSet_ApIsolateSwitch"></label>
+					<select id='selApIsolateSwitch_1'>
+						<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br class="clear" />
+		<label id="wifiSetErrorLogs_1" class="error" style="display: none"></label>
+		<div class="formBox" align="right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID(1)'
+			 class="btn-apply" /> </div>
+	</div>
+	<br class="clear" />
+	<div class="ssid_2" style="display:none">
+		<strong id="lt_wifiset_ssids_2" class="title">SSID2</strong>
+		<div align="right" id="deleteSSID2"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID("2")'
+			 class="btn-apply" /> </div>
+		<div class="ssid_detail_info_2" style="margin-top:10px">
+			<div style="float:left;">
+				<div>
+					<label id='lt_wifiSet_SSIDStatus'></label>
+					<select id="selCurrentSSIDStatus_2" onchange="hideOrShowWPSBtn(this,2)">
+						<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+						<option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+					</select>
+				</div>
+				<div>
+					<label id='lt_wifiSet_hideSSID'></label>
+					<select id="selHideSSID_2" onchange="hideSSID(this,2)">
+						<option id='lt_optEnableSwitch' value='1'>hide</option>
+						<option id='lt_optDisabledSwitch' value='0'>open</option>
+					</select>
+				</div>
+
+				<label id="lt_wifiSet_SSID"> </label>
+				<input type="text" maxlength="32" id="txtWifiSSID_2" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+				<label id="lt_wifiSet_AuthType"></label>
+				<select id="selWifiAuthType_2" onchange="changeAuthType(this,'2')">
+					<option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK </option>
+					<option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+					<option id='dropdownWPA' value="WPA-PSK">WPA-PSK </option>
+					<option id='lt_wifiSet_WEP' value="WEP"> WEP </option>
+					<option id='lt_wifiSet_None' value="none">NONE</option>
+				</select>
+			</div>
+			<div style="float:left;margin-left:150px">
+				<div id="divEncryAlg_2">
+					<label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+					<select id="selEncryAlg_For_WPA_PSK_2">
+						<option value='AES-CCMP'>AES-CCMP</option>
+						<option value='TKIP'>TKIP</option>
+						<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+					</select>
+					<select id="selEncryAlg_For_WEP_2">
+						<option value='Shared-key'>Shared-key</option>
+					</select>
+				</div>
+				<div id="divwepKeyFormat_2" style="display:none;">
+					<label id="lt_wifiSet_wepKeyFormat"></label>
+					<select id="selWepKeyFormat_2">
+						<option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					</select>
+				</div>
+
+				<div id="divPassWd_2">
+					<label id="lt_wifiSet_passwd"></label>
+					<input type="text" class="txtEditBox" id="txtPasswd_2" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+				</div>
+
+
+				<div id='divApIsolateSwitch_2'>
+					<label id="lt_wifiSet_ApIsolateSwitch"></label>
+					<select id='selApIsolateSwitch_2'>
+						<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br class="clear" />
+		<label id="wifiSetErrorLogs_2" class="error" style="display: none"></label>
+		<div class="formBox" align="right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID(2)'
+			 class="btn-apply" /> </div>
+	</div>
+	<br class="clear" />
+	<div class="ssid_3" style="display:none">
+		<strong id="lt_wifiset_ssids_3" class="title">SSID3</strong>
+		<div align="right" id="deleteSSID3"><input type='button' id='lt_btnDeleteSSID' value='Save' onclick='deleteThisSSID("3")'
+			 class="btn-apply" /> </div>
+		<div class="ssid_detail_info_3" style="margin-top:10px">
+			<div style="float:left">
+				<div>
+					<label id='lt_wifiSet_SSIDStatus'></label>
+					<select id="selCurrentSSIDStatus_3" onchange="hideOrShowWPSBtn(this,3)">
+						<option id='lt_SSIDDisabledSwitch' value='1'>Disabled</option>
+						<option id='lt_SSIDEnableSwitch' value='0'>Enabled</option>
+					</select>
+				</div>
+				<div>
+					<label id='lt_wifiSet_hideSSID'></label>
+					<select id="selHideSSID_3" onchange="hideSSID(this,3)">
+						<option id='lt_optEnableSwitch' value='1'>hide</option>
+						<option id='lt_optDisabledSwitch' value='0'>open</option>
+					</select>
+				</div>
+
+				<label id="lt_wifiSet_SSID"> </label>
+				<input type="text" maxlength="32" id="txtWifiSSID_3" class="txtEditBox" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+
+				<label id="lt_wifiSet_AuthType"></label>
+				<select id="selWifiAuthType_3" onchange="changeAuthType(this,'3')">
+					<option id='lt_wifiSet_WPA2' value="WPA2-PSK"> WPA2-PSK </option>
+					<option id='lt_wifiSet_WPAWPA2' value="Mixed"> WPA-WPA2 Mixed </option>
+					<option id='dropdownWPA' value="WPA-PSK">WPA-PSK </option>
+					<option id='lt_wifiSet_WEP' value="WEP"> WEP </option>
+					<option id='lt_wifiSet_None' value="none">NONE</option>
+				</select>
+			</div>
+			<div style="float:left;margin-left:150px">
+				<div id="divEncryAlg_3">
+					<label id="lt_wifiSet_EncrytAlg">Authentication:</label>
+					<select id="selEncryAlg_For_WPA_PSK_3">
+						<option value='AES-CCMP'>AES-CCMP</option>
+						<option value='TKIP'>TKIP</option>
+						<option value='TKIP/AES-CCMP'>TKIP/AES-CCMP</option>
+					</select>
+					<select id="selEncryAlg_For_WEP_3">
+						<option value='Shared-key'>Shared-key</option>
+					</select>
+				</div>
+
+				<div id="divwepKeyFormat_3" style="display:none;">
+					<label id="lt_wifiSet_wepKeyFormat"></label>
+					<select id="selWepKeyFormat_3">
+						<option id='lt_wifiSet_wepKeyFormat64bASCII' value="5">64 bit - 5 ASCII Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat64bHEX' value="10">64 bit - 10 Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bASCII' value="13">128 bit - 13 ASCII Hex Characters</option>
+						<option id='lt_wifiSet_wepKeyFormat128bHEX' value="26">128 bit - 26 Hex Characters</option>
+					</select>
+				</div>
+
+				<div id="divPassWd_3">
+					<label id="lt_wifiSet_passwd"></label>
+					<input type="text" class="txtEditBox" id="txtPasswd_3" onkeyup="this.value=this.value.replace(/[\u0391-\uffe5]/gi,'')" />
+				</div>
+
+				<div id='divApIsolateSwitch_3'>
+					<label id="lt_wifiSet_ApIsolateSwitch"></label>
+					<select id='selApIsolateSwitch_3'>
+						<option id='lt_optDisabledSwitch' value='0'>Disabled</option>
+						<option id='lt_optEnableSwitch' value='1'>Enabled</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<br class="clear" />
+		<label id="wifiSetErrorLogs_3" class="error" style="display: none"></label>
+		<div class="formBox" align="right" id="divSaveWifiConfig"><input type='button' id='lt_btnApply' value='Save' onclick='saveSSID(3)'
+			 class="btn-apply" /> </div>
+	</div>
+	<br class="clear" />
+</div>
+<div id="setWifiConfirm" style="display:none">
+	<div class="popUpBox popUpBox2">
+		<h1 id="lt_wifiSet_title"></h1>
+		<a href="#" class="close" onclick="CloseDlg()">x</a>
+		<div align="center">
+			<label id="lSetWifi" style="width:350px"></label>
+		</div>
+		<div class="buttonRow1 right_align">
+			<input type="button" id="lt_btnOK" class="btn-apply" />
+			<input type="button" id="lt_btnCancel" class="btn-apply" onclick="CloseDlg()" />
+		</div>
+	</div>
+</div>

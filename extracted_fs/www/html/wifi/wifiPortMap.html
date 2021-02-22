@@ -1,0 +1,105 @@
+
+<a href='#' class='help' onclick="getHelp('WirelessMACFilters')">&nbsp;</a>
+<label id="lt_portMap_title" class="title"></label>
+<div id="portMapNote" class="noteBox">
+	<p id='lt_portMapNote_title' class="note_title">Configure a port forwarding to enable external computers to access WWW, FTP or other services provided by the LAN</p>
+	<ul>
+		<li>
+			<strong id="lt_portMapNote_ip">Main IP address : </strong>
+			<span id="lt_portMapNote_ipNote">Designate a computer locates at the LAN to provide services.</span>
+		</li>
+		<li>
+			<strong id="lt_Note_port"></strong>
+			<span id="lt_portMapNote_portNote"></span>
+		</li>
+		<li>
+			<strong id="lt_portMap_Protocol"></strong>
+			<span id="lt_portMap_ProtocolNote"></span>
+		</li>
+	</ul>
+</div>
+<br style="clear:both" />
+<label id="lt_portMap_ListLabel" class="left"> </label>
+<div class="right">
+	<input type='button' id='lt_portMap_btnDeletePortMap' value='delete' class="btn-apply" style="display:none;"/> 
+	<input type='button' id='lt_portMap_btnAddPortMap' value='add' class="btn-apply"/>    	
+</div>
+<br style="clear:both">
+<div class="pc_device clearFloat">
+	<table id="tableIpFilter">
+		<thead>
+	       <tr>         
+	           <th width="15%" id="lt_portMap_name" ></th>
+						 <th width="15%" id="lt_portMap_srcPort"></th>
+	           <th width="15%" id="lt_portMap_destIpAddr" ></th>
+	           <th width="15%" id="lt_portMap_destPort"></th>
+	           <th width="15%" id="lt_portMap_Protocol" ></th>
+	           <th width="15%" id="lt_portMap_status"> </th>
+	           <th width="10%"><input type="checkbox" id="DeleteAllIpEntry"></th>
+	       </tr>                
+	   	</thead>
+	   	<tbody id="tbodyPortMap"></tbody>
+	</table>
+</div>
+<div class="phone_device clearFloat">
+	<table id="tableIpFilter_phone">
+		<thead>
+	       <tr>         
+	           <th width="25%" id="lt_portMap_name" ></th>
+	           <th width="32%" id="lt_portMap_destIpAddr" ></th>
+	           <th width="25%" id="lt_portMap_status"> </th>
+	           <th width="18%"><input type="checkbox" id="DeleteAllIpEntry"></th>
+	       </tr>                
+	   	</thead>
+	   	<tbody id="tbodyPortMap_phone"></tbody>
+	</table>
+</div>
+<div id="divPortMapSetDlg" style="display: none" >
+	<div class="popUpBox popUpBox2" >
+		<h1 id="lt_portMap_PortMapSetDlgTitle"></h1>
+    	<a href="#" class="close" onclick="CloseDlg()">x</a>
+       	<div class="pBoxCont" >    
+			<label id="lt_portMap_name"></label>
+			<input type="text" id="text_portMap_name" maxlength="30">
+			<br style="clear:both" />
+			<label id="lt_portMap_srcPort"></label>
+			<input name="port" type="text" maxlength="5"  id="txtSrcPort" class="sml_port" />
+			<br style="clear:both" />
+
+           	<label id="lt_portMap_destIpAddr"></label>
+           	<div id="divportMapIP_dest" ></div>
+
+           	<label id="lt_portMap_destPort" class="clear"></label>
+           	<input name="port" type="text" maxlength="5"  id="txtDestPort" class="sml_port" />
+           	<br style="clear:both" />
+
+			<label id="lt_portMap_Protocol"></label>
+            <select id="selPortMapProtocol">
+                <option value="tcp">TCP</option>
+                <option value="UDP">UDP</option>
+                <option value="tcpudp">TCP/UDP</option>
+               <!-- <option value="udplite">UDPLITE</option>
+                <option value="icmp">ICMP</option>
+                <option value="esp">ESP</option>
+                <option value="ah">AH</option>
+                <option value="sctp">SCTP</option> -->
+                <!-- <option value="all">All</option> -->
+               	<!-- <option value="none">NONE</option> -->
+           	</select>
+
+           	<label id="lt_portMap_status"></label>
+           	<select id="selPortMapStatus">
+               	<option value="1" id="lt_optEnableSwitch">enabled</option>
+               	<option value="0" id="lt_optDisabledSwitch">disabled</option>    
+           	</select>
+           <br/>
+
+           	<label id="lIpFilterSetError" class="lable13 error" style="display: none"></label>
+
+           	<div class="buttonRow1 right_align">
+				<input id="lt_btnSave" type="button" class="btn-apply" />
+       			<input id="lt_btnCancel" type="button" onclick="CloseDlg()" class="btn-apply" />
+           	</div>
+		</div>
+	</div>
+</div>

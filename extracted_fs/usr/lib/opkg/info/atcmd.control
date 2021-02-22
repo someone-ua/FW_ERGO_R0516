@@ -1,0 +1,8 @@
+Package: atcmd
+Version: 1.0-0
+Depends: libc
+Source: package/notion/atcmd
+Section: notion
+Architecture: ramips_24kec
+Installed-Size: 4958
+Description:  This package is for atcmd.

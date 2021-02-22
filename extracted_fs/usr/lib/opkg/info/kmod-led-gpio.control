@@ -1,0 +1,9 @@
+Package: kmod-led-gpio
+Version: 3.10.14-p112871-3
+Depends: kernel (=3.10.14-p112871-1-edfb187ef19e43c9e651f479d0bc12bd), kmod-input-core
+Source: package/kernel/led-gpio
+Section: kernel
+Architecture: ramips_24kec
+Installed-Size: 3333
+Description:  Kernel module to gpio leds.
+ If your device uses GPIO leds.

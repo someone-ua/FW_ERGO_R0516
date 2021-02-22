@@ -1,0 +1,19 @@
+config system
+	option hostname cpe.com
+	option zonename Asia/Shanghai
+	option timezone	GMT-2
+	option log_file /etc/logfile
+	option log_size 16
+	option language cn
+	option workmode router
+	option bridge 0
+	option wanmode ltefirst
+	option eth_select lan
+
+config timeserver ntp
+	list server	0.openwrt.pool.ntp.org
+	list server	1.openwrt.pool.ntp.org
+	list server	2.openwrt.pool.ntp.org
+	list server	3.openwrt.pool.ntp.org
+	option enabled 0
+	option enable_server 0
